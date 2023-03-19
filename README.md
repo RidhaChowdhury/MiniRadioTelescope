@@ -10,4 +10,4 @@ This Python software is forked from UPENN project: https://github.com/UPennEoR/M
 
 Documentation for astropy_coordinates.py: https://docs.google.com/document/d/1qpQ_SRinI0ADAfMxYnLgn-8IxUDTiz-_WAb4TQxqFYk
 
-Instructions for installing pyrtlsdr, which talks to the USB RTL-SDR module which listens to the antenna: [Relative_link_here_I_hope] (RTLSDR/installing_pyrtlsdr)
+[Instructions for installing pyrtlsdr, which talks to the USB RTL-SDR module which listens to the antenna:](RTLSDR/installing_pyrtlsdr)
