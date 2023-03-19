@@ -8,6 +8,11 @@ Not available from conda?
 pip install pyrtlsdr
 
 
+On Arch
+-------
+sudo pacman -S rtl-sdr
+pip install setuptools # There's an import called "pkg_resources" which you will need.
+pip install pyrtlsdr
 
 
 On the Raspberry Pi
