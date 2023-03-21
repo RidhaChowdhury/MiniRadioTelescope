@@ -9,6 +9,7 @@ Download rtl_sdr executables from osmocom
     osmocom.org/projects/rtl-sdr/wiki/Sidebar
     Windows Builds
     downloads.osmocom.org/binaries/windows/rtl-sdr/rtl-sdr-64bit-20230319.zip
+You can also use, from this repository, Dependencies/rtl-sdr-64bit-20230319.zip
 extract your files; add the extracted folder (something like rtl-sdr-64bit-20230319, containing stuff like librtlsdr.dll and rtl_sdr.exe and libusb-1.0.dll) to PATH environment variable.
 
 Try to run the command rtl_test. If you get this error:
@@ -18,6 +19,7 @@ then you did not set your PATH environment variable corectly.
 When you run the command 'rtl_test' with the dongle plugged in, it should run, but with lots of errors. The default driver on Windows is incorrect, I guess.
 Mighty Zadig will help you.
 Download Zadig from very sketchy website: zadig.akeo.ie. Beware of treacherous adware links! Something like https://github.com/pbatard/libwdi/releases/download/v1.5.0/zadig-2.8.exe
+You can also use, from this repository, Dependencies/zadig-2.8.exe
 Plug RTL-SDR USB dongle in at this time. Wait a minute or so for Windows to install the wrong driver.
 Run Zadig as administrator (you can trust Zadig).
 Following instructions from rtl-sdr.com/qsg:
@@ -35,6 +37,7 @@ You should now be able to run rtl_test with few errors, ending with something li
 You may get the following error (unrelated to rtl_sdr) when you run a python file that imports matplotlib:
     importerror: dll load failed while importing _cext: the specified module could not be found.
 You may be able to solve this by installing the Microsoft Visual C++ 2015 redistributable: https://www.microsoft.com/en-us/download/confirmation.aspx?id=48145
+You can also use, from this repository, Dependencies/vc_redist.x64.exe
 
 You should now be able to run files like test_rtlsdr.py now. RTLSDR/test_rtlsdr.py should generate and display a frequency graph using matplotlib.
 
