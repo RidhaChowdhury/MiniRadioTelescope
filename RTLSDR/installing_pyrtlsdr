@@ -1,4 +1,43 @@
-Some notes on installing pyrtlsdr.
+How to install pyrtlsdr on various operating systems.
+
+
+On Windows 10
+-------------
+Install Python through the Windows store, which you can open by trying to run python on cmd.
+pip install numpy matplotlib pyrtlsdr
+Download rtl_sdr executables from osmocom
+    osmocom.org/projects/rtl-sdr/wiki/Sidebar
+    Windows Builds
+    downloads.osmocom.org/binaries/windows/rtl-sdr/rtl-sdr-64bit-20230319.zip
+extract your files; add the extracted folder (something like rtl-sdr-64bit-20230319, containing stuff like librtlsdr.dll and rtl_sdr.exe and libusb-1.0.dll) to PATH environment variable.
+
+Try to run the command rtl_test. If you get this error:
+    'rtl_test' is not recognized as an internal or external command, operable program or batch file.
+then you did not set your PATH environment variable corectly.
+
+When you run the command 'rtl_test' with the dongle plugged in, it should run, but with lots of errors. The default driver on Windows is incorrect, I guess.
+Mighty Zadig will help you.
+Download Zadig from very sketchy website: zadig.akeo.ie. Beware of treacherous adware links! Something like https://github.com/pbatard/libwdi/releases/download/v1.5.0/zadig-2.8.exe
+Plug RTL-SDR USB dongle in at this time. Wait a minute or so for Windows to install the wrong driver.
+Run Zadig as administrator (you can trust Zadig).
+Following instructions from rtl-sdr.com/qsg:
+    Options -> List All Devices
+    From drop-down -> Bulk-In, Interface (Interface 0)
+    Expect USB ID: 0BDA 2838 00
+    Expect to left of green arrow: (None) or RTL2832UUSB...
+    Expect to right of green arrow: WinUSB (v6.1.7600.16385)
+    Click Replace Driver
+Wait a while.
+You should now be able to run rtl_test with few errors, ending with something like:
+    Reading samples in async mode...
+    lost at least xx bytes
+
+You may get the following error (unrelated to rtl_sdr) when you run a python file that imports matplotlib:
+    importerror: dll load failed while importing _cext: the specified module could not be found.
+You may be able to solve this by installing the Microsoft Visual C++ 2015 redistributable: https://www.microsoft.com/en-us/download/confirmation.aspx?id=48145
+
+You should now be able to run files like test_rtlsdr.py now. RTLSDR/test_rtlsdr.py should generate and display a frequency graph using matplotlib.
+
 
 
 On Mac
@@ -8,11 +47,13 @@ Not available from conda?
 pip install pyrtlsdr
 
 
+
 On Arch
 -------
 sudo pacman -S rtl-sdr
-pip install setuptools # There's an import called "pkg_resources" which you will need.
+pip install setuptools # Provides a module called "pkg_resources" which is used somewhere I guess.
 pip install pyrtlsdr
+
 
 
 On the Raspberry Pi
@@ -52,8 +93,6 @@ sudo make install
 
 (these steps are VERY slow)
 
-
-
 libusb seems to be already installed, but the wrong version (?).  Get the "right" one:
 
 pi@raspberrypi:~/librtlsdr/build $ sudo apt-get install libusb-1.0-0
@@ -67,3 +106,4 @@ libusb-1.0-0 set to manually installed.
 Then follow Paul's instructions, BUT:
 
 cmake ../ -DINSTALL_UDEV_RULES=ON -DDETACH_KERNEL_DRIVER=ON
+
