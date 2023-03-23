@@ -1,0 +1,1753 @@
+<!DOCTYPE html>
+<html class="client-js vector-animations-ready" dir="ltr" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>GRUB - ArchWiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"34de786f2d4deda5ea6356bb","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"GRUB","wgTitle":"GRUB","wgCurRevisionId":771950,"wgRevisionId":771950,"wgArticleId":5984,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Pages or sections flagged with Template:Out of date","Pages or sections flagged with Template:Merge","Pages or sections flagged with Template:Expansion","Boot loaders","GNU"],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"GRUB","wgRelevantArticleId":5984,"wgIsProbablyEditable":false,
+"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVector2022PreviewPages":[]};RLSTATE={"skins.vector.user.styles":"ready","site.styles":"ready","user.styles":"ready","skins.vector.user":"ready","user":"ready","user.options":"loading","mediawiki.ui.button":"ready","skins.vector.styles":"ready","skins.vector.icons":"ready","mediawiki.ui.icon":"ready","zzz.ext.archLinux.styles":"ready","ext.DarkMode.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","mediawiki.toc","skins.vector.js","skins.vector.es6","ext.DarkMode"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});});});</script>
+<link rel="stylesheet" href="GRUB%20-%20ArchWiki_files/load_002.css">
+<script async="" src="GRUB%20-%20ArchWiki_files/load.php"></script>
+<style>
+.oo-ui-icon-bright,.mw-ui-icon-bright:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=bright&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E bright %3C/title%3E%3Cpath d=%22M17.07 7.07V2.93h-4.14L10 0 7.07 2.93H2.93v4.14L0 10l2.93 2.93v4.14h4.14L10 20l2.93-2.93h4.14v-4.14L20 10zM10 16a6 6 0 1 1 6-6 6 6 0 0 1-6 6z%22/%3E%3Ccircle cx=%2210%22 cy=%2210%22 r=%224.5%22/%3E%3C/svg%3E")}.oo-ui-image-invert.oo-ui-icon-bright,.mw-ui-icon-bright-invert:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=bright&variant=invert&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E bright %3C/title%3E%3Cg fill=%22%23fff%22%3E%3Cpath d=%22M17.07 7.07V2.93h-4.14L10 0 7.07 2.93H2.93v4.14L0 10l2.93 2.93v4.14h4.14L10 20l2.93-2.93h4.14v-4.14L20 10zM10 16a6 6 0 1 1 6-6 6 6 0 0 1-6 6z%22/%3E%3Ccircle cx=%2210%22 cy=%2210%22 r=%224.5%22/%3E%3C/g%3E%3C/svg%3E")}.oo-ui-image-progressive.oo-ui-icon-bright,.mw-ui-icon-bright-progressive:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=bright&variant=progressive&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E bright %3C/title%3E%3Cg fill=%22%2336c%22%3E%3Cpath d=%22M17.07 7.07V2.93h-4.14L10 0 7.07 2.93H2.93v4.14L0 10l2.93 2.93v4.14h4.14L10 20l2.93-2.93h4.14v-4.14L20 10zM10 16a6 6 0 1 1 6-6 6 6 0 0 1-6 6z%22/%3E%3Ccircle cx=%2210%22 cy=%2210%22 r=%224.5%22/%3E%3C/g%3E%3C/svg%3E")}.oo-ui-icon-halfBright,.mw-ui-icon-halfBright:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=halfBright&format=rasterized&lang=en&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E half bright %3C/title%3E%3Cpath d=%22M17 6.67V3h-4.2L9.87.07 6.94 3H3v3.67L.07 9.6 3 12.53V17h3.94l2.93 2.93L12.8 17H17v-4.47l2.93-2.93zm-7 8.93v-12a6.21 6.21 0 0 1 6 6 6.21 6.21 0 0 1-6 6z%22/%3E%3C/svg%3E")}.oo-ui-image-invert.oo-ui-icon-halfBright,.mw-ui-icon-halfBright-invert:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=halfBright&variant=invert&format=rasterized&lang=en&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E half bright %3C/title%3E%3Cg fill=%22%23fff%22%3E%3Cpath d=%22M17 6.67V3h-4.2L9.87.07 6.94 3H3v3.67L.07 9.6 3 12.53V17h3.94l2.93 2.93L12.8 17H17v-4.47l2.93-2.93zm-7 8.93v-12a6.21 6.21 0 0 1 6 6 6.21 6.21 0 0 1-6 6z%22/%3E%3C/g%3E%3C/svg%3E")}.oo-ui-image-progressive.oo-ui-icon-halfBright,.mw-ui-icon-halfBright-progressive:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=halfBright&variant=progressive&format=rasterized&lang=en&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E half bright %3C/title%3E%3Cg fill=%22%2336c%22%3E%3Cpath d=%22M17 6.67V3h-4.2L9.87.07 6.94 3H3v3.67L.07 9.6 3 12.53V17h3.94l2.93 2.93L12.8 17H17v-4.47l2.93-2.93zm-7 8.93v-12a6.21 6.21 0 0 1 6 6 6.21 6.21 0 0 1-6 6z%22/%3E%3C/g%3E%3C/svg%3E")}.oo-ui-icon-notBright,.mw-ui-icon-notBright:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=notBright&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E not bright %3C/title%3E%3Ccircle cx=%229.85%22 cy=%2210%22 r=%229%22/%3E%3C/svg%3E")}.oo-ui-image-invert.oo-ui-icon-notBright,.mw-ui-icon-notBright-invert:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=notBright&variant=invert&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E not bright %3C/title%3E%3Cg fill=%22%23fff%22%3E%3Ccircle cx=%229.85%22 cy=%2210%22 r=%229%22/%3E%3C/g%3E%3C/svg%3E")}.oo-ui-image-progressive.oo-ui-icon-notBright,.mw-ui-icon-notBright-progressive:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=notBright&variant=progressive&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E not bright %3C/title%3E%3Cg fill=%22%2336c%22%3E%3Ccircle cx=%229.85%22 cy=%2210%22 r=%229%22/%3E%3C/g%3E%3C/svg%3E")}.oo-ui-icon-eye,.mw-ui-icon-eye:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=eye&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E eye %3C/title%3E%3Cpath d=%22M10 14.5a4.5 4.5 0 1 1 4.5-4.5 4.5 4.5 0 0 1-4.5 4.5zM10 3C3 3 0 10 0 10s3 7 10 7 10-7 10-7-3-7-10-7z%22/%3E%3Ccircle cx=%2210%22 cy=%2210%22 r=%222.5%22/%3E%3C/svg%3E")}.oo-ui-image-invert.oo-ui-icon-eye,.mw-ui-icon-eye-invert:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=eye&variant=invert&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E eye %3C/title%3E%3Cg fill=%22%23fff%22%3E%3Cpath d=%22M10 14.5a4.5 4.5 0 1 1 4.5-4.5 4.5 4.5 0 0 1-4.5 4.5zM10 3C3 3 0 10 0 10s3 7 10 7 10-7 10-7-3-7-10-7z%22/%3E%3Ccircle cx=%2210%22 cy=%2210%22 r=%222.5%22/%3E%3C/g%3E%3C/svg%3E")}.oo-ui-image-progressive.oo-ui-icon-eye,.mw-ui-icon-eye-progressive:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=eye&variant=progressive&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E eye %3C/title%3E%3Cg fill=%22%2336c%22%3E%3Cpath d=%22M10 14.5a4.5 4.5 0 1 1 4.5-4.5 4.5 4.5 0 0 1-4.5 4.5zM10 3C3 3 0 10 0 10s3 7 10 7 10-7 10-7-3-7-10-7z%22/%3E%3Ccircle cx=%2210%22 cy=%2210%22 r=%222.5%22/%3E%3C/g%3E%3C/svg%3E")}.oo-ui-icon-eyeClosed,.mw-ui-icon-eyeClosed:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=eyeClosed&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E eye closed %3C/title%3E%3Cpath d=%22M12.49 9.94A2.5 2.5 0 0 0 10 7.5z%22/%3E%3Cpath d=%22M8.2 5.9a4.38 4.38 0 0 1 1.8-.4 4.5 4.5 0 0 1 4.5 4.5 4.34 4.34 0 0 1-.29 1.55L17 14.14A14 14 0 0 0 20 10s-3-7-10-7a9.63 9.63 0 0 0-4 .85zM2 2 1 3l2.55 2.4A13.89 13.89 0 0 0 0 10s3 7 10 7a9.67 9.67 0 0 0 4.64-1.16L18 19l1-1zm8 12.5A4.5 4.5 0 0 1 5.5 10a4.45 4.45 0 0 1 .6-2.2l1.53 1.44a2.47 2.47 0 0 0-.13.76 2.49 2.49 0 0 0 3.41 2.32l1.54 1.45a4.47 4.47 0 0 1-2.45.73z%22/%3E%3C/svg%3E")}.oo-ui-image-invert.oo-ui-icon-eyeClosed,.mw-ui-icon-eyeClosed-invert:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=eyeClosed&variant=invert&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E eye closed %3C/title%3E%3Cg fill=%22%23fff%22%3E%3Cpath d=%22M12.49 9.94A2.5 2.5 0 0 0 10 7.5z%22/%3E%3Cpath d=%22M8.2 5.9a4.38 4.38 0 0 1 1.8-.4 4.5 4.5 0 0 1 4.5 4.5 4.34 4.34 0 0 1-.29 1.55L17 14.14A14 14 0 0 0 20 10s-3-7-10-7a9.63 9.63 0 0 0-4 .85zM2 2 1 3l2.55 2.4A13.89 13.89 0 0 0 0 10s3 7 10 7a9.67 9.67 0 0 0 4.64-1.16L18 19l1-1zm8 12.5A4.5 4.5 0 0 1 5.5 10a4.45 4.45 0 0 1 .6-2.2l1.53 1.44a2.47 2.47 0 0 0-.13.76 2.49 2.49 0 0 0 3.41 2.32l1.54 1.45a4.47 4.47 0 0 1-2.45.73z%22/%3E%3C/g%3E%3C/svg%3E")}.oo-ui-image-progressive.oo-ui-icon-eyeClosed,.mw-ui-icon-eyeClosed-progressive:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=eyeClosed&variant=progressive&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E eye closed %3C/title%3E%3Cg fill=%22%2336c%22%3E%3Cpath d=%22M12.49 9.94A2.5 2.5 0 0 0 10 7.5z%22/%3E%3Cpath d=%22M8.2 5.9a4.38 4.38 0 0 1 1.8-.4 4.5 4.5 0 0 1 4.5 4.5 4.34 4.34 0 0 1-.29 1.55L17 14.14A14 14 0 0 0 20 10s-3-7-10-7a9.63 9.63 0 0 0-4 .85zM2 2 1 3l2.55 2.4A13.89 13.89 0 0 0 0 10s3 7 10 7a9.67 9.67 0 0 0 4.64-1.16L18 19l1-1zm8 12.5A4.5 4.5 0 0 1 5.5 10a4.45 4.45 0 0 1 .6-2.2l1.53 1.44a2.47 2.47 0 0 0-.13.76 2.49 2.49 0 0 0 3.41 2.32l1.54 1.45a4.47 4.47 0 0 1-2.45.73z%22/%3E%3C/g%3E%3C/svg%3E")}.oo-ui-icon-moon,.mw-ui-icon-moon:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=moon&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E moon %3C/title%3E%3Cpath d=%22M17.39 15.14A7.33 7.33 0 0 1 11.75 1.6c.23-.11.56-.23.79-.34a8.19 8.19 0 0 0-5.41.45 9 9 0 1 0 7 16.58 8.42 8.42 0 0 0 4.29-3.84 5.3 5.3 0 0 1-1.03.69z%22/%3E%3C/svg%3E")}.oo-ui-image-invert.oo-ui-icon-moon,.mw-ui-icon-moon-invert:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=moon&variant=invert&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E moon %3C/title%3E%3Cg fill=%22%23fff%22%3E%3Cpath d=%22M17.39 15.14A7.33 7.33 0 0 1 11.75 1.6c.23-.11.56-.23.79-.34a8.19 8.19 0 0 0-5.41.45 9 9 0 1 0 7 16.58 8.42 8.42 0 0 0 4.29-3.84 5.3 5.3 0 0 1-1.03.69z%22/%3E%3C/g%3E%3C/svg%3E")}.oo-ui-image-progressive.oo-ui-icon-moon,.mw-ui-icon-moon-progressive:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=moon&variant=progressive&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E moon %3C/title%3E%3Cg fill=%22%2336c%22%3E%3Cpath d=%22M17.39 15.14A7.33 7.33 0 0 1 11.75 1.6c.23-.11.56-.23.79-.34a8.19 8.19 0 0 0-5.41.45 9 9 0 1 0 7 16.58 8.42 8.42 0 0 0 4.29-3.84 5.3 5.3 0 0 1-1.03.69z%22/%3E%3C/g%3E%3C/svg%3E")}.oo-ui-icon-largerText,.mw-ui-icon-largerText:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=largerText&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E larger text %3C/title%3E%3Cpath d=%22M17.66 18h-2a.85.85 0 0 1-.56-.17 1.11 1.11 0 0 1-.32-.43l-1.33-3.53h-6.9L5.22 17.4a1.06 1.06 0 0 1-.31.41.83.83 0 0 1-.56.19h-2L8.68 2h2.63zm-4.92-6-2.2-5.84A16.17 16.17 0 0 1 10 4.43q-.12.52-.27 1t-.27.77L7.26 12z%22/%3E%3C/svg%3E")}.oo-ui-image-invert.oo-ui-icon-largerText,.mw-ui-icon-largerText-invert:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=largerText&variant=invert&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E larger text %3C/title%3E%3Cg fill=%22%23fff%22%3E%3Cpath d=%22M17.66 18h-2a.85.85 0 0 1-.56-.17 1.11 1.11 0 0 1-.32-.43l-1.33-3.53h-6.9L5.22 17.4a1.06 1.06 0 0 1-.31.41.83.83 0 0 1-.56.19h-2L8.68 2h2.63zm-4.92-6-2.2-5.84A16.17 16.17 0 0 1 10 4.43q-.12.52-.27 1t-.27.77L7.26 12z%22/%3E%3C/g%3E%3C/svg%3E")}.oo-ui-image-progressive.oo-ui-icon-largerText,.mw-ui-icon-largerText-progressive:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=largerText&variant=progressive&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E larger text %3C/title%3E%3Cg fill=%22%2336c%22%3E%3Cpath d=%22M17.66 18h-2a.85.85 0 0 1-.56-.17 1.11 1.11 0 0 1-.32-.43l-1.33-3.53h-6.9L5.22 17.4a1.06 1.06 0 0 1-.31.41.83.83 0 0 1-.56.19h-2L8.68 2h2.63zm-4.92-6-2.2-5.84A16.17 16.17 0 0 1 10 4.43q-.12.52-.27 1t-.27.77L7.26 12z%22/%3E%3C/g%3E%3C/svg%3E")}.oo-ui-icon-smallerText,.mw-ui-icon-smallerText:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=smallerText&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E smaller text %3C/title%3E%3Cpath d=%22M15.75 18h-1.51a.64.64 0 0 1-.42-.13.83.83 0 0 1-.24-.32l-1-2.65H7.41l-1 2.65a.79.79 0 0 1-.23.31.62.62 0 0 1-.42.14H4.25L9 6h2zm-3.69-4.5L10.4 9.12a12.13 12.13 0 0 1-.4-1.3q-.09.39-.2.72t-.2.58L7.95 13.5z%22/%3E%3C/svg%3E")}.oo-ui-image-invert.oo-ui-icon-smallerText,.mw-ui-icon-smallerText-invert:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=smallerText&variant=invert&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E smaller text %3C/title%3E%3Cg fill=%22%23fff%22%3E%3Cpath d=%22M15.75 18h-1.51a.64.64 0 0 1-.42-.13.83.83 0 0 1-.24-.32l-1-2.65H7.41l-1 2.65a.79.79 0 0 1-.23.31.62.62 0 0 1-.42.14H4.25L9 6h2zm-3.69-4.5L10.4 9.12a12.13 12.13 0 0 1-.4-1.3q-.09.39-.2.72t-.2.58L7.95 13.5z%22/%3E%3C/g%3E%3C/svg%3E")}.oo-ui-image-progressive.oo-ui-icon-smallerText,.mw-ui-icon-smallerText-progressive:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=smallerText&variant=progressive&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E smaller text %3C/title%3E%3Cg fill=%22%2336c%22%3E%3Cpath d=%22M15.75 18h-1.51a.64.64 0 0 1-.42-.13.83.83 0 0 1-.24-.32l-1-2.65H7.41l-1 2.65a.79.79 0 0 1-.23.31.62.62 0 0 1-.42.14H4.25L9 6h2zm-3.69-4.5L10.4 9.12a12.13 12.13 0 0 1-.4-1.3q-.09.39-.2.72t-.2.58L7.95 13.5z%22/%3E%3C/g%3E%3C/svg%3E")}.oo-ui-icon-visionSimulator,.mw-ui-icon-visionSimulator:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=visionSimulator&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E vision simulator %3C/title%3E%3Cpath d=%22M17.5 11.83a.79.79 0 0 1-.83.83h-3.34A1.49 1.49 0 0 1 11.67 11V9.33a.79.79 0 0 1 .83-.83h4.17a.79.79 0 0 1 .83.83zM8.33 11a1.49 1.49 0 0 1-1.67 1.67H3.33a.79.79 0 0 1-.83-.83V9.33a.79.79 0 0 1 .83-.83H7.5a.79.79 0 0 1 .83.83zM0 6.2v6.28a.2.2 0 0 0 .2.2h1.72a1.61 1.61 0 0 0 1.42.83h3.33A2.46 2.46 0 0 0 9.13 12a.19.19 0 0 1 .18-.13h1.39a.19.19 0 0 1 .18.13 2.46 2.46 0 0 0 2.46 1.53h3.33c.55 0 1.1 0 1.37-.7a.2.2 0 0 1 .18-.13h1.58a.2.2 0 0 0 .2-.2V6.2a.2.2 0 0 0-.2-.2H.2a.2.2 0 0 0-.2.2z%22/%3E%3C/svg%3E")}.oo-ui-image-invert.oo-ui-icon-visionSimulator,.mw-ui-icon-visionSimulator-invert:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=visionSimulator&variant=invert&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E vision simulator %3C/title%3E%3Cg fill=%22%23fff%22%3E%3Cpath d=%22M17.5 11.83a.79.79 0 0 1-.83.83h-3.34A1.49 1.49 0 0 1 11.67 11V9.33a.79.79 0 0 1 .83-.83h4.17a.79.79 0 0 1 .83.83zM8.33 11a1.49 1.49 0 0 1-1.67 1.67H3.33a.79.79 0 0 1-.83-.83V9.33a.79.79 0 0 1 .83-.83H7.5a.79.79 0 0 1 .83.83zM0 6.2v6.28a.2.2 0 0 0 .2.2h1.72a1.61 1.61 0 0 0 1.42.83h3.33A2.46 2.46 0 0 0 9.13 12a.19.19 0 0 1 .18-.13h1.39a.19.19 0 0 1 .18.13 2.46 2.46 0 0 0 2.46 1.53h3.33c.55 0 1.1 0 1.37-.7a.2.2 0 0 1 .18-.13h1.58a.2.2 0 0 0 .2-.2V6.2a.2.2 0 0 0-.2-.2H.2a.2.2 0 0 0-.2.2z%22/%3E%3C/g%3E%3C/svg%3E")}.oo-ui-image-progressive.oo-ui-icon-visionSimulator,.mw-ui-icon-visionSimulator-progressive:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=visionSimulator&variant=progressive&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E vision simulator %3C/title%3E%3Cg fill=%22%2336c%22%3E%3Cpath d=%22M17.5 11.83a.79.79 0 0 1-.83.83h-3.34A1.49 1.49 0 0 1 11.67 11V9.33a.79.79 0 0 1 .83-.83h4.17a.79.79 0 0 1 .83.83zM8.33 11a1.49 1.49 0 0 1-1.67 1.67H3.33a.79.79 0 0 1-.83-.83V9.33a.79.79 0 0 1 .83-.83H7.5a.79.79 0 0 1 .83.83zM0 6.2v6.28a.2.2 0 0 0 .2.2h1.72a1.61 1.61 0 0 0 1.42.83h3.33A2.46 2.46 0 0 0 9.13 12a.19.19 0 0 1 .18-.13h1.39a.19.19 0 0 1 .18.13 2.46 2.46 0 0 0 2.46 1.53h3.33c.55 0 1.1 0 1.37-.7a.2.2 0 0 1 .18-.13h1.58a.2.2 0 0 0 .2-.2V6.2a.2.2 0 0 0-.2-.2H.2a.2.2 0 0 0-.2.2z%22/%3E%3C/g%3E%3C/svg%3E")}
+.mw-ui-icon-wikimedia-speechBubbleAdd:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=speechBubbleAdd&format=rasterized&lang=en&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=speechBubbleAdd&format=original&lang=en&skin=vector-2022&version=10ele)}.mw-ui-icon-wikimedia-speechBubbleAdd-progressive:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=speechBubbleAdd&variant=progressive&format=rasterized&lang=en&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=speechBubbleAdd&variant=progressive&format=original&lang=en&skin=vector-2022&version=10ele)}.mw-ui-icon-wikimedia-speechBubbles:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=speechBubbles&format=rasterized&lang=en&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=speechBubbles&format=original&lang=en&skin=vector-2022&version=10ele)}.mw-ui-icon-wikimedia-speechBubbles-progressive:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=speechBubbles&variant=progressive&format=rasterized&lang=en&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=speechBubbles&variant=progressive&format=original&lang=en&skin=vector-2022&version=10ele)}.mw-ui-icon-wikimedia-article:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=article&format=rasterized&lang=en&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=article&format=original&lang=en&skin=vector-2022&version=10ele)}.mw-ui-icon-wikimedia-article-progressive:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=article&variant=progressive&format=rasterized&lang=en&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=article&variant=progressive&format=original&lang=en&skin=vector-2022&version=10ele)}.mw-ui-icon-wikimedia-history:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=history&format=rasterized&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=history&format=original&skin=vector-2022&version=10ele)}.mw-ui-icon-wikimedia-history-progressive:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=history&variant=progressive&format=rasterized&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=history&variant=progressive&format=original&skin=vector-2022&version=10ele)}.mw-ui-icon-wikimedia-wikiText:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=wikiText&format=rasterized&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=wikiText&format=original&skin=vector-2022&version=10ele)}.mw-ui-icon-wikimedia-wikiText-progressive:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=wikiText&variant=progressive&format=rasterized&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=wikiText&variant=progressive&format=original&skin=vector-2022&version=10ele)}.mw-ui-icon-wikimedia-edit:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=edit&format=rasterized&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=edit&format=original&skin=vector-2022&version=10ele)}.mw-ui-icon-wikimedia-edit-progressive:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=edit&variant=progressive&format=rasterized&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=edit&variant=progressive&format=original&skin=vector-2022&version=10ele)}.mw-ui-icon-wikimedia-editLock:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=editLock&format=rasterized&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=editLock&format=original&skin=vector-2022&version=10ele)}.mw-ui-icon-wikimedia-editLock-progressive:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=editLock&variant=progressive&format=rasterized&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=editLock&variant=progressive&format=original&skin=vector-2022&version=10ele)}.mw-ui-icon-wikimedia-star:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=star&format=rasterized&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=star&format=original&skin=vector-2022&version=10ele)}.mw-ui-icon-wikimedia-star-progressive:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=star&variant=progressive&format=rasterized&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=star&variant=progressive&format=original&skin=vector-2022&version=10ele)}.mw-ui-icon-wikimedia-halfStar:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=halfStar&format=rasterized&lang=en&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=halfStar&format=original&lang=en&skin=vector-2022&version=10ele)}.mw-ui-icon-wikimedia-halfStar-progressive:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=halfStar&variant=progressive&format=rasterized&lang=en&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=halfStar&variant=progressive&format=original&lang=en&skin=vector-2022&version=10ele)}.mw-ui-icon-wikimedia-unStar:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=unStar&format=rasterized&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=unStar&format=original&skin=vector-2022&version=10ele)}.mw-ui-icon-wikimedia-unStar-progressive:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=unStar&variant=progressive&format=rasterized&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=unStar&variant=progressive&format=original&skin=vector-2022&version=10ele)}
+@media screen {
+	.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none;font-size:94%}}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="GRUB%20-%20ArchWiki_files/load.css">
+<meta name="generator" content="MediaWiki 1.39.2">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="https://wiki.archlinux.org/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.archlinux.org/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="https://wiki.archlinux.org/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-GRUB rootpage-GRUB skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled uls-dialog-sticky-hide vector-toc-not-collapsed"><div id="archnavbar" class="noprint mw-no-invert">
+    <div id="archnavbarlogo">
+        <p><a id="logo" href="https://archlinux.org/"></a></p>
+    </div>
+    <div id="archnavbarmenu">
+        <ul id="archnavbarlist">
+                        <li id="anb-home"><a href="https://archlinux.org/">Home</a></li>            <li id="anb-packages"><a href="https://archlinux.org/packages/">Packages</a></li>            <li id="anb-forums"><a href="https://bbs.archlinux.org/">Forums</a></li>            <li id="anb-wiki" class="anb-selected"><a href="https://wiki.archlinux.org/">Wiki</a></li>            <li id="anb-bugs"><a href="https://bugs.archlinux.org/">Bugs</a></li>            <li id="anb-security"><a href="https://security.archlinux.org/">Security</a></li>            <li id="anb-aur"><a href="https://aur.archlinux.org/">AUR</a></li>            <li id="anb-download"><a href="https://archlinux.org/download/">Download</a></li>        </ul>
+    </div>
+</div>
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<header class="mw-header">
+			<div class="mw-header-aside">
+			<label id="mw-sidebar-button" class="mw-checkbox-hack-button mw-ui-icon mw-ui-button mw-ui-quiet mw-ui-icon-element" for="mw-sidebar-checkbox" role="button" aria-controls="mw-panel" data-event-name="ui.sidebar" tabindex="0" title="Main menu" aria-expanded="false">
+				<span>Toggle sidebar</span>
+			</label>
+			
+<a href="https://wiki.archlinux.org/title/Main_page" class="mw-logo">
+	<span class="mw-logo-container">
+		<strong class="mw-logo-wordmark">ArchWiki</strong>
+	</span>
+</a>
+
+			</div>
+			<div class="mw-header-content">
+			
+<div id="p-search" role="search" class="vector-search-box-vue  vector-search-box-collapses  vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+	<a href="https://wiki.archlinux.org/title/Special:Search" title="Search ArchWiki [Alt+Shift+f]" accesskey="f" class="mw-ui-button mw-ui-quiet mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-search search-toggle">
+		<span>Search</span>
+	</a>
+	
+	<div>
+		<form action="/index.php" id="searchform" class="vector-search-box-form">
+			<div id="simpleSearch" class="vector-search-box-inner" data-search-loc="header-moved">
+				<input class="vector-search-box-input" type="search" name="search" placeholder="Search ArchWiki" aria-label="Search ArchWiki" autocapitalize="sentences" title="Search ArchWiki [Alt+Shift+f]" accesskey="f" id="searchInput" autocomplete="off">
+				<input type="hidden" name="title" value="Special:Search">
+				<input id="mw-searchButton" class="searchButton mw-fallbackSearchButton" type="submit" name="fulltext" title="Search the pages for this text" value="Search">
+				<input id="searchButton" class="searchButton" type="submit" name="go" title="Go to a page with this exact name if it exists" value="Go">
+			</div>
+		</form>
+	</div>
+</div>
+
+			<nav class="vector-user-links" aria-label="Personal tools" role="navigation">
+	
+
+<div id="p-vector-user-menu-overflow" class="vector-menu mw-portlet mw-portlet-vector-user-menu-overflow vector-user-menu-overflow">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="pt-createaccount-2" class="user-links-collapsible-item mw-list-item"><a href="https://wiki.archlinux.org/index.php?title=Special:CreateAccount&amp;returnto=GRUB" title="You are encouraged to create an account and log in; however, it is not mandatory"><span>Create account</span></a></li></ul>
+		
+	</div>
+</div>
+
+	
+
+<div id="p-personal" class="vector-menu mw-portlet mw-portlet-personal vector-user-menu vector-user-menu-logged-out vector-menu-dropdown" title="More options">
+	<input type="checkbox" id="p-personal-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-personal" class="vector-menu-checkbox">
+	<label id="p-personal-label" for="p-personal-checkbox" class="vector-menu-heading mw-ui-button mw-ui-quiet mw-ui-icon mw-ui-icon-element mw-ui-icon-ellipsis mw-ui-icon-wikimedia-ellipsis">
+		<span class="vector-menu-heading-label">Personal tools</span>
+	</label>
+	<div class="vector-menu-content">
+		<div class="vector-user-menu-create-account"><a href="https://wiki.archlinux.org/index.php?title=Special:CreateAccount&amp;returnto=GRUB" class="vector-menu-content-item user-links-collapsible-item" title="You are encouraged to create an account and log in; however, it is not mandatory"><span class="mw-ui-icon mw-ui-icon-userAdd mw-ui-icon-wikimedia-userAdd"></span> <span>Create account</span></a></div>
+<div class="vector-user-menu-login"><a href="https://wiki.archlinux.org/index.php?title=Special:UserLogin&amp;returnto=GRUB" class="vector-menu-content-item vector-menu-content-item-login" title="You are encouraged to log in; however, it is not mandatory [Alt+Shift+o]" accesskey="o"><span class="mw-ui-icon mw-ui-icon-logIn mw-ui-icon-wikimedia-logIn"></span> <span>Log in</span></a></div>
+<div class="vector-user-menu-anon-editor">
+	<p>
+		Pages for logged out editors <a href="https://wiki.archlinux.org/title/ArchWiki:Contributing" aria-label="Learn more about editing"><span>learn more</span></a>
+	</p>
+</div>
+
+		<ul class="vector-menu-content-list"><li id="pt-darkmode" class="ext-darkmode-link mw-list-item"><a href="#"><span>Dark mode</span></a></li></ul>
+		
+	</div>
+</div>
+
+</nav>
+
+			</div>
+		</header>
+		<div class="vector-sidebar-container ">
+			<div id="mw-navigation">
+				
+
+<nav id="mw-panel" class="mw-sidebar" aria-label="Site" role="navigation">
+	
+
+<div id="p-navigation" class="vector-menu mw-portlet mw-portlet-navigation vector-menu-portal portal">
+	<div id="p-navigation-label" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">Navigation</span>
+	</div>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="n-mainpage-description" class="mw-list-item"><a href="https://wiki.archlinux.org/title/Main_page" title="Visit the main page [Alt+Shift+z]" accesskey="z"><span>Main page</span></a></li><li id="n-Table-of-contents" class="mw-list-item"><a href="https://wiki.archlinux.org/title/Table_of_contents"><span>Table of contents</span></a></li><li id="n-portal" class="mw-list-item"><a href="https://wiki.archlinux.org/title/Getting_involved" title="Various ways Archers can contribute to the community"><span>Getting involved</span></a></li><li id="n-currentevents" class="mw-list-item"><a href="https://wiki.archlinux.org/title/ArchWiki:News" title="The latest lowdown on the wiki"><span>Wiki news</span></a></li><li id="n-randompage" class="mw-list-item"><a href="https://wiki.archlinux.org/title/Special:Random" title="Load a random page [Alt+Shift+x]" accesskey="x"><span>Random page</span></a></li></ul>
+		
+	</div>
+</div>
+
+	
+	
+
+<div id="p-Interaction" class="vector-menu mw-portlet mw-portlet-Interaction vector-menu-portal portal">
+	<div id="p-Interaction-label" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">Interaction</span>
+	</div>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="n-help" class="mw-list-item"><a href="https://wiki.archlinux.org/title/Category:Help" title="Wiki navigation, reading, and editing help"><span>Help</span></a></li><li id="n-Contributing" class="mw-list-item"><a href="https://wiki.archlinux.org/title/ArchWiki:Contributing"><span>Contributing</span></a></li><li id="n-recentchanges" class="mw-list-item"><a href="https://wiki.archlinux.org/title/Special:RecentChanges" title="A list of recent changes in the wiki [Alt+Shift+r]" accesskey="r"><span>Recent changes</span></a></li><li id="n-Recent-talks" class="mw-list-item"><a href="https://wiki.archlinux.org/index.php?title=Special:RecentChanges&amp;namespace=all-discussions" rel="nofollow"><span>Recent talks</span></a></li><li id="n-newpages" class="mw-list-item"><a href="https://wiki.archlinux.org/title/Special:NewPages"><span>New pages</span></a></li><li id="n-Statistics" class="mw-list-item"><a href="https://wiki.archlinux.org/title/ArchWiki:Statistics"><span>Statistics</span></a></li><li id="n-Requests" class="mw-list-item"><a href="https://wiki.archlinux.org/title/ArchWiki_talk:Requests"><span>Requests</span></a></li></ul>
+		
+	</div>
+</div>
+
+
+<div id="p-tb" class="vector-menu mw-portlet mw-portlet-tb vector-menu-portal portal">
+	<div id="p-tb-label" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">Tools</span>
+	</div>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="t-whatlinkshere" class="mw-list-item"><a href="https://wiki.archlinux.org/title/Special:WhatLinksHere/GRUB" title="A list of all wiki pages that link here [Alt+Shift+j]" accesskey="j"><span>What links here</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="https://wiki.archlinux.org/title/Special:RecentChangesLinked/GRUB" rel="nofollow" title="Recent changes in pages linked from this page [Alt+Shift+k]" accesskey="k"><span>Related changes</span></a></li><li id="t-specialpages" class="mw-list-item"><a href="https://wiki.archlinux.org/title/Special:SpecialPages" title="A list of all special pages [Alt+Shift+q]" accesskey="q"><span>Special pages</span></a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="Printable version of this page [Alt+Shift+p]" accesskey="p"><span>Printable version</span></a></li><li id="t-permalink" class="mw-list-item"><a href="https://wiki.archlinux.org/index.php?title=GRUB&amp;oldid=771950" title="Permanent link to this revision of this page"><span>Permanent link</span></a></li><li id="t-info" class="mw-list-item"><a href="https://wiki.archlinux.org/index.php?title=GRUB&amp;action=info" title="More information about this page"><span>Page information</span></a></li></ul>
+		
+	</div>
+</div>
+
+	
+</nav>
+
+			</div>
+		</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-active">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-UEFI_systems" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#UEFI_systems">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>UEFI systems</div>
+			</a>
+			
+				<button aria-controls="toc-UEFI_systems-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle" aria-expanded="false">
+					Toggle UEFI systems subsection
+				</button>
+			
+			<ul id="toc-UEFI_systems-sublist" class="sidebar-toc-list">
+				<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Secure_Boot_support" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Secure_Boot_support">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>Secure Boot support</div>
+			</a>
+			
+			<ul id="toc-Secure_Boot_support-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-BIOS_systems" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#BIOS_systems">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>BIOS systems</div>
+			</a>
+			
+				<button aria-controls="toc-BIOS_systems-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle" aria-expanded="false">
+					Toggle BIOS systems subsection
+				</button>
+			
+			<ul id="toc-BIOS_systems-sublist" class="sidebar-toc-list">
+				<li id="toc-GUID_Partition_Table_(GPT)_specific_instructions" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#GUID_Partition_Table_(GPT)_specific_instructions">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>GUID Partition Table (GPT) specific instructions</div>
+			</a>
+			
+			<ul id="toc-GUID_Partition_Table_(GPT)_specific_instructions-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Master_Boot_Record_(MBR)_specific_instructions" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Master_Boot_Record_(MBR)_specific_instructions">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Master Boot Record (MBR) specific instructions</div>
+			</a>
+			
+			<ul id="toc-Master_Boot_Record_(MBR)_specific_instructions-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Installation_2" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Installation_2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.3</span>Installation</div>
+			</a>
+			
+			<ul id="toc-Installation_2-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Configuration" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Configuration</div>
+			</a>
+			
+				<button aria-controls="toc-Configuration-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle" aria-expanded="false">
+					Toggle Configuration subsection
+				</button>
+			
+			<ul id="toc-Configuration-sublist" class="sidebar-toc-list">
+				<li id="toc-Generated_grub.cfg" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Generated_grub.cfg">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Generated grub.cfg</div>
+			</a>
+			
+			<ul id="toc-Generated_grub.cfg-sublist" class="sidebar-toc-list">
+				<li id="toc-Generate_the_main_configuration_file" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Generate_the_main_configuration_file">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.1</span>Generate the main configuration file</div>
+			</a>
+			
+			<ul id="toc-Generate_the_main_configuration_file-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Detecting_other_operating_systems" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Detecting_other_operating_systems">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.2</span>Detecting other operating systems</div>
+			</a>
+			
+			<ul id="toc-Detecting_other_operating_systems-sublist" class="sidebar-toc-list">
+				<li id="toc-Windows" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#Windows">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.2.1</span>Windows</div>
+			</a>
+			
+			<ul id="toc-Windows-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Additional_arguments" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Additional_arguments">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.3</span>Additional arguments</div>
+			</a>
+			
+			<ul id="toc-Additional_arguments-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Setting_the_top-level_menu_entry" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Setting_the_top-level_menu_entry">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.4</span>Setting the top-level menu entry</div>
+			</a>
+			
+			<ul id="toc-Setting_the_top-level_menu_entry-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-LVM" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#LVM">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.5</span>LVM</div>
+			</a>
+			
+			<ul id="toc-LVM-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-RAID" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#RAID">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.6</span>RAID</div>
+			</a>
+			
+			<ul id="toc-RAID-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Encrypted_/boot" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Encrypted_/boot">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.7</span>Encrypted /boot</div>
+			</a>
+			
+			<ul id="toc-Encrypted_/boot-sublist" class="sidebar-toc-list">
+				<li id="toc-LUKS2" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#LUKS2">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1.7.1</span>LUKS2</div>
+			</a>
+			
+			<ul id="toc-LUKS2-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Custom_grub.cfg" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Custom_grub.cfg">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Custom grub.cfg</div>
+			</a>
+			
+			<ul id="toc-Custom_grub.cfg-sublist" class="sidebar-toc-list">
+				<li id="toc-Boot_menu_entry_examples" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Boot_menu_entry_examples">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.1</span>Boot menu entry examples</div>
+			</a>
+			
+			<ul id="toc-Boot_menu_entry_examples-sublist" class="sidebar-toc-list">
+				<li id="toc-GRUB_commands" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#GRUB_commands">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.1.1</span>GRUB commands</div>
+			</a>
+			
+			<ul id="toc-GRUB_commands-sublist" class="sidebar-toc-list">
+				<li id="toc-&quot;Shutdown&quot;_menu_entry" class="sidebar-toc-list-item sidebar-toc-level-5">
+			<a class="sidebar-toc-link" href="#&quot;Shutdown&quot;_menu_entry">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.1.1.1</span>"Shutdown" menu entry</div>
+			</a>
+			
+			<ul id="toc-&quot;Shutdown&quot;_menu_entry-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-&quot;Restart&quot;_menu_entry" class="sidebar-toc-list-item sidebar-toc-level-5">
+			<a class="sidebar-toc-link" href="#&quot;Restart&quot;_menu_entry">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.1.1.2</span>"Restart" menu entry</div>
+			</a>
+			
+			<ul id="toc-&quot;Restart&quot;_menu_entry-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-&quot;UEFI_Firmware_Settings&quot;_menu_entry" class="sidebar-toc-list-item sidebar-toc-level-5">
+			<a class="sidebar-toc-link" href="#&quot;UEFI_Firmware_Settings&quot;_menu_entry">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.1.1.3</span>"UEFI Firmware Settings" menu entry</div>
+			</a>
+			
+			<ul id="toc-&quot;UEFI_Firmware_Settings&quot;_menu_entry-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-EFI_binaries" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#EFI_binaries">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.1.2</span>EFI binaries</div>
+			</a>
+			
+			<ul id="toc-EFI_binaries-sublist" class="sidebar-toc-list">
+				<li id="toc-UEFI_Shell" class="sidebar-toc-list-item sidebar-toc-level-5">
+			<a class="sidebar-toc-link" href="#UEFI_Shell">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.1.2.1</span>UEFI Shell</div>
+			</a>
+			
+			<ul id="toc-UEFI_Shell-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-gdisk" class="sidebar-toc-list-item sidebar-toc-level-5">
+			<a class="sidebar-toc-link" href="#gdisk">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.1.2.2</span>gdisk</div>
+			</a>
+			
+			<ul id="toc-gdisk-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Chainloading_a_unified_kernel_image" class="sidebar-toc-list-item sidebar-toc-level-5">
+			<a class="sidebar-toc-link" href="#Chainloading_a_unified_kernel_image">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.1.2.3</span>Chainloading a unified kernel image</div>
+			</a>
+			
+			<ul id="toc-Chainloading_a_unified_kernel_image-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Dual-booting" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#Dual-booting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.1.3</span>Dual-booting</div>
+			</a>
+			
+			<ul id="toc-Dual-booting-sublist" class="sidebar-toc-list">
+				<li id="toc-GNU/Linux" class="sidebar-toc-list-item sidebar-toc-level-5">
+			<a class="sidebar-toc-link" href="#GNU/Linux">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.1.3.1</span>GNU/Linux</div>
+			</a>
+			
+			<ul id="toc-GNU/Linux-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Windows_installed_in_UEFI/GPT_mode" class="sidebar-toc-list-item sidebar-toc-level-5">
+			<a class="sidebar-toc-link" href="#Windows_installed_in_UEFI/GPT_mode">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.1.3.2</span>Windows installed in UEFI/GPT mode</div>
+			</a>
+			
+			<ul id="toc-Windows_installed_in_UEFI/GPT_mode-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Windows_installed_in_BIOS/MBR_mode" class="sidebar-toc-list-item sidebar-toc-level-5">
+			<a class="sidebar-toc-link" href="#Windows_installed_in_BIOS/MBR_mode">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.1.3.3</span>Windows installed in BIOS/MBR mode</div>
+			</a>
+			
+			<ul id="toc-Windows_installed_in_BIOS/MBR_mode-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Using_labels" class="sidebar-toc-list-item sidebar-toc-level-4">
+			<a class="sidebar-toc-link" href="#Using_labels">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2.1.4</span>Using labels</div>
+			</a>
+			
+			<ul id="toc-Using_labels-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Using_the_command_shell" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Using_the_command_shell">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Using the command shell</div>
+			</a>
+			
+				<button aria-controls="toc-Using_the_command_shell-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle" aria-expanded="false">
+					Toggle Using the command shell subsection
+				</button>
+			
+			<ul id="toc-Using_the_command_shell-sublist" class="sidebar-toc-list">
+				<li id="toc-Pager_support" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Pager_support">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.1</span>Pager support</div>
+			</a>
+			
+			<ul id="toc-Pager_support-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Using_the_command_shell_environment_to_boot_operating_systems" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_the_command_shell_environment_to_boot_operating_systems">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2</span>Using the command shell environment to boot operating systems</div>
+			</a>
+			
+			<ul id="toc-Using_the_command_shell_environment_to_boot_operating_systems-sublist" class="sidebar-toc-list">
+				<li id="toc-Chainloading_a_partition's_VBR" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Chainloading_a_partition's_VBR">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2.1</span>Chainloading a partition's VBR</div>
+			</a>
+			
+			<ul id="toc-Chainloading_a_partition's_VBR-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Chainloading_a_disk's_MBR_or_a_partitionless_disk's_VBR" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Chainloading_a_disk's_MBR_or_a_partitionless_disk's_VBR">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2.2</span>Chainloading a disk's MBR or a partitionless disk's VBR</div>
+			</a>
+			
+			<ul id="toc-Chainloading_a_disk's_MBR_or_a_partitionless_disk's_VBR-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Chainloading_Windows/Linux_installed_in_UEFI_mode" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Chainloading_Windows/Linux_installed_in_UEFI_mode">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2.3</span>Chainloading Windows/Linux installed in UEFI mode</div>
+			</a>
+			
+			<ul id="toc-Chainloading_Windows/Linux_installed_in_UEFI_mode-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Normal_loading" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Normal_loading">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.2.4</span>Normal loading</div>
+			</a>
+			
+			<ul id="toc-Normal_loading-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Using_the_rescue_console" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Using_the_rescue_console">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4.3</span>Using the rescue console</div>
+			</a>
+			
+			<ul id="toc-Using_the_rescue_console-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-GRUB_removal" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#GRUB_removal">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>GRUB removal</div>
+			</a>
+			
+			<ul id="toc-GRUB_removal-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Troubleshooting" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Troubleshooting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6</span>Troubleshooting</div>
+			</a>
+			
+				<button aria-controls="toc-Troubleshooting-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle" aria-expanded="false">
+					Toggle Troubleshooting subsection
+				</button>
+			
+			<ul id="toc-Troubleshooting-sublist" class="sidebar-toc-list">
+				<li id="toc-Unsupported_file_systems" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Unsupported_file_systems">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.1</span>Unsupported file systems</div>
+			</a>
+			
+			<ul id="toc-Unsupported_file_systems-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Enable_debug_messages" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Enable_debug_messages">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.2</span>Enable debug messages</div>
+			</a>
+			
+			<ul id="toc-Enable_debug_messages-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-msdos-style_error_message" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#msdos-style_error_message">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.3</span>msdos-style error message</div>
+			</a>
+			
+			<ul id="toc-msdos-style_error_message-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-UEFI" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#UEFI">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.4</span>UEFI</div>
+			</a>
+			
+			<ul id="toc-UEFI-sublist" class="sidebar-toc-list">
+				<li id="toc-Common_installation_errors" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Common_installation_errors">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.4.1</span>Common installation errors</div>
+			</a>
+			
+			<ul id="toc-Common_installation_errors-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Create_a_GRUB_entry_in_the_firmware_boot_manager" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Create_a_GRUB_entry_in_the_firmware_boot_manager">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.4.2</span>Create a GRUB entry in the firmware boot manager</div>
+			</a>
+			
+			<ul id="toc-Create_a_GRUB_entry_in_the_firmware_boot_manager-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Drop_to_rescue_shell" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Drop_to_rescue_shell">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.4.3</span>Drop to rescue shell</div>
+			</a>
+			
+			<ul id="toc-Drop_to_rescue_shell-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-GRUB_UEFI_not_loaded" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#GRUB_UEFI_not_loaded">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.4.4</span>GRUB UEFI not loaded</div>
+			</a>
+			
+			<ul id="toc-GRUB_UEFI_not_loaded-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Default/fallback_boot_path" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Default/fallback_boot_path">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.4.5</span>Default/fallback boot path</div>
+			</a>
+			
+			<ul id="toc-Default/fallback_boot_path-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Invalid_signature" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Invalid_signature">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.5</span>Invalid signature</div>
+			</a>
+			
+			<ul id="toc-Invalid_signature-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Boot_freezes" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Boot_freezes">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.6</span>Boot freezes</div>
+			</a>
+			
+			<ul id="toc-Boot_freezes-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Arch_not_found_from_other_OS" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Arch_not_found_from_other_OS">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.7</span>Arch not found from other OS</div>
+			</a>
+			
+			<ul id="toc-Arch_not_found_from_other_OS-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Warning_when_installing_in_chroot" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Warning_when_installing_in_chroot">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.8</span>Warning when installing in chroot</div>
+			</a>
+			
+			<ul id="toc-Warning_when_installing_in_chroot-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-GRUB_loads_slowly" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#GRUB_loads_slowly">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.9</span>GRUB loads slowly</div>
+			</a>
+			
+			<ul id="toc-GRUB_loads_slowly-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-error:_unknown_filesystem" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#error:_unknown_filesystem">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.10</span>error: unknown filesystem</div>
+			</a>
+			
+			<ul id="toc-error:_unknown_filesystem-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-grub-reboot_not_resetting" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#grub-reboot_not_resetting">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.11</span>grub-reboot not resetting</div>
+			</a>
+			
+			<ul id="toc-grub-reboot_not_resetting-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Old_Btrfs_prevents_installation" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Old_Btrfs_prevents_installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.12</span>Old Btrfs prevents installation</div>
+			</a>
+			
+			<ul id="toc-Old_Btrfs_prevents_installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Windows_8/10_not_found" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Windows_8/10_not_found">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.13</span>Windows 8/10 not found</div>
+			</a>
+			
+			<ul id="toc-Windows_8/10_not_found-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-VirtualBox_EFI_mode" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#VirtualBox_EFI_mode">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.14</span>VirtualBox EFI mode</div>
+			</a>
+			
+			<ul id="toc-VirtualBox_EFI_mode-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-GRUB_rescue_and_encrypted_/boot" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#GRUB_rescue_and_encrypted_/boot">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.15</span>GRUB rescue and encrypted /boot</div>
+			</a>
+			
+			<ul id="toc-GRUB_rescue_and_encrypted_/boot-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-GRUB_is_installed_but_the_menu_is_not_shown_at_boot" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#GRUB_is_installed_but_the_menu_is_not_shown_at_boot">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">6.16</span>GRUB is installed but the menu is not shown at boot</div>
+			</a>
+			
+			<ul id="toc-GRUB_is_installed_but_the_menu_is_not_shown_at_boot-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-See_also" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#See_also">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">7</span>See also</div>
+			</a>
+			
+			<ul id="toc-See_also-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				<header class="mw-body-header">
+				            
+            
+            <div id="p-lang-btn" class="vector-menu mw-portlet-empty vector-menu-dropdown">
+            	<input type="checkbox" id="p-lang-btn-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-lang-btn" class="vector-menu-checkbox  mw-interlanguage-selector " aria-label="Go to an article in another language. Available in 7 languages">
+            	<label id="p-lang-btn-label" for="p-lang-btn-checkbox" class="vector-menu-heading mw-ui-progressive mw-portlet-lang-heading-7 mw-ui-button mw-ui-quiet">
+            		<span class="mw-ui-icon mw-ui-icon-language-progressive mw-ui-icon-wikimedia-language-progressive"></span><span class="vector-menu-heading-label">7 languages</span>
+            	</label>
+            	<div class="vector-menu-content">
+            		
+            		<ul class="vector-menu-content-list"><li class="interlanguage-link interwiki-de mw-list-item"><a href="https://wiki.archlinux.de/title/GRUB" title="GRUB – Deutsch" hreflang="de" class="interlanguage-link-target" lang="de"><span>Deutsch</span></a></li><li class="interlanguage-link interwiki-es mw-list-item"><a href="https://wiki.archlinux.org/title/GRUB_(Espa%C3%B1ol)" title="GRUB – español" hreflang="es" class="interlanguage-link-target" lang="es"><span>Español</span></a></li><li class="interlanguage-link interwiki-fa mw-list-item"><a href="https://wiki.archusers.ir/index.php/%DA%AF%D8%B1%D8%A7%D8%A8" title="گراب – فارسی" hreflang="fa" class="interlanguage-link-target" lang="fa"><span>فارسی</span></a></li><li class="interlanguage-link interwiki-ja mw-list-item"><a href="https://wiki.archlinux.jp/index.php/GRUB" title="GRUB – 日本語" hreflang="ja" class="interlanguage-link-target" lang="ja"><span>日本語</span></a></li><li class="interlanguage-link interwiki-pt mw-list-item"><a href="https://wiki.archlinux.org/title/GRUB_(Portugu%C3%AAs)" title="GRUB – português" hreflang="pt" class="interlanguage-link-target" lang="pt"><span>Português</span></a></li><li class="interlanguage-link interwiki-ru mw-list-item"><a href="https://wiki.archlinux.org/title/GRUB_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)" title="GRUB – русский" hreflang="ru" class="interlanguage-link-target" lang="ru"><span>Русский</span></a></li><li class="interlanguage-link interwiki-zh-hans mw-list-item"><a href="https://wiki.archlinuxcn.org/wiki/GRUB" title="GRUB – 中文（简体）" hreflang="zh-Hans" class="interlanguage-link-target" lang="zh-Hans"><span>中文（简体）</span></a></li></ul>
+            		
+            	</div>
+            </div>
+
+				
+					<label id="vector-toc-collapsed-button" class="mw-ui-button mw-ui-quiet mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-listBullet mw-checkbox-hack-button" for="vector-toc-collapsed-checkbox" role="button" aria-controls="toc-toggle-list" data-event-name="vector.toc-toggle-list" tabindex="0" title="Table of Contents" aria-expanded="false">
+						Toggle the table of contents
+					</label>
+				    <h1 id="firstHeading" class="firstHeading mw-first-heading"><span class="mw-page-title-main">GRUB</span></h1>
+				</header>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="ca-nstab-main" class="selected mw-list-item"><a href="https://wiki.archlinux.org/title/GRUB" title="View the content page [Alt+Shift+c]" accesskey="c"><span>Page</span></a></li><li id="ca-talk" class="mw-list-item"><a href="https://wiki.archlinux.org/title/Talk:GRUB" rel="discussion" title="Discussion about the content page [Alt+Shift+t]" accesskey="t"><span>Discussion</span></a></li></ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="ca-view" class="selected mw-list-item"><a href="https://wiki.archlinux.org/title/GRUB"><span>Read</span></a></li><li id="ca-viewsource" class="mw-list-item"><a href="https://wiki.archlinux.org/index.php?title=GRUB&amp;action=edit" title="This page is protected.
+You can view its source [Alt+Shift+e]" accesskey="e"><span>View source</span></a></li><li id="ca-history" class="mw-list-item"><a href="https://wiki.archlinux.org/index.php?title=GRUB&amp;action=history" title="Past revisions of this page [Alt+Shift+h]" accesskey="h"><span>View history</span></a></li></ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="https://wiki.archlinux.org/title/GRUB"><span>Read</span></a></li><li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="https://wiki.archlinux.org/index.php?title=GRUB&amp;action=edit"><span>View source</span></a></li><li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="https://wiki.archlinux.org/index.php?title=GRUB&amp;action=history"><span>View history</span></a></li></ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container="">
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" dir="ltr" lang="en"><div class="mw-parser-output"><div class="archwiki-template-meta-related-articles-start"><p class="mw-no-invert">Related articles</p><ul>
+<li><a href="https://wiki.archlinux.org/title/Arch_boot_process" title="Arch boot process">Arch boot process</a></li>
+<li><a href="https://wiki.archlinux.org/title/Master_Boot_Record" class="mw-redirect" title="Master Boot Record">Master Boot Record</a></li>
+<li><a href="https://wiki.archlinux.org/title/GUID_Partition_Table" class="mw-redirect" title="GUID Partition Table">GUID Partition Table</a></li>
+<li><a href="https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface" title="Unified Extensible Firmware Interface">Unified Extensible Firmware Interface</a></li>
+<li><a href="https://wiki.archlinux.org/title/GRUB_Legacy" title="GRUB Legacy">GRUB Legacy</a></li>
+<li><a href="https://wiki.archlinux.org/title/GRUB/EFI_examples" title="GRUB/EFI examples">/EFI examples</a></li>
+<li><a href="https://wiki.archlinux.org/title/GRUB/Tips_and_tricks" title="GRUB/Tips and tricks">/Tips and tricks</a></li>
+<li><a href="https://wiki.archlinux.org/title/Multiboot_USB_drive" title="Multiboot USB drive">Multiboot USB drive</a></li>
+</ul></div>
+<p><a rel="nofollow" class="external text" href="https://www.gnu.org/software/grub/">GRUB</a> (GRand Unified Bootloader) is a <a href="https://wiki.archlinux.org/title/Boot_loader" class="mw-redirect" title="Boot loader">boot loader</a>. The current GRUB is also referred to as <b>GRUB 2</b>. The original GRUB, or <a href="https://wiki.archlinux.org/title/GRUB_Legacy" title="GRUB Legacy">GRUB Legacy</a>, corresponds to versions 0.9x. This page exclusively describes GRUB 2.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> In the entire article <code><i>esp</i></code> denotes the mountpoint of the <a href="https://wiki.archlinux.org/title/EFI_system_partition" title="EFI system partition">EFI system partition</a> aka ESP.</div>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="UEFI_systems">UEFI systems</span></h2>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> 
+<ul><li>It is recommended to read and understand the <a href="https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface" title="Unified Extensible Firmware Interface">Unified Extensible Firmware Interface</a>, <a href="https://wiki.archlinux.org/title/Partitioning#GUID_Partition_Table" title="Partitioning">Partitioning#GUID Partition Table</a> and <a href="https://wiki.archlinux.org/title/Arch_boot_process#Under_UEFI" title="Arch boot process">Arch boot process#Under UEFI</a> pages.</li>
+<li>When installing to use UEFI it is important to boot the installation media in UEFI mode, otherwise <i>efibootmgr</i> will not be able to add the GRUB UEFI boot entry. Installing to the <a href="#Default/fallback_boot_path">fallback boot path</a> will still work even in BIOS mode since it does not touch the NVRAM.</li>
+<li>To boot from a disk using UEFI, an EFI system partition is required. Follow <a href="https://wiki.archlinux.org/title/EFI_system_partition#Check_for_an_existing_partition" title="EFI system partition">EFI system partition#Check for an existing partition</a> to find out if you have one already, otherwise you need to create it.</li>
+<li>This whole article assumes that inserting additional GRUB2 modules via <code>insmod</code> is possible. As discussed in <a href="https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot#shim_with_key_and_GRUB" title="Unified Extensible Firmware Interface/Secure Boot">Unified Extensible Firmware Interface/Secure Boot#shim with key and GRUB</a>,
+ this is not the case on UEFI systems with Secure Boot enabled. If you 
+want to use any additional GRUB module that is not included in the 
+standard GRUB EFI file <code>grubx64.efi</code> on a Secure Boot system, you have to re-generate the GRUB EFI <code>grubx64.efi</code> with <code>grub-mkstandalone</code> with the additional GRUB modules included.</li></ul>
+</div>
+<h3><span class="mw-headline" id="Installation">Installation</span></h3>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> 
+<ul><li>UEFI firmwares are not implemented consistently across 
+manufacturers. The procedure described below is intended to work on a 
+wide range of UEFI systems but those experiencing problems despite 
+applying this method are encouraged to share detailed information, and 
+if possible the workarounds found, for their hardware-specific case. A <a href="https://wiki.archlinux.org/title/GRUB/EFI_examples" title="GRUB/EFI examples">/EFI examples</a> article has been provided for such cases.</li>
+<li>The section assumes you are installing GRUB for x86_64 systems. For 
+IA32 (32-bit) UEFI systems (not to be confused with 32-bit CPUs), 
+replace <code>x86_64-efi</code> with <code>i386-efi</code> where appropriate.</li></ul>
+</div>
+<p>First, <a href="https://wiki.archlinux.org/title/Install" class="mw-redirect" title="Install">install</a> the packages <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=grub">grub</a></span> and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=efibootmgr">efibootmgr</a></span>: <i>GRUB</i> is the boot loader while <i>efibootmgr</i> is used by the GRUB installation script to write boot entries to NVRAM. 
+</p><p>Then follow the below steps to install GRUB to your disk:
+</p>
+<ol><li><a href="https://wiki.archlinux.org/title/EFI_system_partition#Mount_the_partition" title="EFI system partition">Mount the EFI system partition</a> and in the remainder of this section, substitute <code><i>esp</i></code> with its mount point.</li>
+<li>Choose a boot loader identifier, here named <code>GRUB</code>. A directory of that name will be created in <code><i>esp</i>/EFI/</code> to store the EFI binary and this is the name that will appear in the UEFI boot menu to identify the GRUB boot entry.</li>
+<li>Execute the following command to install the GRUB EFI application <code>grubx64.efi</code> to <code><i>esp</i>/EFI/GRUB/</code> and install its modules to <code>/boot/grub/x86_64-efi/</code>.</li></ol>
+<dl><dd><dl><dd><div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong>
+<ul><li>Make sure to install the packages and run the <code>grub-install</code>
+ command from the system in which GRUB will be installed as the boot 
+loader. That means if you are booting from the live installation 
+environment, you need to be inside the chroot when running <code>grub-install</code>. If for some reason it is necessary to run <code>grub-install</code> from outside of the installed system, append the <code>--boot-directory=</code> option with the path to the mounted <code>/boot</code> directory, e.g <code>--boot-directory=/mnt/boot</code>.</li>
+<li>Some motherboards cannot handle <code>bootloader-id</code> with spaces in it.</li></ul></div></dd>
+<dd><pre># grub-install --target=x86_64-efi --efi-directory=<i>esp</i> --bootloader-id=GRUB</pre></dd></dl></dd></dl>
+<p>After the above installation completed, the main GRUB directory is located at <code>/boot/grub/</code>. Read <a href="https://wiki.archlinux.org/title/GRUB/Tips_and_tricks#Alternative_install_method" title="GRUB/Tips and tricks">/Tips and tricks#Alternative install method</a> for how to specify an alternative location. Note that <code>grub-install</code> also tries to <a href="#Create_a_GRUB_entry_in_the_firmware_boot_manager">create an entry in the firmware boot manager</a>, named <code>GRUB</code> in the above example – this will, however, fail if your boot entries are full; use <a href="https://wiki.archlinux.org/title/Efibootmgr" class="mw-redirect" title="Efibootmgr">efibootmgr</a> to remove unnecessary entries.
+</p><p>Remember to <a href="#Generate_the_main_configuration_file">#Generate the main configuration file</a> after finalizing the configuration.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip"><strong>Tip:</strong> If you use the option <code>--removable</code> then GRUB will be installed to <code><i>esp</i>/EFI/BOOT/BOOTX64.EFI</code> (or <code><i>esp</i>/EFI/BOOT/BOOTIA32.EFI</code> for the <code>i386-efi</code>
+ target) and you will have the additional ability of being able to boot 
+from the drive in case EFI variables are reset or you move the drive to 
+another computer. Usually you can do this by selecting the drive itself 
+similar to how you would using BIOS. If dual booting with Windows, be 
+aware Windows usually places an EFI executable there, but its only 
+purpose is to recreate the UEFI boot entry for Windows. If you are 
+installing GRUB on a <a href="https://wiki.archlinux.org/title/Mac" title="Mac">Mac</a>, you will have to use this option.</div>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> 
+<ul><li><code>--efi-directory</code> and <code>--bootloader-id</code> are specific to GRUB UEFI, <code>--efi-directory</code> replaces <code>--root-directory</code> which is deprecated.</li>
+<li>You might note the absence of a <i>device_path</i> option (e.g.: <code>/dev/sda</code>) in the <code>grub-install</code> command. In fact any <i>device_path</i>
+ provided will be ignored by the GRUB UEFI install script. Indeed, UEFI 
+boot loaders do not use a MBR bootcode or partition boot sector at all.</li></ul>
+</div>
+<p>See <a href="#UEFI">UEFI troubleshooting</a> in case of problems. Additionally see <a href="https://wiki.archlinux.org/title/GRUB/Tips_and_tricks#UEFI_further_reading" title="GRUB/Tips and tricks">/Tips and tricks#UEFI further reading</a>.
+</p>
+<h3><span class="mw-headline" id="Secure_Boot_support">Secure Boot support</span></h3>
+<p>GRUB fully supports secure boot utilising either CA keys or shim, the
+ installation command however is different depending on which you intend
+ to use.
+</p><p>To make use of CA Keys the command is
+</p>
+<pre># grub-install --target=x86_64-efi --efi-directory=<i>esp</i> --bootloader-id=GRUB --modules="tpm" --disable-shim-lock
+</pre>
+<p>To make use of shim-lock the command is
+</p>
+<pre># grub-install --target=x86_64-efi --efi-directory=<i>esp</i> --bootloader-id=GRUB --modules="normal test efi_gop efi_uga search echo linux all_video gfxmenu gfxterm_background gfxterm_menu gfxterm loadenv configfile tpm"
+</pre>
+<p>After installation see <a href="https://wiki.archlinux.org/title/Secure_Boot" class="mw-redirect" title="Secure Boot">Secure Boot</a> for instructions on implementing it
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning"><strong>Warning:</strong> 
+<ul><li>Incorrectly configuring <a href="https://wiki.archlinux.org/title/Secure_Boot" class="mw-redirect" title="Secure Boot">Secure Boot</a>
+ can render your system unbootable. If for any reason you cannot boot 
+after enabling secure boot then you should disable it in firmware and 
+reboot the system.</li>
+<li>Loading unnecessary modules in your bootloader has the potential to 
+present a security risk, only use these commands if you need them.</li></ul></div>
+<h2><span class="mw-headline" id="BIOS_systems">BIOS systems</span></h2>
+<h3><span id="GUID_Partition_Table_.28GPT.29_specific_instructions"></span><span class="mw-headline" id="GUID_Partition_Table_(GPT)_specific_instructions">GUID Partition Table (GPT) specific instructions</span></h3>
+<p>On a BIOS/<a href="https://wiki.archlinux.org/title/GPT" class="mw-redirect" title="GPT">GPT</a> configuration, a <a rel="nofollow" class="external text" href="https://www.gnu.org/software/grub/manual/grub/html_node/BIOS-installation.html#BIOS-installation">BIOS boot partition</a> is required.  GRUB embeds its <code>core.img</code> into this partition.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> 
+<ul><li>Before attempting this method keep in mind that not all systems will be able to support this partitioning scheme. Read more on <a href="https://wiki.archlinux.org/title/Partitioning#GUID_Partition_Table" title="Partitioning">Partitioning#GUID Partition Table</a>.</li>
+<li>The BIOS boot partition is only needed by GRUB on a BIOS/GPT setup. 
+On a BIOS/MBR setup, GRUB uses the post-MBR gap for the embedding the <code>core.img</code>. On GPT, however, there is no guaranteed unused space before the first partition.</li>
+<li>For <a href="https://wiki.archlinux.org/title/UEFI" class="mw-redirect" title="UEFI">UEFI</a>
+ systems this extra partition is not required, since no embedding of 
+boot sectors takes place in that case. However, UEFI systems still 
+require an <a href="https://wiki.archlinux.org/title/EFI_system_partition" title="EFI system partition">EFI system partition</a>.</li></ul>
+</div>
+<p>Create a mebibyte partition (<code>+1M</code> with <i>fdisk</i> or <i>gdisk</i>) on the disk with no file system and with partition type GUID <code>21686148-6449-6E6F-744E-656564454649</code>.
+</p>
+<ul><li>Select partition type <code>BIOS boot</code> for <a href="https://wiki.archlinux.org/title/Fdisk" title="Fdisk">fdisk</a>.</li>
+<li>Select partition type code <code>ef02</code> for <a href="https://wiki.archlinux.org/title/Gdisk" class="mw-redirect" title="Gdisk">gdisk</a>.</li>
+<li>For <a href="https://wiki.archlinux.org/title/Parted" title="Parted">parted</a> set/activate the flag <code>bios_grub</code> on the partition.</li></ul>
+<p>This partition can be in any position order but has to be on the 
+first 2 TiB of the disk.  This partition needs to be created before GRUB
+ installation.  When the partition is ready, install the boot loader as 
+per the instructions below.
+</p><p>The space before the first partition can also be used as the BIOS
+ boot partition though it will be out of GPT alignment specification.  
+Since the partition will not be regularly accessed performance issues 
+can be disregarded, though some disk utilities will display a warning 
+about it.  In <i>fdisk</i> or <i>gdisk</i> create a new partition 
+starting at sector 34 and spanning to 2047 and set the type.  To have 
+the viewable partitions begin at the base consider adding this partition
+ last.
+</p>
+<h3><span id="Master_Boot_Record_.28MBR.29_specific_instructions"></span><span class="mw-headline" id="Master_Boot_Record_(MBR)_specific_instructions">Master Boot Record (MBR) specific instructions</span></h3>
+<p>Usually the post-MBR gap (after the 512 byte <a href="https://wiki.archlinux.org/title/MBR" class="mw-redirect" title="MBR">MBR</a>
+ region and before the start of the first partition) in many MBR 
+partitioned systems is 31 KiB when DOS compatibility cylinder alignment 
+issues are satisfied in the partition table. However a post-MBR gap of 
+about 1 to 2 MiB is recommended to provide sufficient room for embedding
+ GRUB's <code>core.img</code> (<a rel="nofollow" class="external text" href="https://bugs.archlinux.org/task/24103">FS#24103</a>). It is advisable to use a partitioning tool that supports 1 MiB <a href="https://wiki.archlinux.org/title/Partitioning#Partition_alignment" title="Partitioning">partition alignment</a> to obtain this space as well as to satisfy other non-512-byte-sector issues (which are unrelated to embedding of <code>core.img</code>).
+</p>
+<h3><span class="mw-headline" id="Installation_2">Installation</span></h3>
+<p><a href="https://wiki.archlinux.org/title/Install" class="mw-redirect" title="Install">Install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=grub">grub</a></span> package. (It will replace <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/grub-legacy/">grub-legacy</a></span><sup><small>AUR</small></sup> if that is already installed.) Then do:
+</p>
+<pre># grub-install --target=i386-pc <i>/dev/sdX</i>
+</pre>
+<p>where <code>i386-pc</code> is deliberately used regardless of your actual architecture, and <code><i>/dev/sdX</i></code> is the <b>disk</b> (<b>not a partition</b>) where GRUB is to be installed. For example <code>/dev/sda</code> or <code>/dev/nvme0n1</code>, or <code>/dev/mmcblk0</code>. See <a href="https://wiki.archlinux.org/title/Device_file#Block_device_names" title="Device file">Device file#Block device names</a> for a description of the block device naming scheme.
+</p><p>Now you must <a href="#Generate_the_main_configuration_file">generate the main configuration file</a>.
+</p><p>If you use <a href="https://wiki.archlinux.org/title/LVM" title="LVM">LVM</a> for your <code>/boot</code>, you can install GRUB on multiple physical disks.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip"><strong>Tip:</strong> See <a href="https://wiki.archlinux.org/title/GRUB/Tips_and_tricks#Alternative_installation_methods" title="GRUB/Tips and tricks">/Tips and tricks#Alternative installation methods</a> for other ways to install GRUB, such as to a USB stick.</div>
+<p>See <span class="plainlinks archwiki-template-man" title="$ man 8 grub-install"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/grub-install.8">grub-install(8)</a></span> and <a rel="nofollow" class="external text" href="https://www.gnu.org/software/grub/manual/grub/html_node/BIOS-installation.html#BIOS-installation">GRUB Manual</a> for more details on the <code>grub-install</code> command.
+</p>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<p>On an installed system, GRUB loads the <code>/boot/grub/grub.cfg</code> configuration file each boot. You can follow <a href="#Generated_grub.cfg">#Generated grub.cfg</a> for using a tool, or <a href="#Custom_grub.cfg">#Custom grub.cfg</a> for a manual creation.
+</p>
+<h3><span class="mw-headline" id="Generated_grub.cfg">Generated grub.cfg</span></h3>
+<p>This section only covers editing the <code>/etc/default/grub</code> configuration file. See <a href="https://wiki.archlinux.org/title/GRUB/Tips_and_tricks" title="GRUB/Tips and tricks">/Tips and tricks</a> for more information.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> Remember to always <a href="#Generate_the_main_configuration_file">generate the main configuration file</a> after making changes to <code>/etc/default/grub</code> and/or files in <code>/etc/grub.d/</code>.</div>
+<div class="archwiki-template-box archwiki-template-box-warning"><strong>Warning:</strong> Update/reinstall the boot loader (see <a href="#UEFI_systems">#UEFI systems</a> or <a href="#BIOS_systems">#BIOS systems</a>)
+ if a new GRUB version changes the syntax of the configuration file: 
+mismatching configuration can result in an unbootable system.</div>
+<h4><span class="mw-headline" id="Generate_the_main_configuration_file">Generate the main configuration file</span></h4>
+<p>After the installation, the main configuration file <code>/boot/grub/grub.cfg</code> needs to be generated. The generation process can be influenced by a variety of options in <code>/etc/default/grub</code> and scripts in <code>/etc/grub.d/</code>.
+</p><p>If you have not done additional configuration, the automatic 
+generation will determine the root filesystem of the system to boot for 
+the configuration file. For that to succeed it is important that the 
+system is either booted or chrooted into.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> 
+<ul><li>The default file path is <code>/boot/grub/grub.cfg</code>, not <code>/boot/grub/i386-pc/grub.cfg</code>.</li>
+<li>If you are trying to run <i>grub-mkconfig</i> in a <a href="https://wiki.archlinux.org/title/Chroot" title="Chroot">chroot</a> or <a href="https://wiki.archlinux.org/title/Systemd-nspawn" title="Systemd-nspawn">systemd-nspawn</a> container, you might notice that it does not work: <code>grub-probe: error: failed to get canonical path of <i>/dev/sdaX</i></code>. In this case, try using <a href="https://wiki.archlinux.org/title/Arch-chroot" class="mw-redirect" title="Arch-chroot">arch-chroot</a> as described in the <a rel="nofollow" class="external text" href="https://bbs.archlinux.org/viewtopic.php?pid=1225067#p1225067">BBS post</a>.</li></ul></div>
+<p>Use the <i>grub-mkconfig</i> tool to generate <code>/boot/grub/grub.cfg</code>:
+</p>
+<pre># grub-mkconfig -o /boot/grub/grub.cfg
+</pre>
+<p>By default the generation scripts automatically add menu entries for all installed Arch Linux <a href="https://wiki.archlinux.org/title/Kernel" title="Kernel">kernels</a> to the generated configuration.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip"><strong>Tip:</strong> 
+<ul><li>After installing or removing a <a href="https://wiki.archlinux.org/title/Kernel" title="Kernel">kernel</a>, you just need to re-run the above <i>grub-mkconfig</i> command.</li>
+<li>For tips on managing multiple GRUB entries, for example when using both <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux">linux</a></span> and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux-lts">linux-lts</a></span> kernels, see <a href="https://wiki.archlinux.org/title/GRUB/Tips_and_tricks#Multiple_entries" title="GRUB/Tips and tricks">/Tips and tricks#Multiple entries</a>.</li></ul>
+</div>
+<p>To automatically add entries for other installed operating systems, see <a href="#Detecting_other_operating_systems">#Detecting other operating systems</a>.
+</p><p>You can add additional custom menu entries by editing <code>/etc/grub.d/40_custom</code> and re-generating <code>/boot/grub/grub.cfg</code>. Or you can create <code>/boot/grub/custom.cfg</code> and add them there. Changes to <code>/boot/grub/custom.cfg</code> do not require re-running <i>grub-mkconfig</i>, since <code>/etc/grub.d/41_custom</code> adds the necessary <code>source</code> statement to the generated configuration file.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip"><strong>Tip:</strong> <code>/etc/grub.d/40_custom</code> can be used as a template to create <code>/etc/grub.d/<i>nn</i>_custom</code>, where <code><i>nn</i></code>
+ defines the precedence, indicating the order the script is executed.  
+The order scripts are executed determine the placement in the GRUB boot 
+menu. <code><i>nn</i></code> should be greater than <code>06</code> to ensure necessary scripts are executed first.</div>
+<p>See <a href="#Boot_menu_entry_examples">#Boot menu entry examples</a> for custom menu entry examples.
+</p>
+<h4><span class="mw-headline" id="Detecting_other_operating_systems">Detecting other operating systems</span></h4>
+<p>To have <i>grub-mkconfig</i> search for other installed systems and automatically add them to the menu, <a href="https://wiki.archlinux.org/title/Install" class="mw-redirect" title="Install">install</a> the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=os-prober">os-prober</a></span> package and <a href="https://wiki.archlinux.org/title/Mount" class="mw-redirect" title="Mount">mount</a> the partitions from which the other systems boot. Then re-run <i>grub-mkconfig</i>. If you get the following output: <code>Warning: os-prober will not be executed to detect other bootable partitions</code> then edit <code>/etc/default/grub</code> and add/uncomment:
+</p>
+<pre>GRUB_DISABLE_OS_PROBER=false
+</pre>
+<p>Then try again.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong>  
+<ul><li>The exact mount point does not matter, <i>os-prober</i> reads the <code>mtab</code> to identify places to search for bootable entries.</li>
+<li>Remember to mount the partitions each time you run <i>grub-mkconfig</i> in order to include the other operating systems every time.</li></ul>
+</div>
+<div class="archwiki-template-box archwiki-template-box-tip"><strong>Tip:</strong> You might also want GRUB to remember the last chosen boot entry, see <a href="https://wiki.archlinux.org/title/GRUB/Tips_and_tricks#Recall_previous_entry" title="GRUB/Tips and tricks">/Tips and tricks#Recall previous entry</a>.</div>
+<h5><span class="mw-headline" id="Windows">Windows</span></h5>
+<p>For Windows installed in UEFI mode, make sure the <a href="https://wiki.archlinux.org/title/EFI_system_partition" title="EFI system partition">EFI system partition</a> containing the Windows Boot Manager (<code>bootmgfw.efi</code>) is mounted. Run <code>os-prober</code> as root to detect and generate an entry for it.
+</p><p>For Windows installed in BIOS mode, mount the Windows <i>system partition</i> (its <a href="https://wiki.archlinux.org/title/Persistent_block_device_naming#by-label" title="Persistent block device naming">file system label</a> should be <code>System Reserved</code> or <code>SYSTEM</code>). Run <code>os-prober</code> as root to detect and generate an entry for it.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> For Windows installed in BIOS mode:
+<ul><li>NTFS partitions may not always be detected when mounted with the
+ default Linux drivers. If GRUB is not detecting it, try installing <a href="https://wiki.archlinux.org/title/NTFS-3G" title="NTFS-3G">NTFS-3G</a> and remounting.</li></ul>
+<div class="noprint archwiki-template-message">
+<p><a href="https://wiki.archlinux.org/title/File:Tango-view-refresh-red.png" class="image"><img alt="Tango-view-refresh-red.png" src="GRUB%20-%20ArchWiki_files/Tango-view-refresh-red.png" decoding="async" width="48" height="48"></a><b>This article or section is out of date.</b><a href="https://wiki.archlinux.org/title/File:Tango-view-refresh-red.png" class="image"><img alt="Tango-view-refresh-red.png" src="GRUB%20-%20ArchWiki_files/Tango-view-refresh-red.png" decoding="async" width="48" height="48"></a></p>
+<div><b>Reason:</b> Since Windows 7, <code>bootmgr</code> is placed in the <a href="https://en.wikipedia.org/wiki/System_partition_and_boot_partition#Microsoft_definition" class="extiw" title="wikipedia:System partition and boot partition">system partition</a> which is not encrypted. (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:GRUB">Talk:GRUB</a>)</div>
+</div>
+<ul><li>Encrypted Windows partitions may need to be decrypted before mounting. For BitLocker, this can be done with <a href="https://wiki.archlinux.org/title/Cryptsetup" class="mw-redirect" title="Cryptsetup">cryptsetup</a> or <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/dislocker/">dislocker</a></span><sup><small>AUR</small></sup>. This should be sufficient for <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=os-prober">os-prober</a></span> to add the correct entry.</li></ul>
+</div>
+<h4><span class="mw-headline" id="Additional_arguments">Additional arguments</span></h4>
+<p>To pass custom additional arguments to the Linux image, you can set the <code>GRUB_CMDLINE_LINUX</code> + <code>GRUB_CMDLINE_LINUX_DEFAULT</code> variables in <code>/etc/default/grub</code>. The two are appended to each other and passed to kernel when generating regular boot entries. For the <i>recovery</i> boot entry, only <code>GRUB_CMDLINE_LINUX</code> is used in the generation.
+</p><p>It is not necessary to use both, but can be useful. For example, you could use <code>GRUB_CMDLINE_LINUX_DEFAULT="resume=UUID=<i>uuid-of-swap-partition</i> quiet"</code> where <code><i>uuid-of-swap-partition</i></code> is the <a href="https://wiki.archlinux.org/title/UUID" class="mw-redirect" title="UUID">UUID</a> of your swap partition to enable resume after <a href="https://wiki.archlinux.org/title/Hibernation" class="mw-redirect" title="Hibernation">hibernation</a>. This would generate a recovery boot entry without the resume and without <code>quiet</code>
+ suppressing kernel messages during a boot from that menu entry. Though,
+ the other (regular) menu entries would have them as options.
+</p><p>By default <i>grub-mkconfig</i> determines the <a href="https://wiki.archlinux.org/title/UUID" class="mw-redirect" title="UUID">UUID</a> of the root filesystem for the configuration. To disable this, uncomment <code>GRUB_DISABLE_LINUX_UUID=true</code>.
+</p><p>For generating the GRUB recovery entry you have to ensure that <code>GRUB_DISABLE_RECOVERY</code> is not set to <code>true</code> in <code>/etc/default/grub</code>.
+</p><p>See <a href="https://wiki.archlinux.org/title/Kernel_parameters" title="Kernel parameters">Kernel parameters</a> for more info.
+</p>
+<h4><span class="mw-headline" id="Setting_the_top-level_menu_entry">Setting the top-level menu entry</span></h4>
+<p>By default, <i>grub-mkconfig</i> sorts the included kernels using <code>sort -V</code> and uses the first kernel in that list as the top-level entry. This means that, for example, since <code>/boot/vmlinuz-linux-lts</code> is sorted before <code>/boot/vmlinuz-linux</code>, if you have both <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux-lts">linux-lts</a></span> and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux">linux</a></span> installed, the LTS kernel will be the top-level menu entry, which may not be desirable. This can be overridden by specifying <code>GRUB_TOP_LEVEL=<i>path_to_kernel</i>"</code> in <code>/etc/default/grub</code>. For example, to make the regular kernel be the top-level menu entry, you can use <code>GRUB_TOP_LEVEL="/boot/vmlinuz-linux"</code>.
+</p>
+<h4><span class="mw-headline" id="LVM">LVM</span></h4>
+<div class="noprint archwiki-template-message">
+<p><a href="https://wiki.archlinux.org/title/File:Merge-arrows-2.png" class="image"><img alt="Merge-arrows-2.png" src="GRUB%20-%20ArchWiki_files/Merge-arrows-2.png" decoding="async" width="48" height="48"></a><b>This article or section is a candidate for merging with <a href="#Installation">#Installation</a>.</b><a href="https://wiki.archlinux.org/title/File:Merge-arrows-2.png" class="image"><img alt="Merge-arrows-2.png" src="GRUB%20-%20ArchWiki_files/Merge-arrows-2.png" decoding="async" width="48" height="48"></a></p>
+<div><b>Notes:</b> grub-mkconfig is capable of detecting that it needs the <code>lvm</code> module, specifying it in <code>GRUB_PRELOAD_MODULES</code> is not required. Move warning to <a href="#Installation">#Installation</a> &amp; <a href="#Installation_2">#Installation_2</a> or create a <a href="https://wiki.archlinux.org/title/Help:Style#%22Known_issues%22_section" title="Help:Style">Known issues section</a> and document it there. (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:GRUB">Talk:GRUB</a>)</div>
+</div>
+<div class="archwiki-template-box archwiki-template-box-warning"><strong>Warning:</strong> GRUB does not support thin-provisioned logical volumes.</div>
+<p>If you use <a href="https://wiki.archlinux.org/title/LVM" title="LVM">LVM</a> for your <code>/boot</code> or <code>/</code> root partition, make sure that the <code>lvm</code> module is preloaded:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/default/grub</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">GRUB_PRELOAD_MODULES="... lvm"</pre>
+<h4><span class="mw-headline" id="RAID">RAID</span></h4>
+<div class="noprint archwiki-template-message">
+<p><a href="https://wiki.archlinux.org/title/File:Merge-arrows-2.png" class="image"><img alt="Merge-arrows-2.png" src="GRUB%20-%20ArchWiki_files/Merge-arrows-2.png" decoding="async" width="48" height="48"></a><b>This article or section is a candidate for merging with <a href="#Installation">#Installation</a>.</b><a href="https://wiki.archlinux.org/title/File:Merge-arrows-2.png" class="image"><img alt="Merge-arrows-2.png" src="GRUB%20-%20ArchWiki_files/Merge-arrows-2.png" decoding="async" width="48" height="48"></a></p>
+<div><b>Notes:</b> grub-mkconfig is capable of detecting that it needs the <code>mdraid09</code> and/or <code>mdraid1x</code> modules, specifying them in <code>GRUB_PRELOAD_MODULES</code> is not required. Summarize the double grub-install in a note and move it to <a href="#Installation">#Installation</a>; move <code>set root</code> stuff to <a href="#Custom_grub.cfg">#Custom grub.cfg</a>. (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:GRUB">Talk:GRUB</a>)</div>
+</div>
+<p>GRUB provides convenient handling of <a href="https://wiki.archlinux.org/title/RAID" title="RAID">RAID</a> volumes. You need to load GRUB modules <code>mdraid09</code> or <code>mdraid1x</code> to allow you to address the volume natively:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/default/grub</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">GRUB_PRELOAD_MODULES="... mdraid09 mdraid1x"</pre>
+<p>For example, <code>/dev/md0</code> becomes:
+</p>
+<pre>set root=(md/0)
+</pre>
+<p>whereas a partitioned RAID volume (e.g. <code>/dev/md0p1</code>) becomes:
+</p>
+<pre>set root=(md/0,1)
+</pre>
+<p>To install grub when using RAID1 as the <code>/boot</code> partition (or using <code>/boot</code> housed on a RAID1 root partition), on BIOS systems, simply run <i>grub-install</i> on both of the drives, such as:
+</p>
+<pre># grub-install --target=i386-pc --debug /dev/sda
+# grub-install --target=i386-pc --debug /dev/sdb
+</pre>
+<p>Where the RAID 1 array housing <code>/boot</code> is housed on <code>/dev/sda</code> and <code>/dev/sdb</code>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> GRUB supports booting from <a href="https://wiki.archlinux.org/title/Btrfs" title="Btrfs">Btrfs</a> RAID 0/1/10, but <i>not</i> RAID 5/6. You may use <a href="https://wiki.archlinux.org/title/Mdadm" class="mw-redirect" title="Mdadm">mdadm</a> for RAID 5/6, which is supported by GRUB.</div>
+<h4><span id="Encrypted_.2Fboot"></span><span class="mw-headline" id="Encrypted_/boot">Encrypted /boot</span></h4>
+<p>GRUB also has special support for booting with an encrypted <code>/boot</code>. This is done by unlocking a <a href="https://wiki.archlinux.org/title/LUKS" class="mw-redirect" title="LUKS">LUKS</a> blockdevice in order to read its configuration and load any <a href="https://wiki.archlinux.org/title/Initramfs" class="mw-redirect" title="Initramfs">initramfs</a> and <a href="https://wiki.archlinux.org/title/Kernel" title="Kernel">kernel</a> from it. This option tries to solve the issue of having an <a href="https://wiki.archlinux.org/title/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition" title="Dm-crypt/Specialties">unencrypted boot partition</a>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip"><strong>Tip:</strong> <code>/boot</code> is <b>not</b> required to be kept in a separate partition; it may also stay under the system's root <code>/</code> directory tree.</div>
+<div class="archwiki-template-box archwiki-template-box-warning"><strong>Warning:</strong> GRUB 2.06 has limited support for LUKS2. See the <a href="#LUKS2">#LUKS2</a> section below for details.</div>
+<p>To enable this feature encrypt the partition with <code>/boot</code> residing on it using <a href="https://wiki.archlinux.org/title/LUKS" class="mw-redirect" title="LUKS">LUKS</a> as normal. Then add the following option to <code>/etc/default/grub</code>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/default/grub</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">GRUB_ENABLE_CRYPTODISK=y</pre>
+<p>This option is used by grub-install to generate the grub <code>core.img</code>.
+</p><p>Make sure to <a href="#Installation">install grub</a> after modifying this option or encrypting the partition.
+</p><p>Without further changes you will be prompted twice for a passphrase: the first for GRUB to unlock the <code>/boot</code> mount point in early boot, the second to unlock the root filesystem itself as implemented by the initramfs. You can use a <a href="https://wiki.archlinux.org/title/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs" title="Dm-crypt/Device encryption">keyfile</a> to avoid this.
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning"><strong>Warning:</strong> 
+<ul><li>If you want to <a href="#Generate_the_main_configuration_file">generate the main configuration file</a>, make sure that <code>/boot</code> is mounted.</li>
+<li>In order to perform system updates involving the <code>/boot</code> mount point, ensure that the encrypted <code>/boot</code> is unlocked and mounted before performing an update. With a separate <code>/boot</code> partition, this may be accomplished automatically on boot by using <a href="https://wiki.archlinux.org/title/Crypttab" class="mw-redirect" title="Crypttab">crypttab</a> with a <a href="https://wiki.archlinux.org/title/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs" title="Dm-crypt/Device encryption">keyfile</a>.</li></ul>
+</div>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> 
+<ul><li>If you use a special keymap, a default GRUB installation will 
+not know it. This is relevant for how to enter the passphrase to unlock 
+the LUKS blockdevice. See <a href="https://wiki.archlinux.org/title/GRUB/Tips_and_tricks#Manual_configuration_of_core_image_for_early_boot" title="GRUB/Tips and tricks">/Tips and tricks#Manual configuration of core image for early boot</a>.</li>
+<li>If you experience issues getting the prompt for a password to 
+display (errors regarding cryptouuid, cryptodisk, or "device not 
+found"), try reinstalling GRUB and appending <code>--modules="part_gpt part_msdos"</code> to the end of your <code>grub-install</code> command.</li></ul>
+</div>
+<div class="archwiki-template-box archwiki-template-box-tip"><strong>Tip:</strong> You can use <a rel="nofollow" class="external text" href="https://bbs.archlinux.org/viewtopic.php?id=234607">pacman hooks</a> to automount your <code>/boot</code> when upgrades need to access related files.</div>
+<h5><span class="mw-headline" id="LUKS2">LUKS2</span></h5>
+<ul><li>GRUB 2.06 has limited support for LUKS2. See <a rel="nofollow" class="external text" href="https://savannah.gnu.org/bugs/?55093">GRUB bug #55093</a>.</li>
+<li>Argon2id (<i>cryptsetup</i> default) and Argon2i PBKDFs are not supported (<a rel="nofollow" class="external text" href="https://savannah.gnu.org/bugs/?59409">GRUB bug #59409</a>), only PBKDF2 is.</li>
+<li><code>grub-install</code> does not support creating a core image that could be used for unlocking LUKS2. See the comments below or on <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/grub-git/">grub-git</a></span><sup><small>AUR</small></sup> for a workaround.</li></ul>
+<div class="archwiki-template-box archwiki-template-box-tip"><strong>Tip:</strong> You can use <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/grub-improved-luks2-git/">grub-improved-luks2-git</a></span><sup><small>AUR</small></sup> that has been patched for LUKS2 as well as Argon support.</div>
+<ul><li><b>Use</b> <code>grub-install</code> <b>as described in the <a href="#Installation">#Installation</a> section</b> to populate the GRUB module directory. Do not forget to edit <code>/etc/default/grub</code> and run <code>grub-mkconfig -o /boot/grub/grub.cfg</code>, as described above. The generated EFI binary does not support LUKS2 and will be replaced in the next step.</li></ul>
+<ul><li>Create <code>/boot/grub/grub-pre.cfg</code>. Replace <code><i>UUID</i></code> with the LUKS encrypted device <a href="https://wiki.archlinux.org/title/UUID" class="mw-redirect" title="UUID">UUID</a>. Use <code>lvm/NameOfVolumeGroup-NameOfLogicalVolume</code> instead of <code>crypto0</code> if your root drive is on an LVM logical volume inside the LUKS volume, otherwise do not change <code>crypto0</code>, this is how GRUB names encrypted volumes.</li></ul>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/boot/grub/grub-pre.cfg</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">set crypto_uuid=<i>UUID</i>
+cryptomount -u $crypto_uuid
+set root=crypto0
+set prefix=($root)/boot/grub
+insmod normal
+normal</pre>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> Whenever you make changes to <code>grub-pre.cfg</code>, you will have to do the following steps again.</div>
+<div class="archwiki-template-box archwiki-template-box-warning"><strong>Warning:</strong> If using Btrfs and <code>/boot/grub</code> is located on a subvolume, the prefix must include the <i>full path</i> from the top level Btrfs subvolume (subvolid = <code>5</code>). For example, if <code>/boot/grub</code> is located on a subvolume called <code>my_subvolume</code> (subvolid ≠ <code>5</code>), set the line to <code>set prefix=($root)/my_subvolume/boot/grub</code>. This is true even if you have set <code>my_subvolume</code> as default with <code>btrfs subvolume set-default</code> before.</div>
+<ul><li>Add <code>lvm</code> if you use <a href="https://wiki.archlinux.org/title/LVM" title="LVM">LVM</a>. Replace <code>ext2</code> with <code>btrfs</code> or another filesystem module, if needed. Depending on the settings of your key slot, replace <code>gcry_sha256</code> with <code>gcry_sha512</code> or <code>gcry_whirlpool</code> if need be:</li></ul>
+<pre>$ grub-mkimage -p /boot/grub -O x86_64-efi -c grub-pre.cfg -o /tmp/grubx64.efi luks2 part_gpt cryptodisk gcry_rijndael pbkdf2 gcry_sha256 ext2
+</pre>
+<p>If it cannot find <code>grub-pre.cfg</code>, simply change to <code>-c /boot/grub/grub-pre.cfg</code> above.
+</p>
+<ul><li>Copy to ESP:</li></ul>
+<pre># install -v /tmp/grubx64.efi <i>esp</i>/EFI/GRUB/grubx64.efi
+</pre>
+<p>If you enter an invalid passphrase during boot and end up at the GRUB rescue shell, try <code>cryptomount -a</code> to mount all (hopefully only one) encrypted partitions or use <code>cryptomount -u $crypto_uuid</code> to mount a specific one. Then proceed with <code>insmod normal</code> and <code>normal</code> as usual.
+</p><p>If you enter a correct passphrase, but an <code>Invalid passphrase</code> error is immediately returned, make sure that the right cryptographic modules are specified. Use <code>cryptsetup luksDump <i>/dev/nvme0n1p2</i></code> and check whether the hash function (SHA-256, SHA-512) matches the modules (<code>gcry_sha256</code>, <code>gcry_sha512</code>) installed and the PBKDF algorithm is pbkdf2. The hash and PBDKDF algorithms can be changed for existing keys by using <code>cryptsetup luksConvertKey --hash <i>sha256</i> --pbkdf pbkdf2 <i>/dev/nvme0n1p2</i></code>.  Under normal circumstances it should take a few seconds before the passphrase is processed.
+</p>
+<h3><span class="mw-headline" id="Custom_grub.cfg">Custom grub.cfg</span></h3>
+<div class="noprint archwiki-template-message">
+<p><a href="https://wiki.archlinux.org/title/File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="GRUB%20-%20ArchWiki_files/Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a><b>This article or section needs expansion.</b><a href="https://wiki.archlinux.org/title/File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="GRUB%20-%20ArchWiki_files/Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a></p>
+<div><b>Reason:</b> Add instructions on how to write a custom <code>/boot/grub/grub.cfg</code>. See <a href="https://wiki.archlinux.org/title/User:Eschwartz/Grub" title="User:Eschwartz/Grub">User:Eschwartz/Grub</a> for a proposed draft. (Discuss in <a href="https://wiki.archlinux.org/title/Talk:GRUB#Manually_generate_grub.cfg" title="Talk:GRUB">Talk:GRUB#Manually generate grub.cfg</a>)</div>
+</div>
+<p>This section describes the manual creation of GRUB boot entries in <code>/boot/grub/grub.cfg</code> instead of relying on <i>grub-mkconfig</i>.
+</p><p>A basic GRUB config file uses the following options:
+</p>
+<ul><li><code>(hd<i>X</i>,<i>Y</i>)</code> is the partition <i>Y</i> on disk <i>X</i>, partition numbers starting at 1, disk numbers starting at 0</li>
+<li><code>set default=<i>N</i></code> is the default boot entry that is chosen after timeout for user action</li>
+<li><code>set timeout=<i>M</i></code> is the time <i>M</i> to wait in seconds for a user selection before default is booted</li>
+<li><code>menuentry "title" {entry options}</code> is a boot entry titled <code>title</code></li>
+<li><code>set root=(hd<i>X</i>,<i>Y</i>)</code> sets the boot partition,
+ where the kernel and GRUB modules are stored (boot need not be a 
+separate partition, and may simply be a directory under the "root" 
+partition (<code>/</code>)</li></ul>
+<h4><span class="mw-headline" id="Boot_menu_entry_examples">Boot menu entry examples</span></h4>
+<div class="archwiki-template-box archwiki-template-box-tip"><strong>Tip:</strong> These boot entries can also be used when using a <code>/boot/grub/grub.cfg</code> generated by <i>grub-mkconfig</i>. Add them to <code>/etc/grub.d/40_custom</code> and <a href="#Generate_the_main_configuration_file">re-generate the main configuration file</a> or add them to <code>/boot/grub/custom.cfg</code>.</div>
+<p>For tips on managing multiple GRUB entries, for example when using both <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux">linux</a></span> and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux-lts">linux-lts</a></span> kernels, see <a href="https://wiki.archlinux.org/title/GRUB/Tips_and_tricks#Multiple_entries" title="GRUB/Tips and tricks">/Tips and tricks#Multiple entries</a>.
+</p><p>For <a href="https://wiki.archlinux.org/title/Archiso" title="Archiso">Archiso</a> and <a rel="nofollow" class="external text" href="https://pkgbuild.com/~tpowa/archboot/web/archboot.html">Archboot</a> boot menu entries see <a href="https://wiki.archlinux.org/title/Multiboot_USB_drive#Boot_entries" title="Multiboot USB drive">Multiboot USB drive#Boot entries</a>.
+</p>
+<h5><span class="mw-headline" id="GRUB_commands">GRUB commands</span></h5>
+<h6><span id=".22Shutdown.22_menu_entry"></span><span class="mw-headline" id="&quot;Shutdown&quot;_menu_entry">"Shutdown" menu entry</span></h6>
+<pre>menuentry "System shutdown" {
+	echo "System shutting down..."
+	halt
+}
+</pre>
+<h6><span id=".22Restart.22_menu_entry"></span><span class="mw-headline" id="&quot;Restart&quot;_menu_entry">"Restart" menu entry</span></h6>
+<pre>menuentry "System restart" {
+	echo "System rebooting..."
+	reboot
+}
+</pre>
+<h6><span id=".22UEFI_Firmware_Settings.22_menu_entry"></span><span class="mw-headline" id="&quot;UEFI_Firmware_Settings&quot;_menu_entry">"UEFI Firmware Settings" menu entry</span></h6>
+<pre>if [ ${grub_platform} == "efi" ]; then
+	menuentry 'UEFI Firmware Settings' --id 'uefi-firmware' {
+		fwsetup
+	}
+fi</pre>
+<h5><span class="mw-headline" id="EFI_binaries">EFI binaries</span></h5>
+<p>When launched in UEFI mode, GRUB can chainload other EFI binaries.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip"><strong>Tip:</strong> To show these menu entries only when GRUB is launched in UEFI mode, enclose them in the following <code>if</code> statement:
+<pre>if [ ${grub_platform} == "efi" ]; then
+	<i>place UEFI-only menu entries here</i>
+fi</pre></div>
+<h6><span class="mw-headline" id="UEFI_Shell">UEFI Shell</span></h6>
+<p>You can launch <a href="https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface#UEFI_Shell" title="Unified Extensible Firmware Interface">UEFI Shell</a> by placing it in the root of the <a href="https://wiki.archlinux.org/title/EFI_system_partition" title="EFI system partition">EFI system partition</a> and adding this menu entry:
+</p>
+<pre>menuentry "UEFI Shell" {
+	insmod fat
+	insmod chain
+	search --no-floppy --set=root --file /shellx64.efi
+	chainloader /shellx64.efi
+}</pre>
+<h6><span class="mw-headline" id="gdisk">gdisk</span></h6>
+<p>Download the <a href="https://wiki.archlinux.org/title/Gdisk#gdisk_EFI_application" class="mw-redirect" title="Gdisk">gdisk EFI application</a> and copy <code>gdisk_x64.efi</code> to <code><i>esp</i>/EFI/tools/</code>.
+</p>
+<pre>menuentry "gdisk" {
+	insmod fat
+	insmod chain
+	search --no-floppy --set=root --file /EFI/tools/gdisk_x64.efi
+	chainloader /EFI/tools/gdisk_x64.efi
+}</pre>
+<h6><span class="mw-headline" id="Chainloading_a_unified_kernel_image">Chainloading a unified kernel image</span></h6>
+<p>If you have a <a href="https://wiki.archlinux.org/title/Unified_kernel_image" title="Unified kernel image">unified kernel image</a> generated from following <a href="https://wiki.archlinux.org/title/Secure_Boot" class="mw-redirect" title="Secure Boot">Secure Boot</a> or other means, you can add it to the boot menu. For example:
+</p>
+<pre>menuentry "Arch Linux" {
+	insmod fat
+	insmod chain
+	search --no-floppy --set=root --fs-uuid <i>FILESYSTEM_UUID</i>
+	chainloader /EFI/Linux/Arch-linux.efi
+}</pre>
+<h5><span class="mw-headline" id="Dual-booting">Dual-booting</span></h5>
+<h6><span id="GNU.2FLinux"></span><span class="mw-headline" id="GNU/Linux">GNU/Linux</span></h6>
+<p>Assuming that the other distribution is on partition <code>sda2</code>:
+</p>
+<pre>menuentry "Other Linux" {
+	set root=(hd0,2)
+	linux /boot/vmlinuz (add other options here as required)
+	initrd /boot/initrd.img (if the other kernel uses/needs one)
+}</pre>
+<p>Alternatively let GRUB search for the right partition by UUID or file system label:
+</p>
+<pre>menuentry "Other Linux" {
+        # assuming that UUID is 763A-9CB6
+	search --no-floppy --set=root --fs-uuid 763A-9CB6
+
+        # search by label OTHER_LINUX (make sure that partition label is unambiguous)
+        #search --no-floppy --set=root --label OTHER_LINUX
+
+	linux /boot/vmlinuz (add other options here as required, for example: root=UUID=763A-9CB6)
+	initrd /boot/initrd.img (if the other kernel uses/needs one)
+}</pre>
+<p>If the other distribution has already a valid <code>/boot</code> folder with installed GRUB, <code>grub.cfg</code>, kernel and initramfs, GRUB can be instructed to load these other <code>grub.cfg</code> files on-the-fly during boot. For example, for <code>hd0</code> and the fourth GPT partition:
+</p>
+<pre>menuentry "configfile hd0,gpt4"  {
+        insmod part_gpt
+        insmod btrfs
+        insmod ext2
+        set root='hd0,gpt4'
+        configfile /boot/grub/grub.cfg
+}</pre>
+<p>When choosing this entry, GRUB loads the <code>grub.cfg</code> file 
+from the other volume and displays that menu. Any environment variable 
+changes made by the commands in file will not be preserved after <code>configfile</code> returns. Press <code>Esc</code> to return to the first GRUB menu.
+</p>
+<h6><span id="Windows_installed_in_UEFI.2FGPT_mode"></span><span class="mw-headline" id="Windows_installed_in_UEFI/GPT_mode">Windows installed in UEFI/GPT mode</span></h6>
+<p>This mode determines where the Windows boot loader resides and 
+chain-loads it after GRUB when the menu entry is selected. The main task
+ here is finding the EFI system partition and running the bootloader 
+from it.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong>
+ This menuentry will work only in UEFI boot mode and only if the Windows
+ bitness matches the UEFI bitness. It will not work in BIOS installed 
+GRUB. See <a href="https://wiki.archlinux.org/title/Dual_boot_with_Windows#Windows_UEFI_vs_BIOS_limitations" title="Dual boot with Windows">Dual boot with Windows#Windows UEFI vs BIOS limitations</a> and <a href="https://wiki.archlinux.org/title/Dual_boot_with_Windows#Bootloader_UEFI_vs_BIOS_limitations" title="Dual boot with Windows">Dual boot with Windows#Bootloader UEFI vs BIOS limitations</a> for more information.</div>
+<pre>if [ "${grub_platform}" == "efi" ]; then
+	menuentry "Microsoft Windows Vista/7/8/8.1 UEFI/GPT" {
+		insmod part_gpt
+		insmod fat
+		insmod chain
+		search --no-floppy --fs-uuid --set=root $hints_string $fs_uuid
+		chainloader /EFI/Microsoft/Boot/bootmgfw.efi
+	}
+fi</pre>
+<p>where <code>$hints_string</code> and <code>$fs_uuid</code> are obtained with the following two commands.
+</p><p>The <code>$fs_uuid</code> command determines the UUID of the EFI system partition:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"># grub-probe --target=fs_uuid <i>esp</i>/EFI/Microsoft/Boot/bootmgfw.efi</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">1ce5-7f28</pre>
+<p>Alternatively one can run <code>lsblk --fs</code> and read the UUID of the EFI system partition from there.
+</p><p>The <code>$hints_string</code> command will determine the location of the EFI system partition, in this case harddrive 0:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"># grub-probe --target=hints_string <i>esp</i>/EFI/Microsoft/Boot/bootmgfw.efi</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">--hint-bios=hd0,gpt1 --hint-efi=hd0,gpt1 --hint-baremetal=ahci0,gpt1</pre>
+<p>These two commands assume the ESP Windows uses is mounted at <code><i>esp</i></code>. There might be case differences in the path to Windows's EFI file, what with being Windows, and all.
+</p>
+<h6><span id="Windows_installed_in_BIOS.2FMBR_mode"></span><span class="mw-headline" id="Windows_installed_in_BIOS/MBR_mode">Windows installed in BIOS/MBR mode</span></h6>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> GRUB supports booting <code>bootmgr</code> directly and <a rel="nofollow" class="external text" href="https://www.gnu.org/software/grub/manual/grub.html#Chain_002dloading">chainloading</a> of partition boot sector is no longer required to boot Windows in a BIOS/MBR setup.</div>
+<div class="archwiki-template-box archwiki-template-box-warning"><strong>Warning:</strong> It is the <b>system partition</b> that has <code>/bootmgr</code>, not your "real" Windows partition (usually <code>C:</code>). The system partition's <a href="https://wiki.archlinux.org/title/Persistent_block_device_naming#by-label" title="Persistent block device naming">filesystem label</a> is <code>System Reserved</code> or <code>SYSTEM</code> and the partition is only about 100 to 549 MiB in size. See <a href="https://en.wikipedia.org/wiki/System_partition_and_boot_partition" class="extiw" title="wikipedia:System partition and boot partition">Wikipedia:System partition and boot partition</a> for more information.</div>
+<p>Throughout this section, it is assumed your Windows partition is <code>/dev/sda1</code>. A different partition will change every instance of <code>hd0,msdos1</code>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> These menu entries will work only in BIOS boot mode. It will not work in UEFI installed GRUB. See <a href="https://wiki.archlinux.org/title/Dual_boot_with_Windows#Windows_UEFI_vs_BIOS_limitations" title="Dual boot with Windows">Dual boot with Windows#Windows UEFI vs BIOS limitations</a> and <a href="https://wiki.archlinux.org/title/Dual_boot_with_Windows#Bootloader_UEFI_vs_BIOS_limitations" title="Dual boot with Windows">Dual boot with Windows#Bootloader UEFI vs BIOS limitations</a> .</div>
+<p>In both examples <code><i>XXXX-XXXX</i></code> is the filesystem UUID which can be found with command <code>lsblk --fs</code>.
+</p><p>For Windows Vista/7/8/8.1/10:
+</p>
+<pre>if [ "${grub_platform}" == "pc" ]; then
+	menuentry "Microsoft Windows Vista/7/8/8.1/10 BIOS/MBR" {
+		insmod part_msdos
+		insmod ntfs
+		insmod ntldr
+		search --no-floppy --fs-uuid --set=root --hint-bios=hd0,msdos1 --hint-efi=hd0,msdos1 --hint-baremetal=ahci0,msdos1 <i>XXXX-XXXX</i>
+		ntldr /bootmgr
+	}
+fi</pre>
+<p>For Windows XP:
+</p>
+<pre>if [ "${grub_platform}" == "pc" ]; then
+	menuentry "Microsoft Windows XP" {
+		insmod part_msdos
+		insmod ntfs
+		insmod ntldr
+		search --no-floppy --fs-uuid --set=root --hint-bios=hd0,msdos1 --hint-efi=hd0,msdos1 --hint-baremetal=ahci0,msdos1 <i>XXXX-XXXX</i>
+		ntldr /ntldr
+	}
+fi</pre>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong>
+ In some cases, GRUB may be installed without a clean Windows 8, in 
+which case you cannot boot Windows without having an error with <code>\boot\bcd</code> (error code <code>0xc000000f</code>). You can fix it by going to Windows Recovery Console (<code>cmd.exe</code> from install disk) and executing:
+<pre>X:\&gt; bootrec.exe /fixboot
+X:\&gt; bootrec.exe /RebuildBcd
+</pre>
+<p>Do <b>not</b> use <code>bootrec.exe /Fixmbr</code> because it will wipe GRUB out.
+Or you can use Boot Repair function in the Troubleshooting menu - it will not wipe out GRUB but will fix most errors.
+Also you would better keep plugged in both the target hard drive and your bootable device <b>ONLY</b>. Windows usually fails to repair boot information if any other devices are connected.
+</p>
+</div>
+<h5><span class="mw-headline" id="Using_labels">Using labels</span></h5>
+<p>It is possible to use file system labels, human-readable strings attached to file systems, by using the <code>--label</code> option to <code>search</code>. First of all, <a href="https://wiki.archlinux.org/title/Persistent_block_device_naming#by-label" title="Persistent block device naming">make sure your file system has a label</a>.
+</p><p>Then, add an entry using labels. An example of this:
+</p>
+<pre>menuentry "Arch Linux, session texte" {
+  search --label --set=root archroot
+  linux /boot/vmlinuz-linux root=/dev/disk/by-label/archroot ro
+  initrd /boot/initramfs-linux.img
+}
+</pre>
+<h2><span class="mw-headline" id="Using_the_command_shell">Using the command shell</span></h2>
+<p>Since the MBR is too small to store all GRUB modules, only the menu 
+and a few basic commands reside there. The majority of GRUB 
+functionality remains in modules in <code>/boot/grub/</code>, which are 
+inserted as needed. In error conditions (e.g. if the partition layout 
+changes) GRUB may fail to boot. When this happens, a command shell may 
+appear.
+</p><p>GRUB offers multiple shells/prompts. If there is a problem 
+reading the menu but the bootloader is able to find the disk, you will 
+likely be dropped to the "normal" shell:
+</p>
+<pre>grub&gt;
+</pre>
+<p>If there is a more serious problem (e.g. GRUB cannot find required files), you may instead be dropped to the "rescue" shell:
+</p>
+<pre>grub rescue&gt;
+</pre>
+<p>The rescue shell is a restricted subset of the normal shell, offering
+ much less functionality. If dumped to the rescue shell, first try 
+inserting the "normal" module, then starting the "normal" shell:
+</p>
+<pre>grub rescue&gt; set prefix=(hdX,Y)/boot/grub
+grub rescue&gt; insmod (hdX,Y)/boot/grub/i386-pc/normal.mod
+rescue:grub&gt; normal
+</pre>
+<h3><span class="mw-headline" id="Pager_support">Pager support</span></h3>
+<p>GRUB supports pager for reading commands that provide long output (like the <code>help</code> command). This works only in normal shell mode and not in rescue mode. To enable pager, in GRUB command shell type:
+</p>
+<pre>sh:grub&gt; set pager=1
+</pre>
+<h3><span class="mw-headline" id="Using_the_command_shell_environment_to_boot_operating_systems">Using the command shell environment to boot operating systems</span></h3>
+<pre>grub&gt;
+</pre>
+<p>The GRUB's command shell environment can be used to boot operating systems.
+A common scenario may be to boot Windows / Linux stored on a drive/partition via <b>chainloading</b>.
+</p><p><i>Chainloading</i> means to load another boot-loader from the current one, ie, chain-loading.
+</p><p>The other bootloader may be embedded at the start of a 
+partitioned disk (MBR), at the start of a partition or a partitionless 
+disk (VBR), or as an EFI binary in the case of UEFI.
+</p>
+<h4><span id="Chainloading_a_partition.27s_VBR"></span><span class="mw-headline" id="Chainloading_a_partition's_VBR">Chainloading a partition's VBR</span></h4>
+<pre>set root=(hdX,Y)
+chainloader +1
+boot
+</pre>
+<p>X=0,1,2...
+Y=1,2,3...
+</p><p>For example to chainload Windows stored in the first partition of the first hard disk,
+</p>
+<pre>set root=(hd0,1)
+chainloader +1
+boot
+</pre>
+<p>Similarly GRUB installed to a partition can be chainloaded.
+</p>
+<h4><span id="Chainloading_a_disk.27s_MBR_or_a_partitionless_disk.27s_VBR"></span><span class="mw-headline" id="Chainloading_a_disk's_MBR_or_a_partitionless_disk's_VBR">Chainloading a disk's MBR or a partitionless disk's VBR</span></h4>
+<pre>set root=hdX
+chainloader +1
+boot
+</pre>
+<h4><span id="Chainloading_Windows.2FLinux_installed_in_UEFI_mode"></span><span class="mw-headline" id="Chainloading_Windows/Linux_installed_in_UEFI_mode">Chainloading Windows/Linux installed in UEFI mode</span></h4>
+<pre>insmod fat
+set root=(hd0,gpt4)
+chainloader (${root})/EFI/Microsoft/Boot/bootmgfw.efi
+boot
+</pre>
+<p><code>insmod fat</code> is used for loading the FAT file system module for accessing the Windows bootloader on the EFI system partition.
+<code>(hd0,gpt4)</code> or <code>/dev/sda4</code> is the EFI system partition in this example.
+The entry in the <code>chainloader</code> line specifies the path of the <i>.efi</i> file to be chain-loaded.
+</p>
+<h4><span class="mw-headline" id="Normal_loading">Normal loading</span></h4>
+<p>See the examples in <a href="#Using_the_rescue_console">#Using the rescue console</a>
+</p>
+<h3><span class="mw-headline" id="Using_the_rescue_console">Using the rescue console</span></h3>
+<p>See <a href="#Using_the_command_shell">#Using the command shell</a> 
+first. If unable to activate the standard shell, one possible solution 
+is to boot using a live CD or some other rescue disk to correct 
+configuration errors and reinstall GRUB. However, such a boot disk is 
+not always available (nor necessary); the rescue console is surprisingly
+ robust.
+</p><p>The available commands in GRUB rescue include <code>insmod</code>, <code>ls</code>, <code>set</code>, and <code>unset</code>. This example uses <code>set</code> and <code>insmod</code>. <code>set</code> modifies variables and <code>insmod</code> inserts new modules to add functionality.
+</p><p>Before starting, the user must know the location of their <code>/boot</code> partition (be it a separate partition, or a subdirectory under their root):
+</p>
+<pre>grub rescue&gt; set prefix=(hd<i>X</i>,<i>Y</i>)/boot/grub
+</pre>
+<p>where <code><i>X</i></code> is the physical drive number and <code><i>Y</i></code> is the partition number.
+</p>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> With a separate boot partition, omit <code>/boot</code> from the path (i.e. type <code>set prefix=(hd<i>X</i>,<i>Y</i>)/grub</code>).</div>
+<p>To expand console capabilities, insert the <code>linux</code> module:
+</p>
+<pre>grub rescue&gt; insmod i386-pc/linux.mod
+</pre>
+<p>or simply
+</p>
+<pre>grub rescue&gt; insmod linux
+</pre>
+<p>This introduces the <code>linux</code> and <code>initrd</code> commands, which should be familiar.
+</p><p>An example, booting Arch Linux:
+</p>
+<pre>set root=(hd0,5)
+linux /boot/vmlinuz-linux root=/dev/sda5
+initrd /boot/initramfs-linux.img
+boot
+</pre>
+<p>With a separate boot partition (e.g. when using UEFI), again change the lines accordingly:
+</p>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong>
+ Since boot is a separate partition and not part of your root partition,
+ you must address the boot partition manually, in the same way as for 
+the prefix variable.</div>
+<pre>set root=(hd0,5)
+linux (hd<i>X</i>,<i>Y</i>)/vmlinuz-linux root=/dev/sda6
+initrd (hd<i>X</i>,<i>Y</i>)/initramfs-linux.img
+boot
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> If you experienced <code>error: premature end of file /YOUR_KERNEL_NAME</code> during execution of <code>linux</code> command, you can try <code>linux16</code> instead.</div>
+<p>After successfully booting the Arch Linux installation, users can correct <code>grub.cfg</code> as needed and then reinstall GRUB.
+</p><p>To reinstall GRUB and fix the problem completely, changing <code>/dev/sda</code> if needed. See <a href="#Installation">#Installation</a> for details.
+</p>
+<h2><span class="mw-headline" id="GRUB_removal">GRUB removal</span></h2>
+<div class="noprint archwiki-template-message">
+<p><a href="https://wiki.archlinux.org/title/File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="GRUB%20-%20ArchWiki_files/Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a><b>This article or section needs expansion.</b><a href="https://wiki.archlinux.org/title/File:Tango-view-fullscreen.png" class="image"><img alt="Tango-view-fullscreen.png" src="GRUB%20-%20ArchWiki_files/Tango-view-fullscreen.png" decoding="async" width="48" height="48"></a></p>
+<div><b>Reason:</b> Migrating from BIOS booting to UEFI is not the only 
+case where GRUB could be removed. Section needs to either cover how to 
+remove GRUB installed for UEFI booting or it should be removed 
+altogether as too trivial. (Discuss in <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/title/Talk:GRUB">Talk:GRUB</a>)</div>
+</div>
+<p>In general, in order to remove <i>grub</i>, one has to do the 
+installation steps in reverse order. Perhaps cleaning any left over at 
+the end. However, before doing anything, one has to decide if, and how, 
+the machine will boot after the removal. Assuming one removes <i>grub</i>
+ because they would like to use another boot loader, a safe, though a 
+bit difficult,  method is to make sure the other boot loader is working 
+before removing <i>grub</i>.
+</p><p>In any case, even when removing <i>grub</i> before installing another boot loader, for the UEFI case, run:
+</p>
+<pre>$ efibootmgr
+</pre>
+<p>And verify the other boot loader is listed  in the <code>BootOrder</code> line. If <i>grub</i> was not removed, the other boot loader should be listed before <i>grub</i>. If <i>grub</i> is already removed, <i>grub</i>
+ should not be mentioned in that line. But note this is only a 
+necessary, but not sufficient, condition for the machine to boot with 
+the other boot loader. Neither it is a sufficient condition for the full
+ removal of <i>grub</i>.
+</p><p>For both UEFI and non UEFI machines, <code>grub-install</code> was manually run as part of the installation of <i>grub</i>. One of its jobs for the UEFI case was to run the equivalent of <code>efibootmgr --create</code>. As part of <i>grub</i> removal, one has to remove the products of <code>grub-install</code>. The opposite of <code>efibootmgr --create</code> is <code>efibootmgr --delete-bootnum</code>, or an equivalent program. One way to obtain the number of the boot entry for the <code>efibootmgr --delete-bootnum</code> command is from the output of <code>efibootmgr</code> (with no arguments).
+</p><p><code>grub-install</code> creates the <code>/boot/grub</code> directory that needs to be removed manually. Though some users will want to keep it, should they want to install <i>grub</i> again.
+</p><p>After migrating to GPT/UEFI one may want to remove the <a href="https://wiki.archlinux.org/title/Partitioning#Master_Boot_Record_(bootstrap_code)" title="Partitioning">MBR boot code</a> <a href="https://wiki.archlinux.org/title/Dd#Remove_bootloader" title="Dd">using dd</a>:
+</p>
+<pre># dd if=/dev/zero of=/dev/sd<i>X</i> bs=440 count=1
+</pre>
+<h2><span class="mw-headline" id="Troubleshooting">Troubleshooting</span></h2>
+<h3><span class="mw-headline" id="Unsupported_file_systems">Unsupported file systems</span></h3>
+<p>In case that GRUB does not support the root file system, an alternative <code>/boot</code> partition with a supported file system must be created. In some cases, the development version of GRUB <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/grub-git/">grub-git</a></span><sup><small>AUR</small></sup> may have native support for the file system.
+</p><p>If GRUB is used with an unsupported file system it is not able to extract the <a href="https://wiki.archlinux.org/title/UUID" class="mw-redirect" title="UUID">UUID</a> of your drive so it uses classic non-persistent <code>/dev/<i>sdXx</i></code> names instead. In this case you might have to manually edit <code>/boot/grub/grub.cfg</code> and replace <code>root=/dev/<i>sdXx</i></code> with <code>root=UUID=<i>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX</i></code>. You can use the <code>blkid</code> command to get the UUID of your device, see <a href="https://wiki.archlinux.org/title/Persistent_block_device_naming" title="Persistent block device naming">Persistent block device naming</a>.
+</p><p>While GRUB supports <a href="https://wiki.archlinux.org/title/F2FS" title="F2FS">F2FS</a> since version 2.0.4, it cannot correctly read its boot files from an F2FS partition that was created with the <code>extra_attr</code> flag enabled.
+</p>
+<h3><span class="mw-headline" id="Enable_debug_messages">Enable debug messages</span></h3>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> This change is overwritten when <a href="#Generate_the_main_configuration_file">#Generate the main configuration file</a>.</div>
+<p>Add:
+</p>
+<pre>set pager=1
+set debug=all
+</pre>
+<p>to <code>grub.cfg</code>.
+</p>
+<h3><span class="mw-headline" id="msdos-style_error_message">msdos-style error message</span></h3>
+<pre>grub-setup: warn: This msdos-style partition label has no post-MBR gap; embedding will not be possible!
+grub-setup: warn: Embedding is not possible. GRUB can only be installed in this setup by using blocklists.
+            However, blocklists are UNRELIABLE and its use is discouraged.
+grub-setup: error: If you really want blocklists, use --force.
+</pre>
+<p>This error may occur when you try installing GRUB in a VMware container. Read more about it <a rel="nofollow" class="external text" href="https://bbs.archlinux.org/viewtopic.php?pid=581760#p581760">here</a>.
+ It happens when the first partition starts just after the MBR (block 
+63), without the usual space of 1 MiB (2048 blocks) before the first 
+partition. Read <a href="#Master_Boot_Record_(MBR)_specific_instructions">#Master Boot Record (MBR) specific instructions</a>
+</p>
+<h3><span class="mw-headline" id="UEFI">UEFI</span></h3>
+<h4><span class="mw-headline" id="Common_installation_errors">Common installation errors</span></h4>
+<ul><li>An error that may occur on some UEFI devices is <code>Could not prepare Boot variable: Read-only file system</code>. You have to remount <code>/sys/firmware/efi/efivars</code> with read-write enabled. <pre>mount -o remount,rw,nosuid,nodev,noexec --types efivarfs efivarfs /sys/firmware/efi/efivars</pre> See the <a href="https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Bootloader#Install" class="extiw" title="gentoo:Handbook:AMD64/Installation/Bootloader">Gentoo Wiki</a> on installing the <a href="https://wiki.archlinux.org/title/Boot_loader" class="mw-redirect" title="Boot loader">boot loader</a>.</li>
+<li>If you have a problem running <i>grub-install</i> with <i>sysfs</i> or <i>procfs</i> and it says you must run <code>modprobe efivarfs</code> try <a href="https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface#Mount_efivarfs" title="Unified Extensible Firmware Interface">mounting the efivarfs</a> with the command above.</li>
+<li>Without <code>--target</code> or <code>--directory</code> option, grub-install cannot determine for which firmware to install. In such cases <code>grub-install</code> will print <code>source_dir does not exist. Please specify --target or --directory</code>.</li>
+<li>If after running grub-install you get <code>error: <i>esp</i> doesn't look like an EFI partition</code>, then the partition is most likely not <a href="https://wiki.archlinux.org/title/FAT32" class="mw-redirect" title="FAT32">FAT32</a> formatted.</li></ul>
+<h4><span class="mw-headline" id="Create_a_GRUB_entry_in_the_firmware_boot_manager">Create a GRUB entry in the firmware boot manager</span></h4>
+<p><code>grub-install</code> automatically tries to create a menu entry in the boot manager. If it does not, then see <a href="https://wiki.archlinux.org/title/UEFI#efibootmgr" class="mw-redirect" title="UEFI">UEFI#efibootmgr</a> for instructions to use <code>efibootmgr</code> to create a menu entry. However, the problem is likely to be that you have not booted your CD/USB in UEFI mode, as in <a href="https://wiki.archlinux.org/title/UEFI#Create_UEFI_bootable_USB_from_ISO" class="mw-redirect" title="UEFI">UEFI#Create UEFI bootable USB from ISO</a>.
+</p><p>As another example of creating a GRUB entry in the firmware boot manager, consider <code>efibootmgr -c</code>. This assumes that <code>/dev/sda1</code> is the EFI System Partition, and is mounted at <code>/boot/efi</code>. Which are the default behavior of <code>efibootmgr</code>.
+  It creates a new boot option, called "Linux", and puts it at the top 
+of the boot order list. Options may be passed to modify the default 
+behavior. The default OS Loader is <code>\EFI\arch\grub.efi</code>.
+</p>
+<h4><span class="mw-headline" id="Drop_to_rescue_shell">Drop to rescue shell</span></h4>
+<p>If GRUB loads but drops into the rescue shell with no errors, it can be due to one of these two reasons:
+</p>
+<ul><li>It may be because of a missing or misplaced <code>grub.cfg</code>. This will happen if GRUB UEFI was installed with <code>--boot-directory</code> and <code>grub.cfg</code> is missing,</li>
+<li>It also happens if the boot partition, which is hardcoded into the <code>grubx64.efi</code> file, has changed.</li></ul>
+<h4><span class="mw-headline" id="GRUB_UEFI_not_loaded">GRUB UEFI not loaded</span></h4>
+<p>An example of a working UEFI:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;"># efibootmgr -u</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">BootCurrent: 0000
+Timeout: 3 seconds
+BootOrder: 0000,0001,0002
+Boot0000* GRUB HD(1,800,32000,23532fbb-1bfa-4e46-851a-b494bfe9478c)File(\EFI\GRUB\grubx64.efi)
+Boot0001* Shell HD(1,800,32000,23532fbb-1bfa-4e46-851a-b494bfe9478c)File(\shellx64.efi)
+Boot0002* Festplatte BIOS(2,0,00)P0: SAMSUNG HD204UI
+</pre>
+<p>If the screen only goes black for a second and the next boot option is tried afterwards, according to <a rel="nofollow" class="external text" href="https://bbs.archlinux.org/viewtopic.php?pid=981560#p981560">this post</a>,
+ moving GRUB to the partition root can help. The boot option has to be 
+deleted and recreated afterwards. The entry for GRUB should look like 
+this then:
+</p>
+<pre>Boot0000* GRUB HD(1,800,32000,23532fbb-1bfa-4e46-851a-b494bfe9478c)File(\grubx64.efi)
+</pre>
+<h4><span id="Default.2Ffallback_boot_path"></span><span class="mw-headline" id="Default/fallback_boot_path">Default/fallback boot path</span></h4>
+<p>Some UEFI firmwares require a bootable file at a known location 
+before they will show UEFI NVRAM boot entries. If this is the case, <code>grub-install</code> will claim <code>efibootmgr</code>
+ has added an entry to boot GRUB, however the entry will not show up in 
+the VisualBIOS boot order selector. The solution is to install GRUB at 
+the default/fallback boot path:
+</p>
+<pre># grub-install --target=x86_64-efi --efi-directory=<i>esp</i> <b>--removable</b>
+</pre>
+<p>Alternatively you can move an already installed GRUB EFI executable to the default/fallback path:
+</p>
+<pre># mv <i>esp</i>/EFI/grub <i>esp</i>/EFI/BOOT
+# mv <i>esp</i>/EFI/BOOT/grubx64.efi <i>esp</i>/EFI/BOOT/BOOTX64.EFI
+</pre>
+<h3><span class="mw-headline" id="Invalid_signature">Invalid signature</span></h3>
+<p>If trying to boot Windows results in an "invalid signature" error, 
+e.g. after reconfiguring partitions or adding additional hard drives, 
+(re)move GRUB's device configuration and let it reconfigure:
+</p>
+<pre># mv /boot/grub/device.map /boot/grub/device.map-old
+# grub-mkconfig -o /boot/grub/grub.cfg
+</pre>
+<p><code>grub-mkconfig</code> should now mention all found boot options, including Windows. If it works, remove <code>/boot/grub/device.map-old</code>.
+</p>
+<h3><span class="mw-headline" id="Boot_freezes">Boot freezes</span></h3>
+<p>If booting gets stuck without any error message after GRUB loading the kernel and the initial ramdisk, try removing the <code>add_efi_memmap</code> kernel parameter.
+</p>
+<h3><span class="mw-headline" id="Arch_not_found_from_other_OS">Arch not found from other OS</span></h3>
+<p>Some have reported that other distributions may have trouble finding Arch Linux automatically with <code>os-prober</code>. If this problem arises, it has been reported that detection can be improved with the presence of <code>/etc/lsb-release</code>. This file and updating tool is available with the package <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=lsb-release">lsb-release</a></span>.
+</p>
+<h3><span class="mw-headline" id="Warning_when_installing_in_chroot">Warning when installing in chroot</span></h3>
+<p>When installing GRUB on a LVM system in a chroot environment (e.g. during system installation), you may receive warnings like
+</p>
+<pre>/run/lvm/lvmetad.socket: connect failed: No such file or directory
+</pre>
+<p>or
+</p>
+<pre>WARNING: failed to connect to lvmetad: No such file or directory. Falling back to internal scanning.
+</pre>
+<p>This is because <code>/run</code> is not available inside the chroot.
+ These warnings will not prevent the system from booting, provided that 
+everything has been done correctly, so you may continue with the 
+installation.
+</p>
+<h3><span class="mw-headline" id="GRUB_loads_slowly">GRUB loads slowly</span></h3>
+<p>GRUB can take a long time to load when disk space is low. Check if you have sufficient free disk space on your <code>/boot</code> or <code>/</code> partition when you are having problems.
+</p>
+<h3><span class="mw-headline" id="error:_unknown_filesystem">error: unknown filesystem</span></h3>
+<p>GRUB may output <code>error: unknown filesystem</code> and refuse to boot for a few reasons. If you are certain that all <a href="https://wiki.archlinux.org/title/UUID" class="mw-redirect" title="UUID">UUIDs</a> are correct and all filesystems are valid and supported, it may be because your <a href="#GUID_Partition_Table_(GPT)_specific_instructions">BIOS Boot Partition</a> is located outside the first 2 TiB of the drive <a rel="nofollow" class="external autonumber" href="https://bbs.archlinux.org/viewtopic.php?id=195948">[1]</a>.
+ Use a partitioning tool of your choice to ensure this partition is 
+located fully within the first 2 TiB, then reinstall and reconfigure 
+GRUB.
+</p><p>This error might also be caused by an <a href="https://wiki.archlinux.org/title/Ext4" title="Ext4">ext4</a> filesystem having unsupported features set:
+</p>
+<ul><li><code>large_dir</code> - unsupported.</li>
+<li><code>metadata_csum_seed</code> - will be supported in GRUB 2.11 (<a rel="nofollow" class="external text" href="https://git.savannah.gnu.org/cgit/grub.git/commit/?id=7fd5feff97c4b1f446f8fcf6d37aca0c64e7c763">commit</a>).</li></ul>
+<div class="archwiki-template-box archwiki-template-box-warning"><strong>Warning:</strong> Make sure to check GRUB support for new <a href="https://wiki.archlinux.org/title/File_system" class="mw-redirect" title="File system">file system</a> features before you enable them on your <code>/boot</code> file system.</div>
+<h3><span class="mw-headline" id="grub-reboot_not_resetting">grub-reboot not resetting</span></h3>
+<p>GRUB seems to be unable to write to root Btrfs partitions <a rel="nofollow" class="external autonumber" href="https://bbs.archlinux.org/viewtopic.php?id=166131">[2]</a>.
+ If you use grub-reboot to boot into another entry it will therefore be 
+unable to update its on-disk environment. Either run grub-reboot from 
+the other entry (for example when switching between various 
+distributions) or consider a different file system. You can reset a 
+"sticky" entry by executing <code>grub-editenv create</code> and setting <code>GRUB_DEFAULT=0</code> in your <code>/etc/default/grub</code> (do not forget <code>grub-mkconfig -o /boot/grub/grub.cfg</code>).
+</p>
+<h3><span class="mw-headline" id="Old_Btrfs_prevents_installation">Old Btrfs prevents installation</span></h3>
+<p>If a drive is formatted with Btrfs without creating a partition table
+ (eg. /dev/sdx), then later has partition table written to, there are 
+parts of the BTRFS format that persist. Most utilities and OS's do not 
+see this, but GRUB will refuse to install, even with --force
+</p>
+<pre># grub-install: warning: Attempting to install GRUB to a disk with multiple partition labels. This is not supported yet..
+# grub-install: error: filesystem `btrfs' does not support blocklists.
+</pre>
+<p>You can zero the drive, but the easy solution that leaves your data alone is to erase the Btrfs superblock with <code>wipefs -o 0x10040 /dev/sdx</code>
+</p>
+<h3><span id="Windows_8.2F10_not_found"></span><span class="mw-headline" id="Windows_8/10_not_found">Windows 8/10 not found</span></h3>
+<p>A setting in Windows 8/10 called "Hiberboot", "Hybrid Boot" or "Fast 
+Boot" can prevent the Windows partition from being mounted, so <code>grub-mkconfig</code> will not find a Windows install. Disabling Hiberboot in Windows will allow it to be added to the GRUB menu.
+</p>
+<h3><span class="mw-headline" id="VirtualBox_EFI_mode">VirtualBox EFI mode</span></h3>
+<p>For VirtualBox &lt; 6.1, install GRUB to the <a href="#Default/fallback_boot_path">default/fallback boot path</a>.
+</p><p>See also <a href="https://wiki.archlinux.org/title/VirtualBox#Installation_in_EFI_mode_on_VirtualBox_%3C_6.1" title="VirtualBox">VirtualBox#Installation in EFI mode on VirtualBox &lt; 6.1</a>.
+</p>
+<h3><span id="GRUB_rescue_and_encrypted_.2Fboot"></span><span class="mw-headline" id="GRUB_rescue_and_encrypted_/boot">GRUB rescue and encrypted /boot</span></h3>
+<p>When using an <a href="#Encrypted_/boot">encrypted /boot</a>, and you fail to input a correct password, you will be dropped in grub-rescue prompt.
+</p><p>This grub-rescue prompt has limited capabilities. Use the following commands to complete the boot:
+</p>
+<pre>grub rescue&gt; cryptomount &lt;partition&gt;
+grub rescue&gt; insmod normal
+grub rescue&gt; normal
+</pre>
+<p>See <a rel="nofollow" class="external text" href="https://blog.stigok.com/2017/12/29/decrypt-and-mount-luks-disk-from-grub-rescue-mode.html">this blog post</a> for a better description.
+</p>
+<h3><span class="mw-headline" id="GRUB_is_installed_but_the_menu_is_not_shown_at_boot">GRUB is installed but the menu is not shown at boot</span></h3>
+<p>Check <code>/etc/default/grub</code> if <code>GRUB_TIMEOUT</code> is set to <code>0</code>,
+ in which case set it to a positive number: it sets the number of 
+seconds before the default GRUB entry is loaded. Also check if <code>GRUB_TIMEOUT_STYLE</code> is set to <code>hidden</code> and set it to <code>menu</code>, so that the menu will be shown by default. Then <a href="#Generate_the_main_configuration_file">regenerate the main configuration file</a> and reboot to check if it worked.
+</p><p>If it does not work, there may be incompatibility problems with the graphical terminal. Set <code>GRUB_TERMINAL_OUTPUT</code> to <code>console</code> in <code>/etc/default/grub</code> to disable the GRUB graphical terminal.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li><a href="https://en.wikipedia.org/wiki/GNU_GRUB" class="extiw" title="wikipedia:GNU GRUB">Wikipedia:GNU GRUB</a></li>
+<li><a rel="nofollow" class="external text" href="https://www.gnu.org/software/grub/manual/grub.html">Official GRUB Manual</a></li>
+<li><a rel="nofollow" class="external text" href="https://help.ubuntu.com/community/Grub2">Ubuntu wiki page for GRUB</a></li>
+<li><a rel="nofollow" class="external text" href="https://help.ubuntu.com/community/UEFIBooting">GRUB wiki page describing steps to compile for UEFI systems</a></li>
+<li><a href="https://en.wikipedia.org/wiki/BIOS_Boot_partition" class="extiw" title="wikipedia:BIOS Boot partition">Wikipedia:BIOS Boot partition</a></li>
+<li><a rel="nofollow" class="external text" href="https://web.archive.org/web/20160424042444/http://members.iinet.net/~herman546/p20/GRUB2%20Configuration%20File%20Commands.html#Editing_etcgrub.d05_debian_theme">How to configure GRUB</a></li>
+<li><a rel="nofollow" class="external text" href="https://archived.forum.manjaro.org/t/detecting-efi-files-and-booting-them-from-grub/38083">Detecting efi files and booting them from grub</a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20230323150628
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.187 seconds
+Real time usage: 0.231 seconds
+Preprocessor visited node count: 3122/1000000
+Post‐expand include size: 38704/2097152 bytes
+Template argument size: 24974/2097152 bytes
+Highest expansion depth: 9/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 33/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   97.728      1 -total
+ 21.64%   21.146    301 Template:Ic
+ 20.11%   19.657     21 Template:Note
+  7.16%    6.998      1 Template:Related_articles_start
+  5.18%    5.065     16 Template:Bc
+  4.88%    4.765      8 Template:Related
+  4.84%    4.728     10 Template:Tip
+  4.48%    4.381      8 Template:Warning
+  4.26%    4.159      1 Template:Out_of_date
+  4.19%    4.094      5 Template:META_Message
+-->
+
+<!-- Saved in parser cache with key archwiki:pcache:idhash:5984-0!canonical and timestamp 20230323150628 and revision id 771950.
+ -->
+</div>
+<div class="printfooter" data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=GRUB&amp;oldid=771950">https://wiki.archlinux.org/index.php?title=GRUB&amp;oldid=771950</a>"</div></div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.archlinux.org/title/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="https://wiki.archlinux.org/title/Category:Boot_loaders" title="Category:Boot loaders">Boot loaders</a></li><li><a href="https://wiki.archlinux.org/title/Category:GNU" title="Category:GNU">GNU</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="https://wiki.archlinux.org/title/Category:Pages_or_sections_flagged_with_Template:Out_of_date" title="Category:Pages or sections flagged with Template:Out of date">Pages or sections flagged with Template:Out of date</a></li><li><a href="https://wiki.archlinux.org/title/Category:Pages_or_sections_flagged_with_Template:Merge" title="Category:Pages or sections flagged with Template:Merge">Pages or sections flagged with Template:Merge</a></li><li><a href="https://wiki.archlinux.org/title/Category:Pages_or_sections_flagged_with_Template:Expansion" title="Category:Pages or sections flagged with Template:Expansion">Pages or sections flagged with Template:Expansion</a></li></ul></div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo">
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> This page was last edited on 11 March 2023, at 07:26.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="https://wiki.archlinux.org/title/ArchWiki:About">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="https://wiki.archlinux.org/title/ArchWiki:General_disclaimer">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.187","walltime":"0.231","ppvisitednodes":{"value":3122,"limit":1000000},"postexpandincludesize":{"value":38704,"limit":2097152},"templateargumentsize":{"value":24974,"limit":2097152},"expansiondepth":{"value":9,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":33,"limit":5000000},"timingprofile":["100.00%   97.728      1 -total"," 21.64%   21.146    301 Template:Ic"," 20.11%   19.657     21 Template:Note","  7.16%    6.998      1 Template:Related_articles_start","  5.18%    5.065     16 Template:Bc","  4.88%    4.765      8 Template:Related","  4.84%    4.728     10 Template:Tip","  4.48%    4.381      8 Template:Warning","  4.26%    4.159      1 Template:Out_of_date","  4.19%    4.094      5 Template:META_Message"]},"cachereport":{"timestamp":"20230323150628","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":368});});</script>
+
+
+<div id="p-namespaces" style="display: none;"><ul></ul></div></body><!-- Cached/compressed 20230323150628 --></html>

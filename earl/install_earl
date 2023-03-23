@@ -1,0 +1,163 @@
+This document shows how to install Arch Linux on the "earl" laptop, intended to direct the telescope mount control board, get data from the telescope, and possibly process the data.
+Updated 2023-03-23
+
+
+Many of the instructions on this file are specific to the "earl" laptop.
+earl specs:
+Series: hp G60
+Serial: 2CE9404PS6
+Product: VY794UA#ABA
+Warranty: 1y1y0y
+Model: G60-549DX
+
+
+For the most part, follow the official Arch install guide.
+https://wiki.archlinux.org/title/Installation_guide
+
+
+1.6 Verify the boot mode:
+Expect ls to return an error, because this laptop is old and only boots with BIOS.
+
+
+1.7 Connect to the internet:
+The school has some kind of fancy wifi encryption that I don't know how to work with. Don't install at school, or if you must, use ethernet instead. You CAN connect to wifi after the system is setup; NetworkManager is great. But don't try to do it until after the system is installed.
+Otherwise, earl has quirks about wifi; try running the following commands first:
+    ip address
+    iwctl
+        device list
+        adapter phy0 set-property Powered on
+        exit
+
+    rfkill
+    rfkill unblock wlan
+    rfkill
+    iwctl
+        station wlan0 scan
+        station wlan0 get-networks
+        exit
+
+    iwctl --passphrase <passphrase> station wlan0 connect Fios-17J7G
+    ip address
+    ping google.com
+
+
+1.9 Partition the disks
+I recommend fdisk as disk editor and lsblk to see what you have on the system.
+/dev/sda is the hard drive and /dev/sdb is probably your install medium/flash drive.
+Run commands:
+    fdisk /dev/sda
+    d # delete; just mash d<enter> until all partitions are deleted
+    n # new; press enter for default values. It's fine to just use the whole disk in one partition.
+    w # write.
+And you're done. If you're feeling perky, add a swap partition as the installation guide suggests.
+Also note:
+    t # set type; you shouldn't need this but if you do you should use 83 Linux.
+    # Note that if 83 is not just "linux", or the suggested values from L are NOT in hexadecimal,
+    # then you may have a GPT partition table and you will need to convert it to MBR somehow to BIOS boot.
+
+
+2.2 Install essential packages:
+Before anything else, run commands:
+pacman -Sy
+pacman -S archlinux-keyring
+This is not necessary if you have the most recent install disk image.
+I have installed:
+    base linux linux-firmware
+    networkmanager # wifi
+    vim # the best bad text editor
+    man # help page for commands; from man-db
+    grub # boot loader; you may have to reinstall linux after installing grub; see boot loader section below
+    rtl-sdr # for reading from the radio.
+    python3 # python interpreter; runs control software
+I may install:
+    xorg xorg-xinit jwm # window manager; necessary if you want a web browser
+    firefox or chromium # web browser
+    nginx # web server for if we do the 
+
+
+3.3 Time zone:
+For penn state harrisburg, run command:
+    ln -sf /usr/share/zoneinfo/US/Eastern /etc/localtime
+
+
+3.4 Localization
+Run command:
+    vim /etc/locale.gen
+vim is hard; don't bother learning it just for this. Memorize these commands, and it is mostly normal:
+To search:
+    press / to enter "search" mode.
+        Type the thing you are searching for (probably "en_US"), and press <enter> to go there.
+To edit:
+    press i to enter "insert" mode.
+        Use arrow keys, type as normal here.
+To save and quit:
+    Mash escape key to enter "normal" mode,
+        then type :wq<enter> to save and quit
+            where : is the colon; press shift + ;
+        or type :q!<enter> to quit without saving.
+If you get stuck, mash escape a bunch which should take you to "normal" mode.
+    If escape mashing doesnt work, and you have these two black bars across the screen and a history of your commands and the text [Command Line], then you are in command history mode.
+    To exit, you must select a blank line and press <enter>.
+    You got there by pressing q: in normal mode.
+If it says "recording" at the bottom left of the screen, that means you are recording a macro. It doesn't really matter, but press q in normal mode to stop.
+
+
+3.7 Root password
+I recommend "password". If you set up ssh or other remote access, you can change it later, but accessibility by your team is your first priority. 
+
+
+3.8 Boot loader: huge hassle. Two problems: the BIOS and GRUB itself.
+BIOS:
+earl forgets it can boot from hard drive if the boot order is wrong. If you change bios settings, and earl suddenly says "no bootable medium found insert disk and press any key", then fiddle with the boot order/enable and disable random things in BIOS until it starts booting again. I think you need the internal drive to be after the CD drive, but I'm not sure.
+Beware of false positives: earl will always boot properly after you save and exit BIOS--I assume it rescans everything after save and exit. That is, it can boot even if you haven't really fixed the problem. To confirm the problem is fixed, reboot it; if it boots properly WITHOUT you entering Bios, then you know it's good.
+
+GRUB:
+I used GRUB. https://wiki.archlinux.org/title/GRUB
+BUT! You need to do grub-install target=i386-pc /dev/sda as it says on the wiki and then REINSTALL the linux package (pacman -S linux and possibly also base linux-firmware?) so the kernel gets added to the /boot directory (and you may need to reinstall grub/run grub-install multiple times for the /boot directory to be created)
+
+Then make sure you run grub-mkconfig -o /boot/grub/grub.cfg. If you get an error "that directory does not exist", you need to reinstall linux and grub a few more times. The reinstalls are be done when you have a /boot directory with vmlinuz-linux in it. Always run grub-mkconfig last; it should report something like "Found linux image: /boot/vmlinuz-linux".
+
+You may also need to set a bootable flag on the first partition of the disk you install GRUB on (I doubt it) or leave a large space before the first partition on the disk (Probably not?). Also just fiddle around with reinstalling things repeatedly; seems to help.
+
+
+
+Networking after install:
+    systemctl enable NetworkManager # enable means start on boot
+    systemctl start NetworkManager # enable doesn't start it now tho
+    nmcli device wifi list
+
+For normal connections
+    nmcli device wifi connect SSID password <password>
+    ping google.com
+
+For school connection, you need to copy some files from this repository e.g. on a flash drive.
+    cp earl/DigiCert_Global_Root_CA.der /root/.ssh/
+    cp earl/psu.nmconnection /etc/NetworkManager/system-connections/
+
+If you do not have those files, you can try setting up Gnome desktop,
+then connect to the school's wifi using their setup,
+then copy and paste the config file.
+
+Then edit the config file to add your username and password.
+Fix the following lines:
+identity=abc1234@psu.edu
+password=yourpasswordhere
+    vim /etc/NetworkManager/system-connections/psu.nmconnection
+
+    systemctl restart NetworkManager
+    nmcli connection up psu
+    ping google.com
+
+If the wifi still doesn't work, the root certificate may have been changed by PSU IT at some point.
+Try connecting to psuwirelesssetup on a normal computer, which will provide you an up to date certificate.
+
+
+I have not finished installing xorg; this section of documentation is incomplete.
+xorg:
+    pacman -S xterm xorg-apps firefox (includes ttf-fonts)
+    startx
+vim /etc/X11/xinit/xinitrc
+add jwm to last line
+
+
+

@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html class="client-js vector-animations-ready" dir="ltr" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Installation guide - ArchWiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"862223524cecbded2de8faf3","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Installation_guide","wgTitle":"Installation guide","wgCurRevisionId":771995,"wgRevisionId":771995,"wgArticleId":14801,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Installation process"],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Installation_guide","wgRelevantArticleId":14801,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":["sysop"],"wgRestrictionMove":["sysop"],
+"wgVector2022PreviewPages":[]};RLSTATE={"skins.vector.user.styles":"ready","site.styles":"ready","user.styles":"ready","skins.vector.user":"ready","user":"ready","user.options":"loading","mediawiki.ui.button":"ready","skins.vector.styles":"ready","skins.vector.icons":"ready","mediawiki.ui.icon":"ready","zzz.ext.archLinux.styles":"ready","ext.DarkMode.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","mediawiki.toc","skins.vector.js","skins.vector.es6","ext.DarkMode"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});});});</script>
+<link rel="stylesheet" href="Installation%20guide%20-%20ArchWiki_files/load_002.css">
+<script async="" src="Installation%20guide%20-%20ArchWiki_files/load.php"></script>
+<style>
+.oo-ui-icon-bright,.mw-ui-icon-bright:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=bright&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E bright %3C/title%3E%3Cpath d=%22M17.07 7.07V2.93h-4.14L10 0 7.07 2.93H2.93v4.14L0 10l2.93 2.93v4.14h4.14L10 20l2.93-2.93h4.14v-4.14L20 10zM10 16a6 6 0 1 1 6-6 6 6 0 0 1-6 6z%22/%3E%3Ccircle cx=%2210%22 cy=%2210%22 r=%224.5%22/%3E%3C/svg%3E")}.oo-ui-image-invert.oo-ui-icon-bright,.mw-ui-icon-bright-invert:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=bright&variant=invert&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E bright %3C/title%3E%3Cg fill=%22%23fff%22%3E%3Cpath d=%22M17.07 7.07V2.93h-4.14L10 0 7.07 2.93H2.93v4.14L0 10l2.93 2.93v4.14h4.14L10 20l2.93-2.93h4.14v-4.14L20 10zM10 16a6 6 0 1 1 6-6 6 6 0 0 1-6 6z%22/%3E%3Ccircle cx=%2210%22 cy=%2210%22 r=%224.5%22/%3E%3C/g%3E%3C/svg%3E")}.oo-ui-image-progressive.oo-ui-icon-bright,.mw-ui-icon-bright-progressive:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=bright&variant=progressive&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E bright %3C/title%3E%3Cg fill=%22%2336c%22%3E%3Cpath d=%22M17.07 7.07V2.93h-4.14L10 0 7.07 2.93H2.93v4.14L0 10l2.93 2.93v4.14h4.14L10 20l2.93-2.93h4.14v-4.14L20 10zM10 16a6 6 0 1 1 6-6 6 6 0 0 1-6 6z%22/%3E%3Ccircle cx=%2210%22 cy=%2210%22 r=%224.5%22/%3E%3C/g%3E%3C/svg%3E")}.oo-ui-icon-halfBright,.mw-ui-icon-halfBright:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=halfBright&format=rasterized&lang=en&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E half bright %3C/title%3E%3Cpath d=%22M17 6.67V3h-4.2L9.87.07 6.94 3H3v3.67L.07 9.6 3 12.53V17h3.94l2.93 2.93L12.8 17H17v-4.47l2.93-2.93zm-7 8.93v-12a6.21 6.21 0 0 1 6 6 6.21 6.21 0 0 1-6 6z%22/%3E%3C/svg%3E")}.oo-ui-image-invert.oo-ui-icon-halfBright,.mw-ui-icon-halfBright-invert:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=halfBright&variant=invert&format=rasterized&lang=en&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E half bright %3C/title%3E%3Cg fill=%22%23fff%22%3E%3Cpath d=%22M17 6.67V3h-4.2L9.87.07 6.94 3H3v3.67L.07 9.6 3 12.53V17h3.94l2.93 2.93L12.8 17H17v-4.47l2.93-2.93zm-7 8.93v-12a6.21 6.21 0 0 1 6 6 6.21 6.21 0 0 1-6 6z%22/%3E%3C/g%3E%3C/svg%3E")}.oo-ui-image-progressive.oo-ui-icon-halfBright,.mw-ui-icon-halfBright-progressive:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=halfBright&variant=progressive&format=rasterized&lang=en&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E half bright %3C/title%3E%3Cg fill=%22%2336c%22%3E%3Cpath d=%22M17 6.67V3h-4.2L9.87.07 6.94 3H3v3.67L.07 9.6 3 12.53V17h3.94l2.93 2.93L12.8 17H17v-4.47l2.93-2.93zm-7 8.93v-12a6.21 6.21 0 0 1 6 6 6.21 6.21 0 0 1-6 6z%22/%3E%3C/g%3E%3C/svg%3E")}.oo-ui-icon-notBright,.mw-ui-icon-notBright:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=notBright&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E not bright %3C/title%3E%3Ccircle cx=%229.85%22 cy=%2210%22 r=%229%22/%3E%3C/svg%3E")}.oo-ui-image-invert.oo-ui-icon-notBright,.mw-ui-icon-notBright-invert:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=notBright&variant=invert&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E not bright %3C/title%3E%3Cg fill=%22%23fff%22%3E%3Ccircle cx=%229.85%22 cy=%2210%22 r=%229%22/%3E%3C/g%3E%3C/svg%3E")}.oo-ui-image-progressive.oo-ui-icon-notBright,.mw-ui-icon-notBright-progressive:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=notBright&variant=progressive&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E not bright %3C/title%3E%3Cg fill=%22%2336c%22%3E%3Ccircle cx=%229.85%22 cy=%2210%22 r=%229%22/%3E%3C/g%3E%3C/svg%3E")}.oo-ui-icon-eye,.mw-ui-icon-eye:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=eye&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E eye %3C/title%3E%3Cpath d=%22M10 14.5a4.5 4.5 0 1 1 4.5-4.5 4.5 4.5 0 0 1-4.5 4.5zM10 3C3 3 0 10 0 10s3 7 10 7 10-7 10-7-3-7-10-7z%22/%3E%3Ccircle cx=%2210%22 cy=%2210%22 r=%222.5%22/%3E%3C/svg%3E")}.oo-ui-image-invert.oo-ui-icon-eye,.mw-ui-icon-eye-invert:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=eye&variant=invert&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E eye %3C/title%3E%3Cg fill=%22%23fff%22%3E%3Cpath d=%22M10 14.5a4.5 4.5 0 1 1 4.5-4.5 4.5 4.5 0 0 1-4.5 4.5zM10 3C3 3 0 10 0 10s3 7 10 7 10-7 10-7-3-7-10-7z%22/%3E%3Ccircle cx=%2210%22 cy=%2210%22 r=%222.5%22/%3E%3C/g%3E%3C/svg%3E")}.oo-ui-image-progressive.oo-ui-icon-eye,.mw-ui-icon-eye-progressive:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=eye&variant=progressive&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E eye %3C/title%3E%3Cg fill=%22%2336c%22%3E%3Cpath d=%22M10 14.5a4.5 4.5 0 1 1 4.5-4.5 4.5 4.5 0 0 1-4.5 4.5zM10 3C3 3 0 10 0 10s3 7 10 7 10-7 10-7-3-7-10-7z%22/%3E%3Ccircle cx=%2210%22 cy=%2210%22 r=%222.5%22/%3E%3C/g%3E%3C/svg%3E")}.oo-ui-icon-eyeClosed,.mw-ui-icon-eyeClosed:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=eyeClosed&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E eye closed %3C/title%3E%3Cpath d=%22M12.49 9.94A2.5 2.5 0 0 0 10 7.5z%22/%3E%3Cpath d=%22M8.2 5.9a4.38 4.38 0 0 1 1.8-.4 4.5 4.5 0 0 1 4.5 4.5 4.34 4.34 0 0 1-.29 1.55L17 14.14A14 14 0 0 0 20 10s-3-7-10-7a9.63 9.63 0 0 0-4 .85zM2 2 1 3l2.55 2.4A13.89 13.89 0 0 0 0 10s3 7 10 7a9.67 9.67 0 0 0 4.64-1.16L18 19l1-1zm8 12.5A4.5 4.5 0 0 1 5.5 10a4.45 4.45 0 0 1 .6-2.2l1.53 1.44a2.47 2.47 0 0 0-.13.76 2.49 2.49 0 0 0 3.41 2.32l1.54 1.45a4.47 4.47 0 0 1-2.45.73z%22/%3E%3C/svg%3E")}.oo-ui-image-invert.oo-ui-icon-eyeClosed,.mw-ui-icon-eyeClosed-invert:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=eyeClosed&variant=invert&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E eye closed %3C/title%3E%3Cg fill=%22%23fff%22%3E%3Cpath d=%22M12.49 9.94A2.5 2.5 0 0 0 10 7.5z%22/%3E%3Cpath d=%22M8.2 5.9a4.38 4.38 0 0 1 1.8-.4 4.5 4.5 0 0 1 4.5 4.5 4.34 4.34 0 0 1-.29 1.55L17 14.14A14 14 0 0 0 20 10s-3-7-10-7a9.63 9.63 0 0 0-4 .85zM2 2 1 3l2.55 2.4A13.89 13.89 0 0 0 0 10s3 7 10 7a9.67 9.67 0 0 0 4.64-1.16L18 19l1-1zm8 12.5A4.5 4.5 0 0 1 5.5 10a4.45 4.45 0 0 1 .6-2.2l1.53 1.44a2.47 2.47 0 0 0-.13.76 2.49 2.49 0 0 0 3.41 2.32l1.54 1.45a4.47 4.47 0 0 1-2.45.73z%22/%3E%3C/g%3E%3C/svg%3E")}.oo-ui-image-progressive.oo-ui-icon-eyeClosed,.mw-ui-icon-eyeClosed-progressive:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=eyeClosed&variant=progressive&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E eye closed %3C/title%3E%3Cg fill=%22%2336c%22%3E%3Cpath d=%22M12.49 9.94A2.5 2.5 0 0 0 10 7.5z%22/%3E%3Cpath d=%22M8.2 5.9a4.38 4.38 0 0 1 1.8-.4 4.5 4.5 0 0 1 4.5 4.5 4.34 4.34 0 0 1-.29 1.55L17 14.14A14 14 0 0 0 20 10s-3-7-10-7a9.63 9.63 0 0 0-4 .85zM2 2 1 3l2.55 2.4A13.89 13.89 0 0 0 0 10s3 7 10 7a9.67 9.67 0 0 0 4.64-1.16L18 19l1-1zm8 12.5A4.5 4.5 0 0 1 5.5 10a4.45 4.45 0 0 1 .6-2.2l1.53 1.44a2.47 2.47 0 0 0-.13.76 2.49 2.49 0 0 0 3.41 2.32l1.54 1.45a4.47 4.47 0 0 1-2.45.73z%22/%3E%3C/g%3E%3C/svg%3E")}.oo-ui-icon-moon,.mw-ui-icon-moon:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=moon&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E moon %3C/title%3E%3Cpath d=%22M17.39 15.14A7.33 7.33 0 0 1 11.75 1.6c.23-.11.56-.23.79-.34a8.19 8.19 0 0 0-5.41.45 9 9 0 1 0 7 16.58 8.42 8.42 0 0 0 4.29-3.84 5.3 5.3 0 0 1-1.03.69z%22/%3E%3C/svg%3E")}.oo-ui-image-invert.oo-ui-icon-moon,.mw-ui-icon-moon-invert:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=moon&variant=invert&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E moon %3C/title%3E%3Cg fill=%22%23fff%22%3E%3Cpath d=%22M17.39 15.14A7.33 7.33 0 0 1 11.75 1.6c.23-.11.56-.23.79-.34a8.19 8.19 0 0 0-5.41.45 9 9 0 1 0 7 16.58 8.42 8.42 0 0 0 4.29-3.84 5.3 5.3 0 0 1-1.03.69z%22/%3E%3C/g%3E%3C/svg%3E")}.oo-ui-image-progressive.oo-ui-icon-moon,.mw-ui-icon-moon-progressive:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=moon&variant=progressive&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E moon %3C/title%3E%3Cg fill=%22%2336c%22%3E%3Cpath d=%22M17.39 15.14A7.33 7.33 0 0 1 11.75 1.6c.23-.11.56-.23.79-.34a8.19 8.19 0 0 0-5.41.45 9 9 0 1 0 7 16.58 8.42 8.42 0 0 0 4.29-3.84 5.3 5.3 0 0 1-1.03.69z%22/%3E%3C/g%3E%3C/svg%3E")}.oo-ui-icon-largerText,.mw-ui-icon-largerText:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=largerText&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E larger text %3C/title%3E%3Cpath d=%22M17.66 18h-2a.85.85 0 0 1-.56-.17 1.11 1.11 0 0 1-.32-.43l-1.33-3.53h-6.9L5.22 17.4a1.06 1.06 0 0 1-.31.41.83.83 0 0 1-.56.19h-2L8.68 2h2.63zm-4.92-6-2.2-5.84A16.17 16.17 0 0 1 10 4.43q-.12.52-.27 1t-.27.77L7.26 12z%22/%3E%3C/svg%3E")}.oo-ui-image-invert.oo-ui-icon-largerText,.mw-ui-icon-largerText-invert:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=largerText&variant=invert&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E larger text %3C/title%3E%3Cg fill=%22%23fff%22%3E%3Cpath d=%22M17.66 18h-2a.85.85 0 0 1-.56-.17 1.11 1.11 0 0 1-.32-.43l-1.33-3.53h-6.9L5.22 17.4a1.06 1.06 0 0 1-.31.41.83.83 0 0 1-.56.19h-2L8.68 2h2.63zm-4.92-6-2.2-5.84A16.17 16.17 0 0 1 10 4.43q-.12.52-.27 1t-.27.77L7.26 12z%22/%3E%3C/g%3E%3C/svg%3E")}.oo-ui-image-progressive.oo-ui-icon-largerText,.mw-ui-icon-largerText-progressive:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=largerText&variant=progressive&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E larger text %3C/title%3E%3Cg fill=%22%2336c%22%3E%3Cpath d=%22M17.66 18h-2a.85.85 0 0 1-.56-.17 1.11 1.11 0 0 1-.32-.43l-1.33-3.53h-6.9L5.22 17.4a1.06 1.06 0 0 1-.31.41.83.83 0 0 1-.56.19h-2L8.68 2h2.63zm-4.92-6-2.2-5.84A16.17 16.17 0 0 1 10 4.43q-.12.52-.27 1t-.27.77L7.26 12z%22/%3E%3C/g%3E%3C/svg%3E")}.oo-ui-icon-smallerText,.mw-ui-icon-smallerText:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=smallerText&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E smaller text %3C/title%3E%3Cpath d=%22M15.75 18h-1.51a.64.64 0 0 1-.42-.13.83.83 0 0 1-.24-.32l-1-2.65H7.41l-1 2.65a.79.79 0 0 1-.23.31.62.62 0 0 1-.42.14H4.25L9 6h2zm-3.69-4.5L10.4 9.12a12.13 12.13 0 0 1-.4-1.3q-.09.39-.2.72t-.2.58L7.95 13.5z%22/%3E%3C/svg%3E")}.oo-ui-image-invert.oo-ui-icon-smallerText,.mw-ui-icon-smallerText-invert:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=smallerText&variant=invert&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E smaller text %3C/title%3E%3Cg fill=%22%23fff%22%3E%3Cpath d=%22M15.75 18h-1.51a.64.64 0 0 1-.42-.13.83.83 0 0 1-.24-.32l-1-2.65H7.41l-1 2.65a.79.79 0 0 1-.23.31.62.62 0 0 1-.42.14H4.25L9 6h2zm-3.69-4.5L10.4 9.12a12.13 12.13 0 0 1-.4-1.3q-.09.39-.2.72t-.2.58L7.95 13.5z%22/%3E%3C/g%3E%3C/svg%3E")}.oo-ui-image-progressive.oo-ui-icon-smallerText,.mw-ui-icon-smallerText-progressive:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=smallerText&variant=progressive&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E smaller text %3C/title%3E%3Cg fill=%22%2336c%22%3E%3Cpath d=%22M15.75 18h-1.51a.64.64 0 0 1-.42-.13.83.83 0 0 1-.24-.32l-1-2.65H7.41l-1 2.65a.79.79 0 0 1-.23.31.62.62 0 0 1-.42.14H4.25L9 6h2zm-3.69-4.5L10.4 9.12a12.13 12.13 0 0 1-.4-1.3q-.09.39-.2.72t-.2.58L7.95 13.5z%22/%3E%3C/g%3E%3C/svg%3E")}.oo-ui-icon-visionSimulator,.mw-ui-icon-visionSimulator:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=visionSimulator&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E vision simulator %3C/title%3E%3Cpath d=%22M17.5 11.83a.79.79 0 0 1-.83.83h-3.34A1.49 1.49 0 0 1 11.67 11V9.33a.79.79 0 0 1 .83-.83h4.17a.79.79 0 0 1 .83.83zM8.33 11a1.49 1.49 0 0 1-1.67 1.67H3.33a.79.79 0 0 1-.83-.83V9.33a.79.79 0 0 1 .83-.83H7.5a.79.79 0 0 1 .83.83zM0 6.2v6.28a.2.2 0 0 0 .2.2h1.72a1.61 1.61 0 0 0 1.42.83h3.33A2.46 2.46 0 0 0 9.13 12a.19.19 0 0 1 .18-.13h1.39a.19.19 0 0 1 .18.13 2.46 2.46 0 0 0 2.46 1.53h3.33c.55 0 1.1 0 1.37-.7a.2.2 0 0 1 .18-.13h1.58a.2.2 0 0 0 .2-.2V6.2a.2.2 0 0 0-.2-.2H.2a.2.2 0 0 0-.2.2z%22/%3E%3C/svg%3E")}.oo-ui-image-invert.oo-ui-icon-visionSimulator,.mw-ui-icon-visionSimulator-invert:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=visionSimulator&variant=invert&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E vision simulator %3C/title%3E%3Cg fill=%22%23fff%22%3E%3Cpath d=%22M17.5 11.83a.79.79 0 0 1-.83.83h-3.34A1.49 1.49 0 0 1 11.67 11V9.33a.79.79 0 0 1 .83-.83h4.17a.79.79 0 0 1 .83.83zM8.33 11a1.49 1.49 0 0 1-1.67 1.67H3.33a.79.79 0 0 1-.83-.83V9.33a.79.79 0 0 1 .83-.83H7.5a.79.79 0 0 1 .83.83zM0 6.2v6.28a.2.2 0 0 0 .2.2h1.72a1.61 1.61 0 0 0 1.42.83h3.33A2.46 2.46 0 0 0 9.13 12a.19.19 0 0 1 .18-.13h1.39a.19.19 0 0 1 .18.13 2.46 2.46 0 0 0 2.46 1.53h3.33c.55 0 1.1 0 1.37-.7a.2.2 0 0 1 .18-.13h1.58a.2.2 0 0 0 .2-.2V6.2a.2.2 0 0 0-.2-.2H.2a.2.2 0 0 0-.2.2z%22/%3E%3C/g%3E%3C/svg%3E")}.oo-ui-image-progressive.oo-ui-icon-visionSimulator,.mw-ui-icon-visionSimulator-progressive:before{background-image:url(/load.php?modules=oojs-ui.styles.icons-accessibility&image=visionSimulator&variant=progressive&format=rasterized&skin=vector-2022&version=1wpi9);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3E vision simulator %3C/title%3E%3Cg fill=%22%2336c%22%3E%3Cpath d=%22M17.5 11.83a.79.79 0 0 1-.83.83h-3.34A1.49 1.49 0 0 1 11.67 11V9.33a.79.79 0 0 1 .83-.83h4.17a.79.79 0 0 1 .83.83zM8.33 11a1.49 1.49 0 0 1-1.67 1.67H3.33a.79.79 0 0 1-.83-.83V9.33a.79.79 0 0 1 .83-.83H7.5a.79.79 0 0 1 .83.83zM0 6.2v6.28a.2.2 0 0 0 .2.2h1.72a1.61 1.61 0 0 0 1.42.83h3.33A2.46 2.46 0 0 0 9.13 12a.19.19 0 0 1 .18-.13h1.39a.19.19 0 0 1 .18.13 2.46 2.46 0 0 0 2.46 1.53h3.33c.55 0 1.1 0 1.37-.7a.2.2 0 0 1 .18-.13h1.58a.2.2 0 0 0 .2-.2V6.2a.2.2 0 0 0-.2-.2H.2a.2.2 0 0 0-.2.2z%22/%3E%3C/g%3E%3C/svg%3E")}
+.mw-ui-icon-wikimedia-speechBubbleAdd:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=speechBubbleAdd&format=rasterized&lang=en&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=speechBubbleAdd&format=original&lang=en&skin=vector-2022&version=10ele)}.mw-ui-icon-wikimedia-speechBubbleAdd-progressive:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=speechBubbleAdd&variant=progressive&format=rasterized&lang=en&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=speechBubbleAdd&variant=progressive&format=original&lang=en&skin=vector-2022&version=10ele)}.mw-ui-icon-wikimedia-speechBubbles:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=speechBubbles&format=rasterized&lang=en&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=speechBubbles&format=original&lang=en&skin=vector-2022&version=10ele)}.mw-ui-icon-wikimedia-speechBubbles-progressive:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=speechBubbles&variant=progressive&format=rasterized&lang=en&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=speechBubbles&variant=progressive&format=original&lang=en&skin=vector-2022&version=10ele)}.mw-ui-icon-wikimedia-article:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=article&format=rasterized&lang=en&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=article&format=original&lang=en&skin=vector-2022&version=10ele)}.mw-ui-icon-wikimedia-article-progressive:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=article&variant=progressive&format=rasterized&lang=en&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=article&variant=progressive&format=original&lang=en&skin=vector-2022&version=10ele)}.mw-ui-icon-wikimedia-history:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=history&format=rasterized&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=history&format=original&skin=vector-2022&version=10ele)}.mw-ui-icon-wikimedia-history-progressive:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=history&variant=progressive&format=rasterized&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=history&variant=progressive&format=original&skin=vector-2022&version=10ele)}.mw-ui-icon-wikimedia-wikiText:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=wikiText&format=rasterized&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=wikiText&format=original&skin=vector-2022&version=10ele)}.mw-ui-icon-wikimedia-wikiText-progressive:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=wikiText&variant=progressive&format=rasterized&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=wikiText&variant=progressive&format=original&skin=vector-2022&version=10ele)}.mw-ui-icon-wikimedia-edit:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=edit&format=rasterized&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=edit&format=original&skin=vector-2022&version=10ele)}.mw-ui-icon-wikimedia-edit-progressive:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=edit&variant=progressive&format=rasterized&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=edit&variant=progressive&format=original&skin=vector-2022&version=10ele)}.mw-ui-icon-wikimedia-editLock:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=editLock&format=rasterized&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=editLock&format=original&skin=vector-2022&version=10ele)}.mw-ui-icon-wikimedia-editLock-progressive:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=editLock&variant=progressive&format=rasterized&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=editLock&variant=progressive&format=original&skin=vector-2022&version=10ele)}.mw-ui-icon-wikimedia-star:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=star&format=rasterized&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=star&format=original&skin=vector-2022&version=10ele)}.mw-ui-icon-wikimedia-star-progressive:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=star&variant=progressive&format=rasterized&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=star&variant=progressive&format=original&skin=vector-2022&version=10ele)}.mw-ui-icon-wikimedia-halfStar:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=halfStar&format=rasterized&lang=en&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=halfStar&format=original&lang=en&skin=vector-2022&version=10ele)}.mw-ui-icon-wikimedia-halfStar-progressive:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=halfStar&variant=progressive&format=rasterized&lang=en&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=halfStar&variant=progressive&format=original&lang=en&skin=vector-2022&version=10ele)}.mw-ui-icon-wikimedia-unStar:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=unStar&format=rasterized&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=unStar&format=original&skin=vector-2022&version=10ele)}.mw-ui-icon-wikimedia-unStar-progressive:before{background-image:url(/load.php?modules=skins.vector.icons.js&image=unStar&variant=progressive&format=rasterized&skin=vector-2022&version=10ele);background-image:linear-gradient(transparent,transparent),url(/load.php?modules=skins.vector.icons.js&image=unStar&variant=progressive&format=original&skin=vector-2022&version=10ele)}
+@media screen {
+	.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none;font-size:94%}}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="Installation%20guide%20-%20ArchWiki_files/load.css">
+<meta name="generator" content="MediaWiki 1.39.2">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="icon" href="https://wiki.archlinux.org/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.archlinux.org/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="license" href="https://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="https://wiki.archlinux.org/index.php?title=Special:RecentChanges&amp;feed=atom">
+</head>
+<body class="skin-vector skin-vector-search-vue mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Installation_guide rootpage-Installation_guide skin-vector-2022 action-view skin--responsive vector-feature-language-in-header-enabled vector-feature-language-in-main-page-header-disabled vector-feature-language-alert-in-sidebar-disabled vector-feature-sticky-header-disabled vector-feature-sticky-header-edit-disabled vector-feature-table-of-contents-disabled vector-feature-visual-enhancement-next-disabled uls-dialog-sticky-hide vector-toc-not-collapsed"><div id="archnavbar" class="noprint mw-no-invert">
+    <div id="archnavbarlogo">
+        <p><a id="logo" href="https://archlinux.org/"></a></p>
+    </div>
+    <div id="archnavbarmenu">
+        <ul id="archnavbarlist">
+                        <li id="anb-home"><a href="https://archlinux.org/">Home</a></li>            <li id="anb-packages"><a href="https://archlinux.org/packages/">Packages</a></li>            <li id="anb-forums"><a href="https://bbs.archlinux.org/">Forums</a></li>            <li id="anb-wiki" class="anb-selected"><a href="https://wiki.archlinux.org/">Wiki</a></li>            <li id="anb-bugs"><a href="https://bugs.archlinux.org/">Bugs</a></li>            <li id="anb-security"><a href="https://security.archlinux.org/">Security</a></li>            <li id="anb-aur"><a href="https://aur.archlinux.org/">AUR</a></li>            <li id="anb-download"><a href="https://archlinux.org/download/">Download</a></li>        </ul>
+    </div>
+</div>
+<div class="mw-page-container">
+	<span id="top-page"></span>
+	<a class="mw-jump-link" href="#content">Jump to content</a>
+	<div class="mw-page-container-inner">
+		<input type="checkbox" id="mw-sidebar-checkbox" class="mw-checkbox-hack-checkbox">
+		<header class="mw-header">
+			<div class="mw-header-aside">
+			<label id="mw-sidebar-button" class="mw-checkbox-hack-button mw-ui-icon mw-ui-button mw-ui-quiet mw-ui-icon-element" for="mw-sidebar-checkbox" role="button" aria-controls="mw-panel" data-event-name="ui.sidebar" tabindex="0" title="Main menu" aria-expanded="false">
+				<span>Toggle sidebar</span>
+			</label>
+			
+<a href="https://wiki.archlinux.org/title/Main_page" class="mw-logo">
+	<span class="mw-logo-container">
+		<strong class="mw-logo-wordmark">ArchWiki</strong>
+	</span>
+</a>
+
+			</div>
+			<div class="mw-header-content">
+			
+<div id="p-search" role="search" class="vector-search-box-vue  vector-search-box-collapses  vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+	<a href="https://wiki.archlinux.org/title/Special:Search" title="Search ArchWiki [Alt+Shift+f]" accesskey="f" class="mw-ui-button mw-ui-quiet mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-search search-toggle">
+		<span>Search</span>
+	</a>
+	
+	<div>
+		<form action="/index.php" id="searchform" class="vector-search-box-form">
+			<div id="simpleSearch" class="vector-search-box-inner" data-search-loc="header-moved">
+				<input class="vector-search-box-input" type="search" name="search" placeholder="Search ArchWiki" aria-label="Search ArchWiki" autocapitalize="sentences" title="Search ArchWiki [Alt+Shift+f]" accesskey="f" id="searchInput" autocomplete="off">
+				<input type="hidden" name="title" value="Special:Search">
+				<input id="mw-searchButton" class="searchButton mw-fallbackSearchButton" type="submit" name="fulltext" title="Search the pages for this text" value="Search">
+				<input id="searchButton" class="searchButton" type="submit" name="go" title="Go to a page with this exact name if it exists" value="Go">
+			</div>
+		</form>
+	</div>
+</div>
+
+			<nav class="vector-user-links" aria-label="Personal tools" role="navigation">
+	
+
+<div id="p-vector-user-menu-overflow" class="vector-menu mw-portlet mw-portlet-vector-user-menu-overflow vector-user-menu-overflow">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="pt-createaccount-2" class="user-links-collapsible-item mw-list-item"><a href="https://wiki.archlinux.org/index.php?title=Special:CreateAccount&amp;returnto=Installation+guide" title="You are encouraged to create an account and log in; however, it is not mandatory"><span>Create account</span></a></li></ul>
+		
+	</div>
+</div>
+
+	
+
+<div id="p-personal" class="vector-menu mw-portlet mw-portlet-personal vector-user-menu vector-user-menu-logged-out vector-menu-dropdown" title="More options">
+	<input type="checkbox" id="p-personal-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-personal" class="vector-menu-checkbox">
+	<label id="p-personal-label" for="p-personal-checkbox" class="vector-menu-heading mw-ui-button mw-ui-quiet mw-ui-icon mw-ui-icon-element mw-ui-icon-ellipsis mw-ui-icon-wikimedia-ellipsis">
+		<span class="vector-menu-heading-label">Personal tools</span>
+	</label>
+	<div class="vector-menu-content">
+		<div class="vector-user-menu-create-account"><a href="https://wiki.archlinux.org/index.php?title=Special:CreateAccount&amp;returnto=Installation+guide" class="vector-menu-content-item user-links-collapsible-item" title="You are encouraged to create an account and log in; however, it is not mandatory"><span class="mw-ui-icon mw-ui-icon-userAdd mw-ui-icon-wikimedia-userAdd"></span> <span>Create account</span></a></div>
+<div class="vector-user-menu-login"><a href="https://wiki.archlinux.org/index.php?title=Special:UserLogin&amp;returnto=Installation+guide" class="vector-menu-content-item vector-menu-content-item-login" title="You are encouraged to log in; however, it is not mandatory [Alt+Shift+o]" accesskey="o"><span class="mw-ui-icon mw-ui-icon-logIn mw-ui-icon-wikimedia-logIn"></span> <span>Log in</span></a></div>
+<div class="vector-user-menu-anon-editor">
+	<p>
+		Pages for logged out editors <a href="https://wiki.archlinux.org/title/ArchWiki:Contributing" aria-label="Learn more about editing"><span>learn more</span></a>
+	</p>
+</div>
+
+		<ul class="vector-menu-content-list"><li id="pt-darkmode" class="ext-darkmode-link mw-list-item"><a href="#"><span>Dark mode</span></a></li></ul>
+		
+	</div>
+</div>
+
+</nav>
+
+			</div>
+		</header>
+		<div class="vector-sidebar-container ">
+			<div id="mw-navigation">
+				
+
+<nav id="mw-panel" class="mw-sidebar" aria-label="Site" role="navigation">
+	
+
+<div id="p-navigation" class="vector-menu mw-portlet mw-portlet-navigation vector-menu-portal portal">
+	<div id="p-navigation-label" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">Navigation</span>
+	</div>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="n-mainpage-description" class="mw-list-item"><a href="https://wiki.archlinux.org/title/Main_page" title="Visit the main page [Alt+Shift+z]" accesskey="z"><span>Main page</span></a></li><li id="n-Table-of-contents" class="mw-list-item"><a href="https://wiki.archlinux.org/title/Table_of_contents"><span>Table of contents</span></a></li><li id="n-portal" class="mw-list-item"><a href="https://wiki.archlinux.org/title/Getting_involved" title="Various ways Archers can contribute to the community"><span>Getting involved</span></a></li><li id="n-currentevents" class="mw-list-item"><a href="https://wiki.archlinux.org/title/ArchWiki:News" title="The latest lowdown on the wiki"><span>Wiki news</span></a></li><li id="n-randompage" class="mw-list-item"><a href="https://wiki.archlinux.org/title/Special:Random" title="Load a random page [Alt+Shift+x]" accesskey="x"><span>Random page</span></a></li></ul>
+		
+	</div>
+</div>
+
+	
+	
+
+<div id="p-Interaction" class="vector-menu mw-portlet mw-portlet-Interaction vector-menu-portal portal">
+	<div id="p-Interaction-label" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">Interaction</span>
+	</div>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="n-help" class="mw-list-item"><a href="https://wiki.archlinux.org/title/Category:Help" title="Wiki navigation, reading, and editing help"><span>Help</span></a></li><li id="n-Contributing" class="mw-list-item"><a href="https://wiki.archlinux.org/title/ArchWiki:Contributing"><span>Contributing</span></a></li><li id="n-recentchanges" class="mw-list-item"><a href="https://wiki.archlinux.org/title/Special:RecentChanges" title="A list of recent changes in the wiki [Alt+Shift+r]" accesskey="r"><span>Recent changes</span></a></li><li id="n-Recent-talks" class="mw-list-item"><a href="https://wiki.archlinux.org/index.php?title=Special:RecentChanges&amp;namespace=all-discussions" rel="nofollow"><span>Recent talks</span></a></li><li id="n-newpages" class="mw-list-item"><a href="https://wiki.archlinux.org/title/Special:NewPages"><span>New pages</span></a></li><li id="n-Statistics" class="mw-list-item"><a href="https://wiki.archlinux.org/title/ArchWiki:Statistics"><span>Statistics</span></a></li><li id="n-Requests" class="mw-list-item"><a href="https://wiki.archlinux.org/title/ArchWiki_talk:Requests"><span>Requests</span></a></li></ul>
+		
+	</div>
+</div>
+
+
+<div id="p-tb" class="vector-menu mw-portlet mw-portlet-tb vector-menu-portal portal">
+	<div id="p-tb-label" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">Tools</span>
+	</div>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="t-whatlinkshere" class="mw-list-item"><a href="https://wiki.archlinux.org/title/Special:WhatLinksHere/Installation_guide" title="A list of all wiki pages that link here [Alt+Shift+j]" accesskey="j"><span>What links here</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="https://wiki.archlinux.org/title/Special:RecentChangesLinked/Installation_guide" rel="nofollow" title="Recent changes in pages linked from this page [Alt+Shift+k]" accesskey="k"><span>Related changes</span></a></li><li id="t-specialpages" class="mw-list-item"><a href="https://wiki.archlinux.org/title/Special:SpecialPages" title="A list of all special pages [Alt+Shift+q]" accesskey="q"><span>Special pages</span></a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="Printable version of this page [Alt+Shift+p]" accesskey="p"><span>Printable version</span></a></li><li id="t-permalink" class="mw-list-item"><a href="https://wiki.archlinux.org/index.php?title=Installation_guide&amp;oldid=771995" title="Permanent link to this revision of this page"><span>Permanent link</span></a></li><li id="t-info" class="mw-list-item"><a href="https://wiki.archlinux.org/index.php?title=Installation_guide&amp;action=info" title="More information about this page"><span>Page information</span></a></li></ul>
+		
+	</div>
+</div>
+
+	
+</nav>
+
+			</div>
+		</div>
+		<div class="vector-sitenotice-container">
+			<div id="siteNotice"></div>
+		</div>
+		<input type="checkbox" id="vector-toc-collapsed-checkbox" class="mw-checkbox-hack-checkbox">
+		<div class="mw-table-of-contents-container">
+			<div class="vector-sticky-toc-container mw-sticky-header-element">
+				<nav id="mw-panel-toc" class="sidebar-toc" role="navigation" aria-labelledby="sidebar-toc-label" data-event-name="ui.sidebar-toc">
+	<div id="sidebar-toc-label" class="sidebar-toc-header">
+		<p class="sidebar-toc-title">
+		Contents
+		<button class="vector-toc-uncollapse-button">move to sidebar</button>
+		<button class="vector-toc-collapse-button">hide</button>
+		</p>
+	</div>
+	<ul class="sidebar-toc-contents" id="mw-panel-toc-list">
+		<li id="toc-mw-content-text" class="sidebar-toc-list-item sidebar-toc-level-1 sidebar-toc-list-item-active">
+			<a href="#top-page" class="sidebar-toc-link">
+				<div class="sidebar-toc-text">Beginning</div>
+			</a>
+		</li>
+		<li id="toc-Pre-installation" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Pre-installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1</span>Pre-installation</div>
+			</a>
+			
+				<button aria-controls="toc-Pre-installation-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle" aria-expanded="false">
+					Toggle Pre-installation subsection
+				</button>
+			
+			<ul id="toc-Pre-installation-sublist" class="sidebar-toc-list">
+				<li id="toc-Acquire_an_installation_image" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Acquire_an_installation_image">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.1</span>Acquire an installation image</div>
+			</a>
+			
+			<ul id="toc-Acquire_an_installation_image-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Verify_signature" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Verify_signature">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.2</span>Verify signature</div>
+			</a>
+			
+			<ul id="toc-Verify_signature-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Prepare_an_installation_medium" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Prepare_an_installation_medium">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.3</span>Prepare an installation medium</div>
+			</a>
+			
+			<ul id="toc-Prepare_an_installation_medium-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Boot_the_live_environment" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Boot_the_live_environment">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.4</span>Boot the live environment</div>
+			</a>
+			
+			<ul id="toc-Boot_the_live_environment-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Set_the_console_keyboard_layout" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Set_the_console_keyboard_layout">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.5</span>Set the console keyboard layout</div>
+			</a>
+			
+			<ul id="toc-Set_the_console_keyboard_layout-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Verify_the_boot_mode" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Verify_the_boot_mode">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.6</span>Verify the boot mode</div>
+			</a>
+			
+			<ul id="toc-Verify_the_boot_mode-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Connect_to_the_internet" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Connect_to_the_internet">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.7</span>Connect to the internet</div>
+			</a>
+			
+			<ul id="toc-Connect_to_the_internet-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Update_the_system_clock" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Update_the_system_clock">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.8</span>Update the system clock</div>
+			</a>
+			
+			<ul id="toc-Update_the_system_clock-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Partition_the_disks" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Partition_the_disks">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.9</span>Partition the disks</div>
+			</a>
+			
+			<ul id="toc-Partition_the_disks-sublist" class="sidebar-toc-list">
+				<li id="toc-Example_layouts" class="sidebar-toc-list-item sidebar-toc-level-3">
+			<a class="sidebar-toc-link" href="#Example_layouts">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.9.1</span>Example layouts</div>
+			</a>
+			
+			<ul id="toc-Example_layouts-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Format_the_partitions" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Format_the_partitions">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.10</span>Format the partitions</div>
+			</a>
+			
+			<ul id="toc-Format_the_partitions-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Mount_the_file_systems" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Mount_the_file_systems">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">1.11</span>Mount the file systems</div>
+			</a>
+			
+			<ul id="toc-Mount_the_file_systems-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Installation" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2</span>Installation</div>
+			</a>
+			
+				<button aria-controls="toc-Installation-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle" aria-expanded="false">
+					Toggle Installation subsection
+				</button>
+			
+			<ul id="toc-Installation-sublist" class="sidebar-toc-list">
+				<li id="toc-Select_the_mirrors" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Select_the_mirrors">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.1</span>Select the mirrors</div>
+			</a>
+			
+			<ul id="toc-Select_the_mirrors-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Install_essential_packages" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Install_essential_packages">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">2.2</span>Install essential packages</div>
+			</a>
+			
+			<ul id="toc-Install_essential_packages-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Configure_the_system" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Configure_the_system">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3</span>Configure the system</div>
+			</a>
+			
+				<button aria-controls="toc-Configure_the_system-sublist" class="mw-ui-icon mw-ui-icon-wikimedia-expand mw-ui-icon-small sidebar-toc-toggle" aria-expanded="false">
+					Toggle Configure the system subsection
+				</button>
+			
+			<ul id="toc-Configure_the_system-sublist" class="sidebar-toc-list">
+				<li id="toc-Fstab" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Fstab">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.1</span>Fstab</div>
+			</a>
+			
+			<ul id="toc-Fstab-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Chroot" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Chroot">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.2</span>Chroot</div>
+			</a>
+			
+			<ul id="toc-Chroot-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Time_zone" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Time_zone">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.3</span>Time zone</div>
+			</a>
+			
+			<ul id="toc-Time_zone-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Localization" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Localization">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.4</span>Localization</div>
+			</a>
+			
+			<ul id="toc-Localization-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Network_configuration" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Network_configuration">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.5</span>Network configuration</div>
+			</a>
+			
+			<ul id="toc-Network_configuration-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Initramfs" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Initramfs">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.6</span>Initramfs</div>
+			</a>
+			
+			<ul id="toc-Initramfs-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Root_password" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Root_password">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.7</span>Root password</div>
+			</a>
+			
+			<ul id="toc-Root_password-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Boot_loader" class="sidebar-toc-list-item sidebar-toc-level-2">
+			<a class="sidebar-toc-link" href="#Boot_loader">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">3.8</span>Boot loader</div>
+			</a>
+			
+			<ul id="toc-Boot_loader-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+		</li>
+		<li id="toc-Reboot" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Reboot">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">4</span>Reboot</div>
+			</a>
+			
+			<ul id="toc-Reboot-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+		<li id="toc-Post-installation" class="sidebar-toc-list-item sidebar-toc-level-1">
+			<a class="sidebar-toc-link" href="#Post-installation">
+				<div class="sidebar-toc-text">
+				<span class="sidebar-toc-numb">5</span>Post-installation</div>
+			</a>
+			
+			<ul id="toc-Post-installation-sublist" class="sidebar-toc-list">
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+			</div>
+		</div>
+		<div class="mw-content-container">
+			<main id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				<header class="mw-body-header">
+				            
+            
+            <div id="p-lang-btn" class="vector-menu mw-portlet-empty vector-menu-dropdown">
+            	<input type="checkbox" id="p-lang-btn-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-lang-btn" class="vector-menu-checkbox  mw-interlanguage-selector " aria-label="Go to an article in another language. Available in 21 languages">
+            	<label id="p-lang-btn-label" for="p-lang-btn-checkbox" class="vector-menu-heading mw-ui-progressive mw-portlet-lang-heading-21 mw-ui-button mw-ui-quiet">
+            		<span class="mw-ui-icon mw-ui-icon-language-progressive mw-ui-icon-wikimedia-language-progressive"></span><span class="vector-menu-heading-label">21 languages</span>
+            	</label>
+            	<div class="vector-menu-content">
+            		
+            		<ul class="vector-menu-content-list"><li class="interlanguage-link interwiki-bg mw-list-item"><a href="https://wiki.archlinux.org/title/Installation_guide_(%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D1%81%D0%BA%D0%B8)" title="Installation guide – български" hreflang="bg" class="interlanguage-link-target" lang="bg"><span>Български</span></a></li><li class="interlanguage-link interwiki-ca mw-list-item"><a href="https://wiki.archlinux.org/title/Installation_guide_(Catal%C3%A0)" title="Installation guide – català" hreflang="ca" class="interlanguage-link-target" lang="ca"><span>Català</span></a></li><li class="interlanguage-link interwiki-cs mw-list-item"><a href="https://wiki.archlinux.org/title/Installation_guide_(%C4%8Ce%C5%A1tina)" title="Installation guide – čeština" hreflang="cs" class="interlanguage-link-target" lang="cs"><span>Čeština</span></a></li><li class="interlanguage-link interwiki-de mw-list-item"><a href="https://wiki.archlinux.de/title/Arch_Install_Scripts" title="Arch Install Scripts – Deutsch" hreflang="de" class="interlanguage-link-target" lang="de"><span>Deutsch</span></a></li><li class="interlanguage-link interwiki-el mw-list-item"><a href="https://wiki.archlinux.org/title/Installation_guide_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC)" title="Installation guide – Ελληνικά" hreflang="el" class="interlanguage-link-target" lang="el"><span>Ελληνικά</span></a></li><li class="interlanguage-link interwiki-es mw-list-item"><a href="https://wiki.archlinux.org/title/Installation_guide_(Espa%C3%B1ol)" title="Installation guide – español" hreflang="es" class="interlanguage-link-target" lang="es"><span>Español</span></a></li><li class="interlanguage-link interwiki-fa mw-list-item"><a href="https://wiki.archusers.ir/index.php/%D8%B1%D8%A7%D9%87%D9%86%D9%85%D8%A7%DB%8C_%D8%AA%D8%A7%D8%B2%D9%87%E2%80%8C%DA%A9%D8%A7%D8%B1%D8%A7%D9%86" title="راهنمای تازه‌کاران – فارسی" hreflang="fa" class="interlanguage-link-target" lang="fa"><span>فارسی</span></a></li><li class="interlanguage-link interwiki-fi mw-list-item"><a href="https://wiki.archlinux.org/title/Installation_guide_(Suomi)" title="Installation guide – suomi" hreflang="fi" class="interlanguage-link-target" lang="fi"><span>Suomi</span></a></li><li class="interlanguage-link interwiki-fr mw-list-item"><a href="https://wiki.archlinux.org/title/Installation_guide_(Fran%C3%A7ais)" title="Installation guide – français" hreflang="fr" class="interlanguage-link-target" lang="fr"><span>Français</span></a></li><li class="interlanguage-link interwiki-it mw-list-item"><a href="https://wiki.archlinux.org/title/Installation_guide_(Italiano)" title="Installation guide – italiano" hreflang="it" class="interlanguage-link-target" lang="it"><span>Italiano</span></a></li><li class="interlanguage-link interwiki-ja mw-list-item"><a href="https://wiki.archlinux.jp/index.php/%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%82%AC%E3%82%A4%E3%83%89" title="インストールガイド – 日本語" hreflang="ja" class="interlanguage-link-target" lang="ja"><span>日本語</span></a></li><li class="interlanguage-link interwiki-ko mw-list-item"><a href="https://wiki.archlinux.org/title/Installation_guide_(%ED%95%9C%EA%B5%AD%EC%96%B4)" title="Installation guide – 한국어" hreflang="ko" class="interlanguage-link-target" lang="ko"><span>한국어</span></a></li><li class="interlanguage-link interwiki-pl mw-list-item"><a href="https://wiki.archlinux.org/title/Installation_guide_(Polski)" title="Installation guide – polski" hreflang="pl" class="interlanguage-link-target" lang="pl"><span>Polski</span></a></li><li class="interlanguage-link interwiki-pt mw-list-item"><a href="https://wiki.archlinux.org/title/Installation_guide_(Portugu%C3%AAs)" title="Installation guide – português" hreflang="pt" class="interlanguage-link-target" lang="pt"><span>Português</span></a></li><li class="interlanguage-link interwiki-ru mw-list-item"><a href="https://wiki.archlinux.org/title/Installation_guide_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)" title="Installation guide – русский" hreflang="ru" class="interlanguage-link-target" lang="ru"><span>Русский</span></a></li><li class="interlanguage-link interwiki-sv mw-list-item"><a href="https://wiki.archlinux.org/title/Installation_guide_(Svenska)" title="Installation guide – svenska" hreflang="sv" class="interlanguage-link-target" lang="sv"><span>Svenska</span></a></li><li class="interlanguage-link interwiki-th mw-list-item"><a href="https://wiki.archlinux.org/title/Installation_guide_(%E0%B9%84%E0%B8%97%E0%B8%A2)" title="Installation guide – ไทย" hreflang="th" class="interlanguage-link-target" lang="th"><span>ไทย</span></a></li><li class="interlanguage-link interwiki-tr mw-list-item"><a href="https://wiki.archlinux.org/title/Installation_guide_(T%C3%BCrk%C3%A7e)" title="Installation guide – Türkçe" hreflang="tr" class="interlanguage-link-target" lang="tr"><span>Türkçe</span></a></li><li class="interlanguage-link interwiki-uk mw-list-item"><a href="https://wiki.archlinux.org/title/Installation_guide_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0)" title="Installation guide – українська" hreflang="uk" class="interlanguage-link-target" lang="uk"><span>Українська</span></a></li><li class="interlanguage-link interwiki-zh-hans mw-list-item"><a href="https://wiki.archlinuxcn.org/wiki/Installation_guide" title="Installation guide – 中文（简体）" hreflang="zh-Hans" class="interlanguage-link-target" lang="zh-Hans"><span>中文（简体）</span></a></li><li class="interlanguage-link interwiki-zh-hant mw-list-item"><a href="https://wiki.archlinux.org/title/Installation_guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87)" title="Installation guide – 中文（繁體）" hreflang="zh-Hant" class="interlanguage-link-target" lang="zh-Hant"><span>中文（繁體）</span></a></li></ul>
+            		
+            	</div>
+            </div>
+
+				
+					<label id="vector-toc-collapsed-button" class="mw-ui-button mw-ui-quiet mw-ui-icon mw-ui-icon-element mw-ui-icon-wikimedia-listBullet mw-checkbox-hack-button" for="vector-toc-collapsed-checkbox" role="button" aria-controls="toc-toggle-list" data-event-name="vector.toc-toggle-list" tabindex="0" title="Table of Contents" aria-expanded="false">
+						Toggle the table of contents
+					</label>
+				    <h1 id="firstHeading" class="firstHeading mw-first-heading"><span class="mw-page-title-main">Installation guide</span></h1>
+				</header>
+				<nav class="vector-article-toolbar" aria-label="Tools" role="navigation">
+					<div class="mw-article-toolbar-container">
+						<div id="left-navigation">
+							
+
+<div id="p-associated-pages" class="vector-menu mw-portlet mw-portlet-associated-pages vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="ca-nstab-main" class="selected mw-list-item"><a href="https://wiki.archlinux.org/title/Installation_guide" title="View the content page [Alt+Shift+c]" accesskey="c"><span>Page</span></a></li><li id="ca-talk" class="mw-list-item"><a href="https://wiki.archlinux.org/title/Talk:Installation_guide" rel="discussion" title="Discussion about the content page [Alt+Shift+t]" accesskey="t"><span>Discussion</span></a></li></ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-variants" class="vector-menu mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-label="Change language variant">
+	<label id="p-variants-label" for="p-variants-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</div>
+
+						</div>
+						<div id="right-navigation" class="vector-collapsible ">
+							
+
+<div id="p-views" class="vector-menu mw-portlet mw-portlet-views vector-menu-tabs">
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="ca-view" class="selected mw-list-item"><a href="https://wiki.archlinux.org/title/Installation_guide"><span>Read</span></a></li><li id="ca-viewsource" class="mw-list-item"><a href="https://wiki.archlinux.org/index.php?title=Installation_guide&amp;action=edit" title="This page is protected.
+You can view its source [Alt+Shift+e]" accesskey="e"><span>View source</span></a></li><li id="ca-history" class="mw-list-item"><a href="https://wiki.archlinux.org/index.php?title=Installation_guide&amp;action=history" title="Past revisions of this page [Alt+Shift+h]" accesskey="h"><span>View history</span></a></li></ul>
+		
+	</div>
+</div>
+
+							
+
+<div id="p-cactions" class="vector-menu mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-has-collapsible-items" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox">
+	<label id="p-cactions-label" for="p-cactions-checkbox" class="vector-menu-heading ">
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="ca-more-view" class="selected vector-more-collapsible-item mw-list-item"><a href="https://wiki.archlinux.org/title/Installation_guide"><span>Read</span></a></li><li id="ca-more-viewsource" class="vector-more-collapsible-item mw-list-item"><a href="https://wiki.archlinux.org/index.php?title=Installation_guide&amp;action=edit"><span>View source</span></a></li><li id="ca-more-history" class="vector-more-collapsible-item mw-list-item"><a href="https://wiki.archlinux.org/index.php?title=Installation_guide&amp;action=history"><span>View history</span></a></li></ul>
+		
+	</div>
+</div>
+
+						</div>
+					</div>
+				</nav>
+				<div id="bodyContent" class="vector-body" data-mw-ve-target-container="">
+					<div class="mw-body-subheader">
+					        <div class="mw-indicators">
+        </div>
+
+					    <div id="siteSub" class="noprint">From ArchWiki</div>
+					</div>
+					
+					
+					
+					<div id="mw-content-text" class="mw-body-content mw-content-ltr" dir="ltr" lang="en"><div class="mw-parser-output"><p>This document is a guide for installing <a href="https://wiki.archlinux.org/title/Arch_Linux" title="Arch Linux">Arch Linux</a>
+ using the live system booted from an installation medium made from an 
+official installation image. The installation medium provides 
+accessibility features which are described on the page <a href="https://wiki.archlinux.org/title/Install_Arch_Linux_with_accessibility_options" title="Install Arch Linux with accessibility options">Install Arch Linux with accessibility options</a>. For alternative means of installation, see <a href="https://wiki.archlinux.org/title/Category:Installation_process" title="Category:Installation process">Category:Installation process</a>.
+</p><p>Before installing, it would be advised to view the <a href="https://wiki.archlinux.org/title/FAQ" class="mw-redirect" title="FAQ">FAQ</a>. For conventions used in this document, see <a href="https://wiki.archlinux.org/title/Help:Reading" title="Help:Reading">Help:Reading</a>. In particular, code examples may contain placeholders (formatted in <code><i>italics</i></code>) that must be replaced manually.
+</p><p>This guide is kept concise and you are advised to follow the 
+instructions in the presented order per section. For more detailed 
+instructions, see the respective <a href="https://wiki.archlinux.org/title/ArchWiki" class="mw-redirect" title="ArchWiki">ArchWiki</a> articles or the various programs' <a href="https://wiki.archlinux.org/title/Man_page" title="Man page">man pages</a>, both linked from this guide. For interactive help, the <a href="https://wiki.archlinux.org/title/IRC_channel" class="mw-redirect" title="IRC channel">IRC channel</a> and the <a rel="nofollow" class="external text" href="https://bbs.archlinux.org/">forums</a> are also available.
+</p><p>Arch Linux should run on any <a href="https://en.wikipedia.org/wiki/X86-64" class="extiw" title="wikipedia:X86-64">x86_64</a>-compatible machine with a minimum of 512 MiB RAM, though more memory is needed to boot the live system for installation.<a rel="nofollow" class="external autonumber" href="https://lists.archlinux.org/archives/list/arch-releng@lists.archlinux.org/message/D5HSGOFTPGYI6IZUEB3ZNAX4D3F3ID37/">[1]</a>
+ A basic installation should take less than 2 GiB of disk space. As the 
+installation process needs to retrieve packages from a remote 
+repository, this guide assumes a working internet connection is 
+available.
+</p>
+<mw:tocplace></mw:tocplace>
+<h2><span class="mw-headline" id="Pre-installation">Pre-installation</span></h2>
+<h3><span class="mw-headline" id="Acquire_an_installation_image">Acquire an installation image</span></h3>
+<p>Visit the <a rel="nofollow" class="external text" href="https://archlinux.org/download/">Download</a> page and, depending on how you want to boot, acquire the ISO file or a netboot image, and the respective <a href="https://wiki.archlinux.org/title/GnuPG" title="GnuPG">GnuPG</a> signature.
+</p>
+<h3><span class="mw-headline" id="Verify_signature">Verify signature</span></h3>
+<p>It is recommended to verify the image signature before use, especially when downloading from an <i>HTTP mirror</i>, where downloads are generally prone to be intercepted to <a rel="nofollow" class="external text" href="https://www2.cs.arizona.edu/stork/packagemanagersecurity/attacks-on-package-managers.html">serve malicious images</a>. 
+</p><p>On a system with <a href="https://wiki.archlinux.org/title/GnuPG" title="GnuPG">GnuPG</a> installed, do this by downloading the <i>ISO PGP signature</i> (<a rel="nofollow" class="external text" href="https://archlinux.org/download/#checksums">under Checksums in the page Download</a>) to the ISO directory, and <a href="https://wiki.archlinux.org/title/GnuPG#Verify_a_signature" title="GnuPG">verifying</a> it with: 
+</p>
+<pre>$ gpg --keyserver-options auto-key-retrieve --verify archlinux-<i>version</i>-x86_64.iso.sig
+</pre>
+<p>Alternatively, from an existing Arch Linux installation run:
+</p>
+<pre>$ pacman-key -v archlinux-<i>version</i>-x86_64.iso.sig
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> 
+<ul><li>The signature itself could be manipulated if it is downloaded from a mirror site, instead of from <a rel="nofollow" class="external text" href="https://archlinux.org/download/">archlinux.org</a>
+ as above. In this case, ensure that the public key, which is used to 
+decode the signature, is signed by another, trustworthy key. The <code>gpg</code> command will output the fingerprint of the public key.</li>
+<li>Another method to verify the authenticity of the signature is to 
+ensure that the public key's fingerprint is identical to the key 
+fingerprint of the <a rel="nofollow" class="external text" href="https://archlinux.org/people/developers/">Arch Linux developer</a> who signed the ISO-file. See <a href="https://en.wikipedia.org/wiki/Public-key_cryptography" class="extiw" title="wikipedia:Public-key cryptography">Wikipedia:Public-key cryptography</a> for more information on the public-key process to authenticate keys.</li></ul>
+</div>
+<h3><span class="mw-headline" id="Prepare_an_installation_medium">Prepare an installation medium</span></h3>
+<p>The installation image can be supplied to the target machine via a <a href="https://wiki.archlinux.org/title/USB_flash_installation_medium" title="USB flash installation medium">USB flash drive</a>, an <a href="https://wiki.archlinux.org/title/Optical_disc_drive#Burning" title="Optical disc drive">optical disc</a> or a network with <a href="https://wiki.archlinux.org/title/PXE" class="mw-redirect" title="PXE">PXE</a>: follow the appropriate article to prepare yourself an installation medium from the chosen image.
+</p>
+<h3><span class="mw-headline" id="Boot_the_live_environment">Boot the live environment</span></h3>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> Arch Linux installation images do not support Secure Boot. You will need to <a href="https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot#Disabling_Secure_Boot" title="Unified Extensible Firmware Interface/Secure Boot">disable Secure Boot</a> to boot the installation medium. If desired, <a href="https://wiki.archlinux.org/title/Secure_Boot" class="mw-redirect" title="Secure Boot">Secure Boot</a> can be set up after completing the installation.</div>
+<ol><li>Point the current boot device to the one which has the Arch 
+Linux installation medium. Typically it is achieved by pressing a key 
+during the <a href="https://en.wikipedia.org/wiki/Power-on_self_test" class="extiw" title="wikipedia:Power-on self test">POST</a> phase, as indicated on the splash screen. Refer to your motherboard's manual for details.</li>
+<li>When the installation medium's boot loader menu appears, select <i>Arch Linux install medium</i> and press <code>Enter</code> to enter the installation environment. <div class="archwiki-template-box archwiki-template-box-tip"><strong>Tip:</strong> The installation image uses <a href="https://wiki.archlinux.org/title/GRUB" title="GRUB">GRUB</a> for UEFI and <a href="https://wiki.archlinux.org/title/Syslinux" title="Syslinux">syslinux</a> for BIOS booting. See <a rel="nofollow" class="external text" href="https://gitlab.archlinux.org/archlinux/mkinitcpio/mkinitcpio-archiso/blob/master/docs/README.bootparams">README.bootparams</a> for a list of <a href="https://wiki.archlinux.org/title/Kernel_parameters#Configuration" title="Kernel parameters">boot parameters</a>.</div></li>
+<li>You will be logged in on the first <a href="https://en.wikipedia.org/wiki/Virtual_console" class="extiw" title="wikipedia:Virtual console">virtual console</a> as the root user, and presented with a <a href="https://wiki.archlinux.org/title/Zsh" title="Zsh">Zsh</a> shell prompt.</li></ol>
+<p>To switch to a different console—for example, to view this guide with <a rel="nofollow" class="external text" href="https://lynx.invisible-island.net/lynx_help/Lynx_users_guide.html">Lynx</a> alongside the installation—use the <code>Alt+<i>arrow</i></code> <a href="https://wiki.archlinux.org/title/Keyboard_shortcuts" title="Keyboard shortcuts">shortcut</a>. To <a href="https://wiki.archlinux.org/title/Textedit" class="mw-redirect" title="Textedit">edit</a> configuration files, <span class="plainlinks archwiki-template-man" title="$ man 1 mcedit"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/mcedit.1">mcedit(1)</a></span>, <a href="https://wiki.archlinux.org/title/Nano#Usage" title="Nano">nano</a> and <a href="https://wiki.archlinux.org/title/Vim#Usage" title="Vim">vim</a> are available. See <a rel="nofollow" class="external text" href="https://geo.mirror.pkgbuild.com/iso/latest/arch/pkglist.x86_64.txt">pkglist.x86_64.txt</a> for a list of the packages included in the installation medium.
+</p>
+<h3><span class="mw-headline" id="Set_the_console_keyboard_layout">Set the console keyboard layout</span></h3>
+<p>The default <a href="https://wiki.archlinux.org/title/Console_keymap" class="mw-redirect" title="Console keymap">console keymap</a> is <a href="https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg" class="extiw" title="wikipedia:File:KB United States-NoAltGr.svg">US</a>. Available layouts can be listed with:
+</p>
+<pre># ls /usr/share/kbd/keymaps/**/*.map.gz
+</pre>
+<p>To set the keyboard layout, pass a corresponding file name to <span class="plainlinks archwiki-template-man" title="$ man 1 loadkeys"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/loadkeys.1">loadkeys(1)</a></span>, omitting path and file extension. For example, to set a <a href="https://en.wikipedia.org/wiki/File:KB_Germany.svg" class="extiw" title="wikipedia:File:KB Germany.svg">German</a> keyboard layout:
+</p>
+<pre># loadkeys de-latin1
+</pre>
+<p><a href="https://wiki.archlinux.org/title/Console_fonts" class="mw-redirect" title="Console fonts">Console fonts</a> are located in <code>/usr/share/kbd/consolefonts/</code> and can likewise be set with <span class="plainlinks archwiki-template-man" title="$ man 8 setfont"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/setfont.8">setfont(8)</a></span>.
+</p>
+<h3><span class="mw-headline" id="Verify_the_boot_mode">Verify the boot mode</span></h3>
+<p>To verify the boot mode, list the <a href="https://wiki.archlinux.org/title/Efivars" class="mw-redirect" title="Efivars">efivars</a> directory:
+</p>
+<pre># ls /sys/firmware/efi/efivars
+</pre>
+<p>If the command shows the directory without error, then the system is 
+booted in UEFI mode. If the directory does not exist, the system may be 
+booted in <a href="https://en.wikipedia.org/wiki/BIOS" class="extiw" title="wikipedia:BIOS">BIOS</a> (or <a href="https://en.wikipedia.org/wiki/Compatibility_Support_Module" class="extiw" title="wikipedia:Compatibility Support Module">CSM</a>) mode. If the system did not boot in the mode you desired, refer to your motherboard's manual.
+</p>
+<h3><span class="mw-headline" id="Connect_to_the_internet">Connect to the internet</span></h3>
+<p>To set up a network connection in the live environment, go through the following steps:
+</p>
+<ul><li>Ensure your <a href="https://wiki.archlinux.org/title/Network_interface" class="mw-redirect" title="Network interface">network interface</a> is listed and enabled, for example with <span class="plainlinks archwiki-template-man" title="$ man 8 ip-link"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/ip-link.8">ip-link(8)</a></span>: <pre># ip link</pre></li>
+<li>For wireless and WWAN, make sure the card is not blocked with <a href="https://wiki.archlinux.org/title/Rfkill" class="mw-redirect" title="Rfkill">rfkill</a>.</li>
+<li>Connect to the network:
+<ul><li>Ethernet—plug in the cable.</li>
+<li>Wi-Fi—authenticate to the wireless network using <a href="https://wiki.archlinux.org/title/Iwctl" class="mw-redirect" title="Iwctl">iwctl</a>.</li>
+<li>Mobile broadband modem—connect to the mobile network with the <a href="https://wiki.archlinux.org/title/Mmcli" class="mw-redirect" title="Mmcli">mmcli</a> utility.</li></ul></li>
+<li>Configure your network connection:
+<ul><li><a href="https://wiki.archlinux.org/title/DHCP" class="mw-redirect" title="DHCP">DHCP</a>: dynamic IP address and DNS server assignment (provided by <a href="https://wiki.archlinux.org/title/Systemd-networkd" title="Systemd-networkd">systemd-networkd</a> and <a href="https://wiki.archlinux.org/title/Systemd-resolved" title="Systemd-resolved">systemd-resolved</a>) should work out of the box for Ethernet, WLAN, and WWAN network interfaces.</li>
+<li>Static IP address: follow <a href="https://wiki.archlinux.org/title/Network_configuration#Static_IP_address" title="Network configuration">Network configuration#Static IP address</a>.</li></ul></li>
+<li>The connection may be verified with <a href="https://wiki.archlinux.org/title/Ping" class="mw-redirect" title="Ping">ping</a>: <pre># ping archlinux.org</pre></li></ul>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> In the installation image, <a href="https://wiki.archlinux.org/title/Systemd-networkd" title="Systemd-networkd">systemd-networkd</a>, <a href="https://wiki.archlinux.org/title/Systemd-resolved" title="Systemd-resolved">systemd-resolved</a>, <a href="https://wiki.archlinux.org/title/Iwd" title="Iwd">iwd</a> and <a href="https://wiki.archlinux.org/title/ModemManager" class="mw-redirect" title="ModemManager">ModemManager</a> are preconfigured and enabled by default. That will not be the case for the installed system.</div>
+<h3><span class="mw-headline" id="Update_the_system_clock">Update the system clock</span></h3>
+<p>In the live environment <a href="https://wiki.archlinux.org/title/Systemd-timesyncd" title="Systemd-timesyncd">systemd-timesyncd</a> is enabled by default and time will be synced automatically once a connection to the internet is established.
+</p><p>Use <span class="plainlinks archwiki-template-man" title="$ man 1 timedatectl"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/timedatectl.1">timedatectl(1)</a></span> to ensure the system clock is accurate:
+</p>
+<pre># timedatectl
+</pre>
+<h3><span class="mw-headline" id="Partition_the_disks">Partition the disks</span></h3>
+<p>When recognized by the live system, disks are assigned to a <a href="https://wiki.archlinux.org/title/Block_device" class="mw-redirect" title="Block device">block device</a> such as <code>/dev/sda</code>, <code>/dev/nvme0n1</code> or <code>/dev/mmcblk0</code>. To identify these devices, use <a href="https://wiki.archlinux.org/title/Lsblk" class="mw-redirect" title="Lsblk">lsblk</a> or <i>fdisk</i>.
+</p>
+<pre># fdisk -l
+</pre>
+<p>Results ending in <code>rom</code>, <code>loop</code> or <code>airoot</code> may be ignored.
+</p><p>The following <a href="https://wiki.archlinux.org/title/Partition" class="mw-redirect" title="Partition">partitions</a> are <b>required</b> for a chosen device:
+</p>
+<ul><li>One partition for the <a href="https://en.wikipedia.org/wiki/Root_directory" class="extiw" title="wikipedia:Root directory">root directory</a> <code>/</code>.</li>
+<li>For booting in <a href="https://wiki.archlinux.org/title/UEFI" class="mw-redirect" title="UEFI">UEFI</a> mode: an <a href="https://wiki.archlinux.org/title/EFI_system_partition" title="EFI system partition">EFI system partition</a>.</li></ul>
+<p>If you want to create any stacked block devices for <a href="https://wiki.archlinux.org/title/LVM" title="LVM">LVM</a>, <a href="https://wiki.archlinux.org/title/Dm-crypt" title="Dm-crypt">system encryption</a> or <a href="https://wiki.archlinux.org/title/RAID" title="RAID">RAID</a>, do it now.
+</p><p>Use <a href="https://wiki.archlinux.org/title/Fdisk" title="Fdisk">fdisk</a> or <a href="https://wiki.archlinux.org/title/Parted" title="Parted">parted</a> to modify partition tables. For example:
+</p>
+<pre># fdisk <i>/dev/the_disk_to_be_partitioned</i>
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> 
+<ul><li>If the disk does not show up, <a href="https://wiki.archlinux.org/title/Partitioning#Drives_are_not_visible_when_firmware_RAID_is_enabled" title="Partitioning">make sure the disk controller is not in RAID mode</a>.</li>
+<li>If the disk from which you want to boot <a href="https://wiki.archlinux.org/title/EFI_system_partition#Check_for_an_existing_partition" title="EFI system partition">already has an EFI system partition</a>, do not create another one, but use the existing partition instead.</li>
+<li><a href="https://wiki.archlinux.org/title/Swap" title="Swap">Swap</a> space can be set on a <a href="https://wiki.archlinux.org/title/Swap_file" class="mw-redirect" title="Swap file">swap file</a> for file systems supporting it.</li></ul>
+</div>
+<h4><span class="mw-headline" id="Example_layouts">Example layouts</span></h4>
+<table class="wikitable">
+<caption>UEFI with <a href="https://wiki.archlinux.org/title/GPT" class="mw-redirect" title="GPT">GPT</a>
+</caption>
+<tbody><tr>
+<th>Mount point
+</th>
+<th>Partition
+</th>
+<th><a href="https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs" class="extiw" title="wikipedia:GUID Partition Table">Partition type</a>
+</th>
+<th>Suggested size
+</th></tr>
+<tr>
+<td><code>/mnt/boot</code><sup>1</sup>
+</td>
+<td><code>/dev/<i>efi_system_partition</i></code>
+</td>
+<td><a href="https://wiki.archlinux.org/title/EFI_system_partition" title="EFI system partition">EFI system partition</a>
+</td>
+<td>At least 300 MiB. If multiple kernels will be installed, then no less than 1 GiB.
+</td></tr>
+<tr>
+<td><code>[SWAP]</code>
+</td>
+<td><code>/dev/<i>swap_partition</i></code>
+</td>
+<td>Linux swap
+</td>
+<td>More than 512 MiB
+</td></tr>
+<tr>
+<td><code>/mnt</code>
+</td>
+<td><code>/dev/<i>root_partition</i></code>
+</td>
+<td>Linux x86-64 root (/)
+</td>
+<td>Remainder of the device
+</td></tr></tbody></table>
+<ol><li><a href="https://wiki.archlinux.org/title/EFI_system_partition#Typical_mount_points" title="EFI system partition">Other mount points</a>, such as <code>/mnt/efi</code>,
+ are possible, provided that the used boot loader is capable of loading 
+the kernel and initramfs images from the root volume. See the warning in
+ <a href="https://wiki.archlinux.org/title/Arch_boot_process#Boot_loader" title="Arch boot process">Arch boot process#Boot loader</a>.</li></ol>
+<table class="wikitable">
+<caption>BIOS with <a href="https://wiki.archlinux.org/title/MBR" class="mw-redirect" title="MBR">MBR</a>
+</caption>
+<tbody><tr>
+<th>Mount point
+</th>
+<th>Partition
+</th>
+<th><a href="https://en.wikipedia.org/wiki/Partition_type" class="extiw" title="wikipedia:Partition type">Partition type</a>
+</th>
+<th>Suggested size
+</th></tr>
+<tr>
+<td><code>[SWAP]</code>
+</td>
+<td><code>/dev/<i>swap_partition</i></code>
+</td>
+<td>Linux swap
+</td>
+<td>More than 512 MiB
+</td></tr>
+<tr>
+<td><code>/mnt</code>
+</td>
+<td><code>/dev/<i>root_partition</i></code>
+</td>
+<td>Linux
+</td>
+<td>Remainder of the device
+</td></tr></tbody></table>
+<p>See also <a href="https://wiki.archlinux.org/title/Partitioning#Example_layouts" title="Partitioning">Partitioning#Example layouts</a>.
+</p>
+<h3><span class="mw-headline" id="Format_the_partitions">Format the partitions</span></h3>
+<p>Once the partitions have been created, each newly created partition must be formatted with an appropriate <a href="https://wiki.archlinux.org/title/File_system" class="mw-redirect" title="File system">file system</a>. See <a href="https://wiki.archlinux.org/title/File_systems#Create_a_file_system" title="File systems">File systems#Create a file system</a> for details.
+</p><p>For example, to create an <a href="https://wiki.archlinux.org/title/Ext4" title="Ext4">Ext4</a> file system on <code>/dev/<i>root_partition</i></code>, run:
+</p>
+<pre># mkfs.ext4 /dev/<i>root_partition</i>
+</pre>
+<p>If you created a partition for <a href="https://wiki.archlinux.org/title/Swap" title="Swap">swap</a>, initialize it with <span class="plainlinks archwiki-template-man" title="$ man 8 mkswap"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/mkswap.8">mkswap(8)</a></span>:
+</p>
+<pre># mkswap /dev/<i>swap_partition</i>
+</pre>
+<div class="archwiki-template-box archwiki-template-box-note"><strong>Note:</strong> For stacked block devices replace <code>/dev/<i>*_partition</i></code> with the appropriate block device path.</div>
+<p>If you created an EFI system partition, <a href="https://wiki.archlinux.org/title/EFI_system_partition#Format_the_partition" title="EFI system partition">format it</a> to FAT32 using <span class="plainlinks archwiki-template-man" title="$ man 8 mkfs.fat"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/mkfs.fat.8">mkfs.fat(8)</a></span>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-warning"><strong>Warning:</strong>
+ Only format the EFI system partition if you created it during the 
+partitioning step. If there already was an EFI system partition on disk 
+beforehand, reformatting it can destroy the boot loaders of other 
+installed operating systems.</div>
+<pre># mkfs.fat -F 32 /dev/<i>efi_system_partition</i>
+</pre>
+<h3><span class="mw-headline" id="Mount_the_file_systems">Mount the file systems</span></h3>
+<p><a href="https://wiki.archlinux.org/title/Mount" class="mw-redirect" title="Mount">Mount</a> the root volume to <code>/mnt</code>. For example, if the root volume is <code>/dev/<i>root_partition</i></code>:
+</p>
+<pre># mount /dev/<i>root_partition</i> /mnt
+</pre>
+<p>Create any remaining mount points (such as <code>/mnt/boot</code>) and mount the volumes in their corresponding hierarchical order.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip"><strong>Tip:</strong> Run <span class="plainlinks archwiki-template-man" title="$ man 8 mount"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/mount.8">mount(8)</a></span> with the <code>--mkdir</code> option to create the specified mount point. Alternatively, create it using <span class="plainlinks archwiki-template-man" title="$ man 1 mkdir"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/mkdir.1">mkdir(1)</a></span> beforehand.</div>
+<p>For UEFI systems, mount the EFI system partition:
+</p>
+<pre># mount --mkdir /dev/<i>efi_system_partition</i> /mnt/boot
+</pre>
+<p>If you created a <a href="https://wiki.archlinux.org/title/Swap" title="Swap">swap</a> volume, enable it with <span class="plainlinks archwiki-template-man" title="$ man 8 swapon"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/swapon.8">swapon(8)</a></span>:
+</p>
+<pre># swapon /dev/<i>swap_partition</i>
+</pre>
+<p><span class="plainlinks archwiki-template-man" title="$ man 8 genfstab"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/genfstab.8">genfstab(8)</a></span> will later detect mounted file systems and swap space.
+</p>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<h3><span class="mw-headline" id="Select_the_mirrors">Select the mirrors</span></h3>
+<p>Packages to be installed must be downloaded from <a href="https://wiki.archlinux.org/title/Mirrors" title="Mirrors">mirror servers</a>, which are defined in <code>/etc/pacman.d/mirrorlist</code>. On the live system, after connecting to the internet, <a href="https://wiki.archlinux.org/title/Reflector" title="Reflector">reflector</a> updates the mirror list by choosing 20 most recently synchronized HTTPS mirrors and sorting them by download rate.
+</p><p>The higher a mirror is placed in the list, the more priority it 
+is given when downloading a package. You may want to inspect the file to
+ see if it is satisfactory. If it is not, <a href="https://wiki.archlinux.org/title/Textedit" class="mw-redirect" title="Textedit">edit</a>
+ the file accordingly, and move the geographically closest mirrors to 
+the top of the list, although other criteria should be taken into 
+account.
+</p><p>This file will later be copied to the new system by <i>pacstrap</i>, so it is worth getting right.
+</p>
+<h3><span class="mw-headline" id="Install_essential_packages">Install essential packages</span></h3>
+<p>Use the <span class="plainlinks archwiki-template-man" title="$ man 8 pacstrap"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/pacstrap.8">pacstrap(8)</a></span> script to install the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=base">base</a></span> package, Linux <a href="https://wiki.archlinux.org/title/Kernel" title="Kernel">kernel</a> and firmware for common hardware:
+</p>
+<pre># pacstrap -K /mnt base linux linux-firmware
+</pre>
+<div class="archwiki-template-box archwiki-template-box-tip"><strong>Tip:</strong> 
+<ul><li>You can substitute <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux">linux</a></span> for a <a href="https://wiki.archlinux.org/title/Kernel" title="Kernel">kernel</a> package of your choice, or you could omit it entirely when installing in a <a href="https://en.wikipedia.org/wiki/Container_(virtualization)" class="extiw" title="wikipedia:Container (virtualization)">container</a>.</li>
+<li>You could omit the installation of the firmware package when installing in a virtual machine or container.</li></ul>
+</div>
+<p>The <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=base">base</a></span>
+ package does not include all tools from the live installation, so 
+installing other packages may be necessary for a fully functional base 
+system. In particular, consider installing:
+</p>
+<ul><li>userspace utilities for the management of <a href="https://wiki.archlinux.org/title/File_systems" title="File systems">file systems</a> that will be used on the system,</li>
+<li>utilities for accessing <a href="https://wiki.archlinux.org/title/RAID" title="RAID">RAID</a> or <a href="https://wiki.archlinux.org/title/LVM" title="LVM">LVM</a> partitions,</li>
+<li>specific firmware for other devices not included in <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=linux-firmware">linux-firmware</a></span> (e.g. <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=sof-firmware">sof-firmware</a></span> for <a href="https://wiki.archlinux.org/title/Advanced_Linux_Sound_Architecture#ALSA_firmware" title="Advanced Linux Sound Architecture">sound cards</a>),</li>
+<li>software necessary for <a href="https://wiki.archlinux.org/title/Networking" class="mw-redirect" title="Networking">networking</a> (e.g. a network manager or DHCP client),</li>
+<li>a <a href="https://wiki.archlinux.org/title/Text_editor" class="mw-redirect" title="Text editor">text editor</a>,</li>
+<li>packages for accessing documentation in <a href="https://wiki.archlinux.org/title/Man" class="mw-redirect" title="Man">man</a> and <a href="https://wiki.archlinux.org/title/Info" class="mw-redirect" title="Info">info</a> pages: <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=man-db">man-db</a></span>, <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=man-pages">man-pages</a></span> and <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://archlinux.org/packages/?name=texinfo">texinfo</a></span>.</li></ul>
+<p>To <a href="https://wiki.archlinux.org/title/Install" class="mw-redirect" title="Install">install</a> other packages or package groups, append the names to the <i>pacstrap</i> command above (space separated) or use <a href="https://wiki.archlinux.org/title/Pacman" title="Pacman">pacman</a> while <a href="#Chroot">chrooted into the new system</a>. For comparison, packages available in the live system can be found in <a rel="nofollow" class="external text" href="https://geo.mirror.pkgbuild.com/iso/latest/arch/pkglist.x86_64.txt">pkglist.x86_64.txt</a>.
+</p>
+<h2><span class="mw-headline" id="Configure_the_system">Configure the system</span></h2>
+<h3><span class="mw-headline" id="Fstab">Fstab</span></h3>
+<p>Generate an <a href="https://wiki.archlinux.org/title/Fstab" title="Fstab">fstab</a> file (use <code>-U</code> or <code>-L</code> to define by <a href="https://wiki.archlinux.org/title/UUID" class="mw-redirect" title="UUID">UUID</a> or labels, respectively):
+</p>
+<pre># genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
+</pre>
+<p>Check the resulting <code>/mnt/etc/fstab</code> file, and <a href="https://wiki.archlinux.org/title/Textedit" class="mw-redirect" title="Textedit">edit</a> it in case of errors.
+</p>
+<h3><span class="mw-headline" id="Chroot">Chroot</span></h3>
+<p><a href="https://wiki.archlinux.org/title/Change_root" class="mw-redirect" title="Change root">Change root</a> into the new system:
+</p>
+<pre># arch-chroot /mnt
+</pre>
+<h3><span class="mw-headline" id="Time_zone">Time zone</span></h3>
+<p>Set the <a href="https://wiki.archlinux.org/title/Time_zone" class="mw-redirect" title="Time zone">time zone</a>:
+</p>
+<pre># ln -sf /usr/share/zoneinfo/<i>Region</i>/<i>City</i> /etc/localtime
+</pre>
+<p>Run <span class="plainlinks archwiki-template-man" title="$ man 8 hwclock"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/hwclock.8">hwclock(8)</a></span> to generate <code>/etc/adjtime</code>:
+</p>
+<pre># hwclock --systohc
+</pre>
+<p>This command assumes the hardware clock is set to <a href="https://en.wikipedia.org/wiki/UTC" class="extiw" title="wikipedia:UTC">UTC</a>. See <a href="https://wiki.archlinux.org/title/System_time#Time_standard" title="System time">System time#Time standard</a> for details.
+</p>
+<h3><span class="mw-headline" id="Localization">Localization</span></h3>
+<p><a href="https://wiki.archlinux.org/title/Textedit" class="mw-redirect" title="Textedit">Edit</a> <code>/etc/locale.gen</code> and uncomment <code>en_US.UTF-8 UTF-8</code> and other needed <a href="https://wiki.archlinux.org/title/Locale" title="Locale">locales</a>. Generate the locales by running:
+</p>
+<pre># locale-gen
+</pre>
+<p><a href="https://wiki.archlinux.org/title/Create" class="mw-redirect" title="Create">Create</a> the <span class="plainlinks archwiki-template-man" title="$ man 5 locale.conf"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/locale.conf.5">locale.conf(5)</a></span> file, and <a href="https://wiki.archlinux.org/title/Locale#Setting_the_system_locale" title="Locale">set the LANG variable</a> accordingly:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/locale.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">LANG=<i>en_US.UTF-8</i></pre>
+<p>If you <a href="#Set_the_console_keyboard_layout">set the console keyboard layout</a>, make the changes persistent in <span class="plainlinks archwiki-template-man" title="$ man 5 vconsole.conf"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/vconsole.conf.5">vconsole.conf(5)</a></span>:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/vconsole.conf</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;">KEYMAP=<i>de-latin1</i></pre>
+<h3><span class="mw-headline" id="Network_configuration">Network configuration</span></h3>
+<p><a href="https://wiki.archlinux.org/title/Create" class="mw-redirect" title="Create">Create</a> the <a href="https://wiki.archlinux.org/title/Hostname" class="mw-redirect" title="Hostname">hostname</a> file:
+</p>
+<pre style="margin-bottom: 0; border-bottom:none; padding-bottom:0.8em;">/etc/hostname</pre>
+<pre style="margin-top: 0; border-top-style:dashed; padding-top: 0.8em;"><i>myhostname</i>
+</pre>
+<p>Complete the <a href="https://wiki.archlinux.org/title/Network_configuration" title="Network configuration">network configuration</a> for the newly installed environment. That may include installing suitable <a href="https://wiki.archlinux.org/title/Network_management" class="mw-redirect" title="Network management">network management</a> software.
+</p>
+<h3><span class="mw-headline" id="Initramfs">Initramfs</span></h3>
+<p>Creating a new <i>initramfs</i> is usually not required, because <a href="https://wiki.archlinux.org/title/Mkinitcpio" title="Mkinitcpio">mkinitcpio</a> was run on installation of the <a href="https://wiki.archlinux.org/title/Kernel" title="Kernel">kernel</a> package with <i>pacstrap</i>.
+</p><p>For <a href="https://wiki.archlinux.org/title/Install_Arch_Linux_on_LVM#Adding_mkinitcpio_hooks" title="Install Arch Linux on LVM">LVM</a>, <a href="https://wiki.archlinux.org/title/Dm-crypt" title="Dm-crypt">system encryption</a> or <a href="https://wiki.archlinux.org/title/RAID#Configure_mkinitcpio" title="RAID">RAID</a>, modify <span class="plainlinks archwiki-template-man" title="$ man 5 mkinitcpio.conf"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/mkinitcpio.conf.5">mkinitcpio.conf(5)</a></span> and recreate the initramfs image:
+</p>
+<pre># mkinitcpio -P
+</pre>
+<h3><span class="mw-headline" id="Root_password">Root password</span></h3>
+<p>Set the root <a href="https://wiki.archlinux.org/title/Password" class="mw-redirect" title="Password">password</a>:
+</p>
+<pre># passwd
+</pre>
+<h3><span class="mw-headline" id="Boot_loader">Boot loader</span></h3>
+<p>Choose and install a Linux-capable <a href="https://wiki.archlinux.org/title/Boot_loader" class="mw-redirect" title="Boot loader">boot loader</a>. If you have an Intel or AMD CPU, enable <a href="https://wiki.archlinux.org/title/Microcode" title="Microcode">microcode</a> updates in addition.
+</p>
+<h2><span class="mw-headline" id="Reboot">Reboot</span></h2>
+<p>Exit the chroot environment by typing <code>exit</code> or pressing <code>Ctrl+d</code>.
+</p><p>Optionally manually unmount all the partitions with <code>umount -R /mnt</code>: this allows noticing any "busy" partitions, and finding the cause with <span class="plainlinks archwiki-template-man" title="$ man 1 fuser"><a rel="nofollow" class="external text" href="https://man.archlinux.org/man/fuser.1">fuser(1)</a></span>.
+</p><p>Finally, restart the machine by typing <code>reboot</code>: any partitions still mounted will be automatically unmounted by <i>systemd</i>. Remember to remove the installation medium and then login into the new system with the root account.
+</p>
+<h2><span class="mw-headline" id="Post-installation">Post-installation</span></h2>
+<p>See <a href="https://wiki.archlinux.org/title/General_recommendations" title="General recommendations">General recommendations</a>
+ for system management directions and post-installation tutorials (like 
+creating unprivileged user accounts, setting up a graphical user 
+interface, sound or a touchpad).
+</p><p>For a list of applications that may be of interest, see <a href="https://wiki.archlinux.org/title/List_of_applications" title="List of applications">List of applications</a>.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20230323150631
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.077 seconds
+Real time usage: 0.081 seconds
+Preprocessor visited node count: 1122/1000000
+Post‐expand include size: 9990/2097152 bytes
+Template argument size: 4194/2097152 bytes
+Highest expansion depth: 7/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   25.750      1 -total
+ 23.83%    6.136     17 Template:Man
+ 13.30%    3.425     40 Template:Ic
+ 10.44%    2.689      3 Template:Tip
+  8.78%    2.261      8 Template:Pkg
+  8.69%    2.239      3 Template:Hc
+  7.41%    1.909      1 Template:Warning
+  7.32%    1.886      5 Template:Note
+  6.16%    1.586      2 Template:Bc
+-->
+
+<!-- Saved in parser cache with key archwiki:pcache:idhash:14801-0!canonical and timestamp 20230323150631 and revision id 771995.
+ -->
+</div>
+<div class="printfooter" data-nosnippet="">Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Installation_guide&amp;oldid=771995">https://wiki.archlinux.org/index.php?title=Installation_guide&amp;oldid=771995</a>"</div></div>
+					<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.archlinux.org/title/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="https://wiki.archlinux.org/title/Category:Installation_process" title="Category:Installation process">Installation process</a></li></ul></div></div>
+				</div>
+			</main>
+			
+		</div>
+		<div class="mw-footer-container">
+			
+<footer id="footer" class="mw-footer" role="contentinfo">
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> This page was last edited on 11 March 2023, at 09:43.</li>
+	<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="https://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://terms.archlinux.org/docs/privacy-policy/">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="https://wiki.archlinux.org/title/ArchWiki:About">About ArchWiki</a></li>
+	<li id="footer-places-disclaimer"><a href="https://wiki.archlinux.org/title/ArchWiki:General_disclaimer">Disclaimers</a></li>
+</ul>
+
+	
+</footer>
+
+		</div>
+	</div> 
+</div> 
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.077","walltime":"0.081","ppvisitednodes":{"value":1122,"limit":1000000},"postexpandincludesize":{"value":9990,"limit":2097152},"templateargumentsize":{"value":4194,"limit":2097152},"expansiondepth":{"value":7,"limit":100},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":0,"limit":5000000},"timingprofile":["100.00%   25.750      1 -total"," 23.83%    6.136     17 Template:Man"," 13.30%    3.425     40 Template:Ic"," 10.44%    2.689      3 Template:Tip","  8.78%    2.261      8 Template:Pkg","  8.69%    2.239      3 Template:Hc","  7.41%    1.909      1 Template:Warning","  7.32%    1.886      5 Template:Note","  6.16%    1.586      2 Template:Bc"]},"cachereport":{"timestamp":"20230323150631","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":206});});</script>
+
+
+<div id="p-namespaces" style="display: none;"><ul></ul></div></body><!-- Cached/compressed 20230323150631 --></html>
