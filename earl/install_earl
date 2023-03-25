@@ -1,5 +1,5 @@
 This document shows how to install Arch Linux on the "earl" laptop, intended to direct the telescope mount control board, get data from the telescope, and possibly process the data.
-Updated 2023-03-23
+Updated 2023-03-24
 
 
 Many of the instructions on this file are specific to the "earl" laptop.
@@ -20,8 +20,8 @@ Expect ls to return an error, because this laptop is old and only boots with BIO
 
 
 1.7 Connect to the internet:
-The school has some kind of fancy wifi encryption that I don't know how to work with. Don't install at school, or if you must, use ethernet instead. You CAN connect to wifi after the system is setup; NetworkManager is great. But don't try to do it until after the system is installed.
-Otherwise, earl has quirks about wifi; try running the following commands first:
+The school has some kind of fancy wifi encryption that I don't know how to work with. Don't install at school, or if you must, use ethernet instead. You CAN connect to wifi after the system is set up; NetworkManager is great. But don't try to do it until after the system is installed.
+For normal wifi, earl has some quirks. Try the following commands:
     ip address
     iwctl
         device list
@@ -68,11 +68,8 @@ I have installed:
     man # help page for commands; from man-db
     grub # boot loader; you may have to reinstall linux after installing grub; see boot loader section below
     rtl-sdr # for reading from the radio.
-    python3 # python interpreter; runs control software
-I may install:
-    xorg xorg-xinit jwm # window manager; necessary if you want a web browser
-    firefox or chromium # web browser
-    nginx # web server for if we do the 
+    python3 python-pip # python interpreter; runs control software
+    git # downloads this repository
 
 
 3.3 Time zone:
@@ -120,6 +117,12 @@ Then make sure you run grub-mkconfig -o /boot/grub/grub.cfg. If you get an error
 You may also need to set a bootable flag on the first partition of the disk you install GRUB on (I doubt it) or leave a large space before the first partition on the disk (Probably not?). Also just fiddle around with reinstalling things repeatedly; seems to help.
 
 
+At some point, run
+    git clone https://github.com/RidhaChowdhury/MiniRadioTelescope
+to get this repository.
+You need some of the files to connect to the school's wifi,
+ and the jwm config file.
+
 
 Networking after install:
     systemctl enable NetworkManager # enable means start on boot
@@ -152,12 +155,50 @@ If the wifi still doesn't work, the root certificate may have been changed by PS
 Try connecting to psuwirelesssetup on a normal computer, which will provide you an up to date certificate.
 
 
-I have not finished installing xorg; this section of documentation is incomplete.
-xorg:
-    pacman -S xterm xorg-apps firefox (includes ttf-fonts)
+To install the window manager + firefox:
+If the rest of these instructions are troublesome, try:
+    pacman -S gnome gdm
+    systemctl enable gdm.service
+gnome is a "it just works" type thing, which will hopefully be a reliable backup.
+I set up jwm since I assume it will be more stable on old hardware.
+
+Window manager/graphical user interface commands:
+    pacman -S xorg xorg-xinit xorg-apps ttf-fonts
+
     startx
-vim /etc/X11/xinit/xinitrc
-add jwm to last line
+startx should produce a very weird gui.
+Focus on the terminals by moving the mouse over them.
+Exit from the gui by closing the terminals by typing "exit"
+    
+    pacman -S firefox jwm
+
+    vim /etc/X11/xinit/xinitrc
+replace the last lines of xinitrc with 
+    xterm &
+    exec jwm
+
+    startx 
+startx should produce a gui vaguely like Windows XP.
+Exit by clicking the "JWM" menu in the bottom left,
+ then clicking the bottom-most option "Exit".
+
+Copy the jwm config file. Removes dead menu entries, renames some stuff, and adds some keyboard shortcuts.
+Adds ctrl + alt + t for terminal
+Not strictly necessary.
+    cp earl/.jwmrc /root/
+
+
+Install pyrtlsdr (copied from RTLSDR/installing_pyrtlsdr):
+    pip install setuptools pyrtlsdr numpy
+For graphs (necessary for demo)
+    pip install matplotlib
+    pacman -S tk
+You should then be able to do
+    python3 RTLSDR/rtlsdr_wrapper.py
+with the usb dongle plugged in and it will produce a chart looking like a bumpy normal distribution.
+
+
+
 
 
 
