@@ -40,8 +40,9 @@ def open_global_sdr():
 
 def close_global_sdr():
     global global_sdr
-    logger.debug('Closing global, persistent RTLSDR connection.')
-    global_sdr.close()
+    if not global_sdr is None: # global_sdr may be unset if rtlsdr.RtlSdr() errors e.g. if module not plugged in.
+        logger.debug('Closing global, persistent RTLSDR connection.')
+        global_sdr.close()
 
 def get_samples(frequency, rate=1e6, count=RTLSDR_SAMPLE_LENGTH*1024, time=None, use_global_sdr=True):
     global global_sdr
