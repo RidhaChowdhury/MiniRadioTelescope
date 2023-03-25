@@ -163,7 +163,7 @@ gnome is a "it just works" type thing, which will hopefully be a reliable backup
 I set up jwm since I assume it will be more stable on old hardware.
 
 Window manager/graphical user interface commands:
-    pacman -S xorg xorg-xinit xorg-apps ttf-fonts
+    pacman -S xorg xorg-xinit xterm xorg-xclock ttf-fonts
 
     startx
 startx should produce a very weird gui.
