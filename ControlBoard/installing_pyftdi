@@ -1,0 +1,13 @@
+How to install pyftdi on various operating systems.
+It's trivial on Arch, but I've read it's harder on Windows and possibly requires mighty Zadig. So whoever tries to install on Windows, please document your attempt here.
+
+
+Arch
+----
+    sudo pip install pyftdi
+# Possibly requires some other libraries, like libusb that were installed during RTLDSR/installing_pyrtlsdr; I don't know.
+You should be able to do:
+    sudo python3 ControlBoard/port_wrapper.py
+And have it print out diagnostics along the lines of, "Writing Hello World to device \n Response from device Hello World"
+
+

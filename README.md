@@ -10,20 +10,28 @@ This Python software is forked from UPENN project: https://github.com/UPennEoR/M
 
 ## General structure of this repository
 
-* The RTLSDR folder relates to the [rtl-sdr](rtl-sdr.com) module, which gets data from the antenna.
+* The RTLSDR folder relates to the [rtl-sdr](https://rtl-sdr.com) module, which gets data from the antenna.
 
   * [RTLSDR/installing_pyrtlsdr:](RTLSDR/installing_pyrtlsdr) Instructions for installing pyrtlsdr, python lib for reading data.
-  * [RTLSDR/rtlsdr_wrapper.py:](RTLSDR/rtlsdr_wrapper.py) Wrapper/basic example. Can get raw samples at a frequency and draw a plot.
+  
+  * [RTLSDR/rtlsdr_wrapper.py:](RTLSDR/rtlsdr_wrapper.py) Can get raw samples at a frequency and draw a plot.
+
+* The ControlBoard folder relates to the PCB which moves the telescope mount.
+
+  * [ControlBoard/port_wrapper.py:](ControlBoard/port_wrapper.py) Writes/reads bytes from an RT232RL chip over USB. Currently must be run as sudo.
 
 * "earl" is the hostname of the laptop donated to serve as the control platform.
-  * [earl/installing_earl:](earl/installing_earl) Instructions for installing arch on the laptop.
+  
+  * [earl/installing_earl:](earl/installing_earl) Instructions for installing arch, pyrtlsdr, and a GUI on the laptop.
 
 ## Documentation
+
 [Software documentation folder on Google Drive](https://drive.google.com/drive/folders/1lzj3X5Istw0j4d1xbYx2XgU6ZHmYsZLo)
 
-* [Documentation for astropy_coordinates.py](https://docs.google.com/document/d/1qpQ_SRinI0ADAfMxYnLgn-8IxUDTiz-_WAb4TQxqFYk)
+* [astropy_coordinates.py](https://docs.google.com/document/d/1qpQ_SRinI0ADAfMxYnLgn-8IxUDTiz-_WAb4TQxqFYk)
 
-* [Documentation for RTLSDR/rtlsdr_wrapper.py](https://docs.google.com/document/d/1XA12joOU6Yji55qQAi5daokHakzWAKffufSam6EbvlQ)
+* [RTLSDR/rtlsdr_wrapper.py](https://docs.google.com/document/d/1XA12joOU6Yji55qQAi5daokHakzWAKffufSam6EbvlQ)
 
+* [ControlBoard/port_wrapper.py](https://docs.google.com/document/d/1AYz8a0kYeIECHZkxlMaqzaY4veql7QWp9-3E0fqa3-M)
 
 
