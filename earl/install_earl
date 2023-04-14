@@ -60,7 +60,7 @@ Also note:
 Before anything else, run commands:
 pacman -Sy
 pacman -S archlinux-keyring
-This is not necessary if you have the most recent install disk image.
+This necessary if your installer image is even a little out-of-date.
 I have installed:
     base linux linux-firmware
     networkmanager # wifi
@@ -70,6 +70,9 @@ I have installed:
     rtl-sdr # for reading from the radio.
     python3 python-pip # python interpreter; runs control software
     git # downloads this repository
+    udisks2 udiskie # auto-mount flash drives to /run/media/root/DRIVE_NAME. Needs further setup.
+So run something like:
+    pacman -S base linux linux-firmware networkmanager vim man grub rtl-sdr python3 python-pip git udisks2 udiskie
 
 
 3.3 Time zone:
@@ -196,6 +199,13 @@ For graphs (necessary for demo)
 You should then be able to do
     python3 RTLSDR/rtlsdr_wrapper.py
 with the usb dongle plugged in and it will produce a chart looking like a bumpy normal distribution.
+
+
+Set udiskie to run on startup:
+    vim /root/.profile
+Add the following (possibly only) line:
+    udiskie >/dev/null 2>/dev/null &
+udiskie automatically mounts flash drives when you plug them in. Convenient, not mandatory.
 
 
 
