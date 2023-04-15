@@ -40,6 +40,26 @@ class PortWrapper:
     def __exit__(self, exception_type, exception, traceback):
         self.port.close()
 
+# For testing when you don't have the chip.
+# Just mirrors inputs as outputs, queue style.
+class FakePortWrapper:
+    def __init__(self):
+        self.queue = []
+
+    def write(self, b):
+        for byte in b:
+            self.queue.append(b)
+
+    def read(self, n=1):
+        b = b''.join(self.queue[0:n])
+        self.queue = self.queue[n:]
+        return b
+
+    def __enter__(self):
+        return self
+    def __exit__(self, exception_type, exception, traceback):
+        return
+
 def main():
     print('Opening the FT232 device...')
     with PortWrapper() as port:
