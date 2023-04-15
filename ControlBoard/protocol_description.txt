@@ -1,0 +1,40 @@
+Command structure
+two bytes for degrees
+    0-3600 (in tenths of a degree)
+    same for alt and az
+
+        1   1    2    2   ?
+PC -> <cmd><cmd><alt><az><eot>
+   <- <rsp><rsp><alt><az><eot>
+
+Add a command to set how twisted the cable is and whether we'll tip over
+Make sure we have a flat surface!
+What would happen if hotplugged USB? -> stop!
+Baud Rate - 115200 115.2 Kbps
+Time out if EOT not Rx'd within X ms.
+Response is 16 bit flags (AXA bitset)
+Stretchy width for cmd input
+
+Firmware superloop:
+Read PC Commands
+    Check uart buffer for new chars
+    update motor states
+Read buttons
+Check rotary encoders -> update actual pos
+Update motors Current pos, desired pos)
+E-Stop (only one axis?)
+Send status -> ~3 HZ
+    -> Alt/Az Coords
+    -> Controller state -> Ok? Failure? Warnings? Sensor Info?
+    Refresh LCD <- only if new info
+    blink leds
+
+Commands to PCB:
+- Set AZ (calibrate)
+- Set Alt (Calibrate)
+- GOTO (Alt, Az)
+- Stop -> all, alt, az
+- Get Status
+- alt rotate (+/-)
+- az rotate (+/-)
+- set cable twist
