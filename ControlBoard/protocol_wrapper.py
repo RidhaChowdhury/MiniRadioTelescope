@@ -10,7 +10,7 @@ CALIBRATE_AZ = 'cz'.encode('ASCII')
 CALIBRATE_TWIST = 'ct'.encode('ASCII')
 
 MOVE_ALT_PLUS = 'ml'.encode('ASCII')
-MOVE_ALT_PLUS = 'wl'.encode('ASCII')
+MOVE_ALT_MINUS = 'wl'.encode('ASCII')
 MOVE_AZ_PLUS = 'mz'.encode('ASCII')
 MOVE_AZ_MINUS = 'wz'.encode('ASCII')
 
