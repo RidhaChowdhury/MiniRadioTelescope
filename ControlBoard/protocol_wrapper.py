@@ -10,7 +10,7 @@ CALIBRATE_AZ = 'cz'.encode('ASCII')
 CALIBRATE_TWIST = 'ct'.encode('ASCII')
 
 MOVE_ALT_PLUS = 'ml'.encode('ASCII')
-MOVE_ALT_PLUS = 'wl'.encode('ASCII')
+MOVE_ALT_MINUS = 'wl'.encode('ASCII')
 MOVE_AZ_PLUS = 'mz'.encode('ASCII')
 MOVE_AZ_MINUS = 'wz'.encode('ASCII')
 
@@ -30,7 +30,6 @@ def encode_degrees(num):
         encoding = round(num % 360 * 10)
     else:
         raise Exception('Unknown argument type num: {} Expected float or int.'.format(type(azimuth)))
-    print(encoding)
     return encoding.to_bytes(2, byteorder='big')
 
 def encode_calibrate_azimuth(azimuth): return CALIBRATE_AZ + encode_degrees(azimuth) + EOT
@@ -38,15 +37,16 @@ def encode_calibrate_altitude(altitude): return CALIBRATE_ALT + encode_degrees(a
 def encode_calibrate_twist(twist): return CALIBRATE_TWIST + encode_degrees(twist) + EOT
 
 def encode_move_alt_plus(offset): return MOVE_ALT_PLUS + encode_degrees(offset) + EOT
-def encode_move_alt_minus(offset): return MOVE_ALT_MINUS + encode_degrees(offset) + EOT
+def encode_move_alt_minus(offset): return MOVE_ALT_MINUS + encode_degrees(-offset) + EOT
 def encode_move_az_plus(offset): return MOVE_AZ_PLUS + encode_degrees(offset) + EOT
-def encode_move_az_minus(offset): return MOVE_AZ_MINUS + encode_degrees(offset) + EOT
+def encode_move_az_minus(offset): return MOVE_AZ_MINUS + encode_degrees(-offset) + EOT
 
 def encode_goto(altitude, azimuth): return GOTO_ALT_AZ + encode_degrees(altitude) + encode_degrees(azimuth) + EOT
 
 class PCBWrapper:
     def calibrate_altitude(self, altitude): self.port.write(encode_calibrate_altitude(altitude))
     def calibrate_azimuth(self, azimuth): self.port.write(encode_calibrate_azimuth(azimuth))
+    def calibrate_twist(self, twist): self.port.write(encode_calibrate_twist(twist))
     def goto(self, altitude, azimuth): self.port.write(encode_goto(altitude, azimuth))
 
     def move_alt(self, offset):
@@ -54,7 +54,7 @@ class PCBWrapper:
             self.port.write(encode_move_alt_plus(offset))
         else:
             self.port.write(encode_move_alt_minus(offset))
-    def mov_az(self, offset):
+    def move_az(self, offset):
         if offset >= 0:
             self.port.write(encode_move_az_plus(offset))
         else:
@@ -66,6 +66,7 @@ class PCBWrapper:
 
     def get_status(self):
         self.port.write(GET_STATUS + EOT)
+        return 'get_status is not implemented yet'
 
     def __enter__(self):
         if DEBUG_FAKE_PORT:
