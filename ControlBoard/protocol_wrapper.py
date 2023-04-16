@@ -1,25 +1,30 @@
 from ControlBoard.port_wrapper import PortWrapper, FakePortWrapper
 
-DEBUG_FAKE_PORT = False
+DEBUG_FAKE_PORT = True
 
 # Commands to PCB:
 EOT = chr(4).encode('ASCII')
 
-CALIBRATE_ALT = 'cl'.encode('ASCII')
-CALIBRATE_AZ = 'cz'.encode('ASCII')
+CALIBRATE_ALT =   'cl'.encode('ASCII')
+CALIBRATE_AZ =    'cz'.encode('ASCII')
 CALIBRATE_TWIST = 'ct'.encode('ASCII')
 
-MOVE_ALT_PLUS = 'ml'.encode('ASCII')
-MOVE_ALT_MINUS = 'wl'.encode('ASCII')
-MOVE_AZ_PLUS = 'mz'.encode('ASCII')
-MOVE_AZ_MINUS = 'wz'.encode('ASCII')
+MOVE_ALT_PLUS =   'ml'.encode('ASCII')
+MOVE_ALT_MINUS =  'wl'.encode('ASCII')
+MOVE_AZ_PLUS =    'mz'.encode('ASCII')
+MOVE_AZ_MINUS =   'wz'.encode('ASCII')
 
-GOTO_ALT_AZ = 'g '.encode('ASCII')
+GOTO_ALT_AZ =     'g '.encode('ASCII')
 
-STOP_ALT = 'xl'.encode('ASCII')
-STOP_AZ = 'xz'.encode('ASCII')
-STOP_ALL = 'xa'.encode('ASCII')
-GET_STATUS = 'r '.encode('ASCII')
+STOP_ALT =        'xl'.encode('ASCII')
+STOP_AZ =         'xz'.encode('ASCII')
+STOP_ALL =        'xa'.encode('ASCII')
+GET_STATUS =      'r '.encode('ASCII')
+
+FLAGS = [
+    (1 << 15, "Bad command; start over"),
+    (1 << 14, "Moving"),                    # Stationary by default
+]
 
 def encode_degrees(num):
     if num < 0:
@@ -66,7 +71,23 @@ class PCBWrapper:
 
     def get_status(self):
         self.port.write(GET_STATUS + EOT)
-        return 'get_status is not implemented yet'
+        status = self.port.read(7)
+
+        flag_bytes = status[0:2]
+        alt_bytes = status[2:4]
+        az_bytes = status[4:6]
+        assert(status[6] == EOT)
+        
+        flag_vector = flag_bytes[0] << 8 | flag_bytes[1]
+        alt = alt_bytes[0] << 8 | alt_bytes[1]
+        az = alt_bytes[0] << 8 | alt_bytes[1]
+        
+        flags = {}
+        for flag_mask, flag_string in FLAGS:
+            flags[flag_string] = flag_mask & flag_vector != 0
+        
+        return flags, alt, az
+
 
     def __enter__(self):
         if DEBUG_FAKE_PORT:
