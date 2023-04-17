@@ -1,22 +1,18 @@
 import unittest
 
-from astropy.coordinates import SkyCoord, EarthLocation
-from astropy.coordinates import Angle
-from astropy import units as u
-
-import astropy_coordinates as ac
-import datetime
-
 def std(s): # returns a numpy.float64, not a u.degree
+    from astropy.coordinates import Angle
     return Angle(s).degree
 
 class TestTrackedObject(unittest.TestCase):
     def test_tracked_object(self):
-        psh = EarthLocation(lat=40.20412 * u.deg, lon=-76.74238 * u.deg)
-        paris = EarthLocation(lat=48.85350 * u.deg, lon=2.34839 * u.deg)
-        TO = ac.TrackedObject
-        dt = datetime.datetime
-        SC = SkyCoord
+        from astropy.coordinates import SkyCoord as SC, EarthLocation as EL
+        from astropy import units as u
+        from astropy_coordinates import TrackedObject as TO
+        from datetime import datetime as dt
+        
+        psh = EL(lat=40.20412 * u.deg, lon=-76.74238 * u.deg)
+        paris = EL(lat=48.85350 * u.deg, lon=2.34839 * u.deg)
         object_samples = [
             ('sirius', 1, TO(name='sirius', location=psh), [
                 (dt(2023, 11, 3, 20, 0, 0), (std('-62d58m20.9s'), std('325d45m24.2s'))),
