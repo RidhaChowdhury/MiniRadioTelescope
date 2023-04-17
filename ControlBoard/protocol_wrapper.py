@@ -1,6 +1,6 @@
 from ControlBoard.port_wrapper import PortWrapper, FakePortWrapper
 
-DEBUG_FAKE_PORT = True
+DEBUG_FAKE_PORT = False
 
 # Commands to PCB:
 EOT = chr(4).encode('ASCII')
