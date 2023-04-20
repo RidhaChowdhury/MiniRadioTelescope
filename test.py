@@ -1,5 +1,14 @@
 import unittest
 
+class TestProtocolWrapper(unittest.TestCase):
+    def test_protocol_fake(self):
+        from ControlBoard.protocol_wrapper import PCBWrapper
+        from ControlBoard.port_wrapper import FakePortWrapper
+        fake_pcb = FakePortWrapper()
+        with PCBWrapper(fake_pcb) as pcb:
+            pcb.goto(12, 24)
+            print(fake_pcb.parse_commands())
+
 def std(s): # returns a numpy.float64, not a u.degree
     from astropy.coordinates import Angle
     return Angle(s).degree
