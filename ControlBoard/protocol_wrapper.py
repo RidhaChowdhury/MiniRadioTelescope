@@ -1,30 +1,6 @@
 from ControlBoard.port_wrapper import PortWrapper, FakePortWrapper
 
-DEBUG_FAKE_PORT = False
-
-# Commands to PCB:
-EOT = chr(4).encode('ASCII')
-
-CALIBRATE_ALT =   'cl'.encode('ASCII')
-CALIBRATE_AZ =    'cz'.encode('ASCII')
-CALIBRATE_TWIST = 'ct'.encode('ASCII')
-
-MOVE_ALT_PLUS =   'ml'.encode('ASCII')
-MOVE_ALT_MINUS =  'wl'.encode('ASCII')
-MOVE_AZ_PLUS =    'mz'.encode('ASCII')
-MOVE_AZ_MINUS =   'wz'.encode('ASCII')
-
-GOTO_ALT_AZ =     'g '.encode('ASCII')
-
-STOP_ALT =        'xl'.encode('ASCII')
-STOP_AZ =         'xz'.encode('ASCII')
-STOP_ALL =        'xa'.encode('ASCII')
-GET_STATUS =      'r '.encode('ASCII')
-
-FLAGS = [
-    (1 << 15, "Bad command; start over"),
-    (1 << 14, "Moving"),                    # Stationary by default
-]
+from ControlBoard.protocol import *
 
 def encode_degrees(num):
     if num < 0:
@@ -87,13 +63,13 @@ class PCBWrapper:
             flags[flag_string] = flag_mask & flag_vector != 0
         
         return flags, alt, az
-
-
+    
+    def __init__(self, port_manager=None):
+        if port_manager is None:
+            port_manager = PortWrapper()
+        self.port_manager = port_manager
+    
     def __enter__(self):
-        if DEBUG_FAKE_PORT:
-            self.port_manager = FakePortWrapper()
-        else:
-            self.port_manager = PortWrapper()
         self.port = self.port_manager.__enter__()
         return self
 

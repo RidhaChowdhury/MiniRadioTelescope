@@ -5,7 +5,7 @@ from pyftdi.usbtools import UsbTools
 
 import pyftdi.serialext
 
-BAUD = 3_000_000
+BAUD = 115_200
 
 # Hacked together from pyftdi.ftdi.Ftdi.show_devices()
 #  and pyftdi.usbtools.UsbTools.show_devices().
@@ -44,17 +44,41 @@ class PortWrapper:
 # Just mirrors inputs as outputs, queue style.
 class FakePortWrapper:
     def __init__(self):
-        self.queue = []
+        self.transmit_queue = []
+        self.receive_queue = []
 
     def write(self, b):
         for byte in b:
-            self.queue.append(b)
+            self.receive_queue.append(byte)
         print('FakePort get: {}'.format(b))
 
     def read(self, n=1):
-        b = b''.join(self.queue[0:n])
-        self.queue = self.queue[n:]
+        b = bytes(self.transmit_queue[0:n])
+        self.transmit_queue = self.transmit_queue[n:]
         return b
+    
+    def parse_commands(self):
+        import ControlBoard.protocol as p
+        commands = []
+        def read(n=1):
+            return bytes([self.receive_queue.pop(0) for _ in range(n)])
+        def read_degrees():
+            b = read(2)
+            d = b[0] << 8 | b[1]
+            return d / 10
+        while self.receive_queue:
+            command = {}
+            operation = read(2)
+            if operation == p.GOTO_ALT_AZ:
+                command['operation'] = 'goto'
+                command['altitude'] = read_degrees()
+                command['azimuth'] = read_degrees()
+                assert(read(1) == p.EOT)
+            else:
+                raise Exception('Unrecognized command starting with {} continuing {}'.format(repr(operation), repr(self.receive_queue)))
+            commands.append(command)
+                
+        return commands
 
     def __enter__(self):
         return self
