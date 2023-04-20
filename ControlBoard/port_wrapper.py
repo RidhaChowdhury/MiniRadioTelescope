@@ -48,11 +48,11 @@ class FakePortWrapper:
 
     def write(self, b):
         for byte in b:
-            self.queue.append(b)
+            self.queue.append(byte)
         print('FakePort get: {}'.format(b))
 
     def read(self, n=1):
-        b = b''.join(self.queue[0:n])
+        b = bytes(self.queue[0:n])
         self.queue = self.queue[n:]
         return b
 
