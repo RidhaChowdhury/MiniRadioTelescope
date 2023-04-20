@@ -1,7 +1,5 @@
 from ControlBoard.port_wrapper import PortWrapper, FakePortWrapper
 
-DEBUG_FAKE_PORT = True
-
 # Commands to PCB:
 EOT = chr(4).encode('ASCII')
 
@@ -87,13 +85,13 @@ class PCBWrapper:
             flags[flag_string] = flag_mask & flag_vector != 0
         
         return flags, alt, az
-
-
+    
+    def __init__(self, port_manager=None):
+        if port_manager is None:
+            port_manager = PortWrapper()
+        self.port_manager = port_manager
+    
     def __enter__(self):
-        if DEBUG_FAKE_PORT:
-            self.port_manager = FakePortWrapper()
-        else:
-            self.port_manager = PortWrapper()
         self.port = self.port_manager.__enter__()
         return self
 
