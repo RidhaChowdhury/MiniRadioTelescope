@@ -200,6 +200,8 @@ You should then be able to do
     python3 RTLSDR/rtlsdr_wrapper.py
 with the usb dongle plugged in and it will produce a chart looking like a bumpy normal distribution.
 
+Also run
+    pip install pyftdi
 
 Set udiskie to run on startup:
     vim /root/.profile
