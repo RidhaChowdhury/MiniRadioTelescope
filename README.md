@@ -8,6 +8,10 @@ Embedded firmware repository: https://github.com/drkntz/radiotelescope-firmware
 
 This Python software is forked from UPENN project: https://github.com/UPennEoR/MiniRadioTelescope
 
+## Quickstart/onboarding guide for new contributors:
+
+* [QUICKSTART.md:](QUICKSTART.md) Instructions for installing git, vscode, python, and committing to this repository.
+
 ## General structure of this repository
 
 * The RTLSDR folder relates to the [rtl-sdr](https://rtl-sdr.com) module, which gets data from the antenna.
