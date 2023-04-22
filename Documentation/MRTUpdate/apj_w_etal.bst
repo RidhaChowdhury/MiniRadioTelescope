@@ -1,1 +1,0 @@
-/Users/jaguirre/Documents/Latex/apj_w_etal.bst
