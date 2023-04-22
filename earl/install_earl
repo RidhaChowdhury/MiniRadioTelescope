@@ -192,7 +192,7 @@ Not strictly necessary.
 
 
 Install pyrtlsdr (copied from RTLSDR/installing_pyrtlsdr):
-    pip install setuptools pyrtlsdr numpy
+    pip install setuptools pyrtlsdr numpy astropy pyserial
 For graphs (necessary for demo)
     pip install matplotlib
     pacman -S tk
